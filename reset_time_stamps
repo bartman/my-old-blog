@@ -1,0 +1,3 @@
+#!/bin/sh
+cd entries
+perl -e 'for (@ARGV) { my $foo = $_;  $foo =~ s/(..)$/\.$1/; system "touch -t $foo $_"}' *

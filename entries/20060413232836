@@ -1,0 +1,17 @@
+Subject: secure apt-get
+Content-Type: text/x-markdown
+Tags: debian, apt, security
+
+Debiean-heads might find it interesting that [Joey Hess](http://kitenet.net/~joey) has produced a 
+detailed [SecureApt](http://wiki.debian.org/SecureApt) article on how to use security features
+of *apt-get*.
+
+The particularly interesting bits are:
+
+- details about the security levels put into packages
+- examples of how *apt-key* aught to be used
+- timeline that the debian pgp keys will adhere to
+- problems to be avoided and symptoms you will see if you have 'em
+- links to relevant documentation 
+
+

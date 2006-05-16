@@ -1,0 +1,103 @@
+Subject: building a RHEL4 kernel w/ kdb support
+Content-Type: text/x-markdown
+Tags: linux,kernel,kdb
+
+Sometimes I have a need to reproduce bugs on other platforms.  When that platform uses a heavily patched kernel, it makes it hard to debug.  Below are some notes I took while building a RHEL4 kernel with [kdb support](http://oss.sgi.com/projects/kdb/faq.html).
+
+<read-more>
+
+### 1. get the kernel
+
+It's not easy to find the kernel sources for RHEL4 if you don't have the CDs.  I was working off-site so I didn't.
+
+I finally found [a security article](http://www.linuxsecurity.com/content/view/120531) on 
+[LinuxSecurity.com](http://www.linuxsecurity.com/) that talked about a security fix and referenced the FTP source for
+[kernel-2.6.9-22.EL.src.rpm](ftp://updates.redhat.com/enterprise/4Desktop/en/os/SRPMS/kernel-2.6.9-22.EL.src.rpm).
+I grabbed that.
+
+### 2. install the rpm
+
+This step is easy, just run `rpm -i kernel-2.6.9-22.EL.src.rpm`.  The sources are unpacked into 
+`/usr/src/redhat` directories.
+
+### 3. prepare the kernel
+
+This step unpacks the tarball and applies the millions of patches packages with the redhat kernel:
+
+`$ rpmbuild --target=i686 -bp /usr/src/redhat/SPECS/kernel-2.6.spec`
+
+The kernel is now in `/usr/src/redhat/BUILD/kernel-2.6.9/linux-2.6.9`
+
+### 4. getting the KDB patches
+
+If you need help, read the [README](ftp://oss.sgi.com/projects/kdb/download/v4.4/README).
+
+You need to get two KDB patches.  One common, and one for your architecture.  In my case that's i386.
+
+`$ wget ftp://oss.sgi.com/projects/kdb/download/v4.4/kdb-v4.4-2.6.9-common-2.bz2`<br>
+`$ wget ftp://oss.sgi.com/projects/kdb/download/v4.4/kdb-v4.4-2.6.9-i386-1.bz2`
+
+### 5. applying patches to the RHEL4 kernel
+
+I was really crossing my fingers before I started this, because the millions 
+of patches that redhat ships with their kernel.  :)
+
+Here are the steps I took, below I will post links to my patches for 2.6.9-22 after merging the rejected patch sections.
+
+First is the `common` patch:
+
+`$ cd /usr/src/redhat/BUILD/kernel-2.6.9/linux-2.6.9`<br>
+`$ bunzip2 -c /tmp/kdb-v4.4-2.6.9-common-2.bz2 | patch -p1`
+
+This will result in 1 hunk FAILED in `include/linux/sysctl.h`.
+
+Next we move on to the 'i386' patch:
+
+`$ bunzip2 -c /tmp/kdb-v4.4-2.6.9-i386-1.bz2 | patch -p1`
+
+This will result in a total of 3 hunks FAILED in `arch/i386/kernel/reboot.c`, `arch/i386/kernel/traps.c` 
+and `include/asm-i386/kmap_types.h`.
+
+My patches are available here: 
+[kdb-v4.4-2.6.9-22.EL-common-2.bz2](/~bart/kernel/2.6.9-22+kdb/kdb-v4.4-2.6.9-22.EL-common-2.bz2) and 
+[kdb-v4.4-2.6.9-22.EL-i386-1.bz2](/~bart/kernel/2.6.9-22+kdb/kdb-v4.4-2.6.9-22.EL-i386-1.bz2).
+
+### 6. building the kernel ###
+
+The rpmbuild has already prepared the kernel, but w/o CONFIG_KDB.  So you have to run `make menuconfig` and enable it.
+Here is my configuration:
+
+`$ grep CONFIG.*KDB .config`<br>
+`CONFIG_KDB=y`<br>
+`# CONFIG_KDB_MODULES is not set`<br>
+`# CONFIG_KDB_OFF is not set`<br>
+`CONFIG_KDB_CONTINUE_CATASTROPHIC=0`<br>
+
+**NOTE: I had some issues building the `CONFIG_KDB_MODULES` option in**
+
+The next step is building the kernel.
+
+`$ make`
+
+And then installing it...
+
+`$ make modules_install install`
+
+Note that, the redhat post install script requires that modules_install be ran before install.
+
+Note further that, the kernel will actually be named `2.6.9-prep`.  I suppose there are good easons for this. :)
+
+### 7. building an rpm
+
+**I have not tried this yet**
+
+Copy my two patches (
+[kdb-v4.4-2.6.9-22.EL-common-2.bz2](/~bart/kernel/2.6.9-22+kdb/kdb-v4.4-2.6.9-22.EL-common-2.bz2) and 
+[kdb-v4.4-2.6.9-22.EL-i386-1.bz2](/~bart/kernel/2.6.9-22+kdb/kdb-v4.4-2.6.9-22.EL-i386-1.bz2)
+) and put them into `/usr/src/redhat/SOURCE`.  
+
+Modify the `/usr/src/redhat/SPECS/kernel-2.6.spec` file to inlcude the above patches.  Rebuild using...
+
+`$ rpmbuild --target=i686 -ba /usr/src/redhat/SPECS/kernel-2.6.spec`
+
+
