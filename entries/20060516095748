@@ -65,39 +65,39 @@ The procedure is:
 
   - /mnt/flash/etc/fstab
 
-          /dev/hda1       /       ext3    noatime,errors=remount-ro 0 1   <br>
-          proc            /proc   proc    defaults                  0 0   <br>
-          tmpfs           /tmp    tmpfs   defaults,size=5M          0 0
+            /dev/hda1       /       ext3    noatime,errors=remount-ro 0 1   <br>
+            proc            /proc   proc    defaults                  0 0   <br>
+            tmpfs           /tmp    tmpfs   defaults,size=5M          0 0
 
   - /mnt/flash/etc/hostname
 
-          hostname.network.foo
+            hostname.network.foo
 
   - /mnt/flash/etc/hosts
 
-          127.0.0.1 localhost hostname
-          192.168.1.1 hostname hostname.network.foo
+            127.0.0.1 localhost hostname
+            192.168.1.1 hostname hostname.network.foo
 
   - /mnt/flash/etc/network/interfaces
 
-          auto lo eth0
-          
-          iface lo inet loopback
-          
-          iface eth0 inet static
-                  address 192.168.1.1
-                  netmask 255.255.255.0
+            auto lo eth0
+            
+            iface lo inet loopback
+            
+            iface eth0 inet static
+                    address 192.168.1.1
+                    netmask 255.255.255.0
 
   - /mnt/flash/etc/apt/sources.list
 
-          deb http://ftp.debian.org/debian testing main
-          deb http://security.debian.org/ testing/updates main
+            deb http://ftp.debian.org/debian testing main
+            deb http://security.debian.org/ testing/updates main
 
   - /mnt/flash/etc/inittab
   
-    *this should be added at the bottom:*
+      *this should be added at the bottom:*
 
-          T0:23:respawn:/sbin/getty -L ttyS0 38400 vt100
+            T0:23:respawn:/sbin/getty -L ttyS0 38400 vt100
 
 4. finish off the install
 
