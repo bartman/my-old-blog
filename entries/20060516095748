@@ -1,6 +1,6 @@
 Subject: bootstrapping debian on my sbc
 Content-Type: text/x-markdown
-Alias: 
+Alias: sbc-bootstrap-with-debian
 Tags: debian,linux,sbc
 
 So my [sbc]{tag/sbc} of choice these days is the 
@@ -149,7 +149,11 @@ The procedure is:
 
   And then install the MBR.
 
-        *!!! read the comment above about my hardware !!!*
+  ** WARNING: this could kill your system's disk. **
+
+  *!!! read the comment above about my hardware !!!*
+
+  ** WARNING: are you sure you want to do this? **
 
         # install-mbr /dev/hda
         # lilo -M /dev/hda -C /etc/lilo.conf
