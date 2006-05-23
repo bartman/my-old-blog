@@ -85,11 +85,9 @@ And then installing it...
 
 Note that, the redhat post install script requires that modules_install be ran before install.
 
-Note further that, the kernel will actually be named `2.6.9-prep`.  I suppose there are good easons for this. :)
+Note further that, the kernel will actually be named `2.6.9-prep`.  I suppose there are good reasons for this. :)
 
 ### 7. building an rpm
-
-**I have not tried this yet**
 
 Copy my two patches (
 [kdb-v4.4-2.6.9-22.EL-common-2.bz2](/~bart/kernel/2.6.9-22+kdb/kdb-v4.4-2.6.9-22.EL-common-2.bz2) and 
@@ -99,5 +97,18 @@ Copy my two patches (
 Modify the `/usr/src/redhat/SPECS/kernel-2.6.spec` file to inlcude the above patches.  Rebuild using...
 
 `$ rpmbuild --target=i686 -ba /usr/src/redhat/SPECS/kernel-2.6.spec`
+
+this will build a `2.6.9-22.EL.root` kernel.
+
+### 8. install the kernel
+
+Just run...
+
+`$ rpm -i kernel-2.6.9-22.EL.root.i686.rpm kernel-devel-2.6.9-22.EL.root.i686.rpm`
+
+### 9. using kdb
+
+Read the [Inside the Linux kernel debugger](http://www-128.ibm.com/developerworks/linux/library/l-kdbug/) 
+article from IBM.
 
 
