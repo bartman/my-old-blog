@@ -1,0 +1,14 @@
+Subject: xen domain0 on debian
+Content-Type: text/x-markdown
+Tags: linux,xen,xen-box-setup
+Alias: debian-xen-dom0
+
+This is part of my [xen box setup]{rtag/xen-box-setup} "series". :)
+
+Xen domain 0 is special. Be it by a rule or simply by convention, it tends to run all the 
+drivers and start up the other xen hosts.
+
+I have already covered how I partitioned my disk and that I have installed (debian/testing).
+
+In this installment I wil
+

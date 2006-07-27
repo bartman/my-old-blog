@@ -26,7 +26,7 @@ Anyway, here goes...
         $ apt-get install xen-tools ssh python python2.3-twisted iproute bridge-utils libcurl3-dev \
           libncurses5-dev debootstrap zlib1g-dev make gcc build-essential python python-dev \
           python-twisted bzip2 module-init-tools tetex-base transfig tgif python-pyopenssl \
-          python-pam python-serial netpbm vim
+          python-pam python-serial netpbm vim initrd-tools
 
     I am no longer sure which are absolutely required and for what part of the xen build.  Some were 
     listed in the documentation, and others in various howto's I've read.

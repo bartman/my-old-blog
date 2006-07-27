@@ -1,0 +1,83 @@
+Subject: git vs hg
+Content-Type: text/x-markdown
+Alias: git-vs-hg
+Tags: git, mercurial, scm
+
+After working almost exclusively with [git](http://git.or.cz/) for a few months, I had to do some work
+on a freebsd kernel.  The freebsd kernel is maintained in [mercurial](http://www.selenic.com/mercurial). I
+noticed right away a few features that I have started to take for granted with git.
+
+<read-more>
+
+But let's go back for a bit...
+
+I started using BK in 2001 while working for Soma Networks.  I really loved it and was really happy 
+when Linus adopted it for kernel development.
+
+There BK pulled it's free license and Linus wrote git.  At first I really liked git, it was simple, powerful,
+and open.  And I knew that it would be a solid tool in about a year time because of the amount of people
+that would follow wherever Linus led them -- and that they would try to tell him that he was wrong while 
+following.
+
+Sometime around the 2nd or 3rd moth of git's development, Matt Mackall told Linus that he was doing the 
+back end wrong.  That is, instead of storing state, git should store differences in state.  Linus 
+of course didn't listen.  Matt thought that he was write and started to work on mercurial.
+
+And while I see Matt's case, and he could very well be 100% correct about his issues with git, I 
+find that git is a much more powerfull tool... at least after getting over the 
+[complex interface](http://www.kernel.org/pub/software/scm/git/docs/git.html).  I have to say that 
+the [documentation](http://www.kernel.org/pub/software/scm/git/docs/everyday.html) a lot
+[better](http://www.kernel.org/pub/software/scm/git/docs/tutorial.html).  This reason and having to 
+use git for work have gotten me [over the initial pain]{learning-to-love-git}.
+
+And here are a few things that make git great:
+
+  1. git-branch
+
+     The first thing I noticed was the fact that it is relatively hard to track two branches using hg.
+     I would have never noticed that had I not worked with git's very powerful branching :)
+
+     I really like the fact that you can have multiple branches in one repo and track them both.  For 
+     example I want to track both the [release](http://hg.fr.freebsd.org/src-releng_6/) and the 
+     [development](http://hg.fr.freebsd.org/src-head/) branches of `/usr/src` directory of freebsd.
+
+     With git I can manage them using `.git/remotes/release` and `.git/remotes/development`, or even easier
+     with cogito's cg-branch-add command.  Then I can simply pull and update both branches
+
+        git-pull release
+        git-pull development
+
+     And I can do this regardless of what branch I am currently on.  This is really cool when you're 
+     trying to compare changes between two development streams of the same tree.
+
+     That's just awesome.
+
+  2. git-rebase
+
+     So say you're working on a large project -- in therms of the number of developers -- to which you 
+     don't have commit privileges to.  Usually you would submit patches via email and hope they get 
+     excepted... because if they do you will not have to maintain them *out of tree*.
+
+     Say after the first submission you are told to fix a few things and try again.  A new upstream comes
+     out and since you're not really interested in doing development on a patch for an older kernel
+     -- because that will never get accepted.
+
+     So now, you need to move your development onto a new branch.  With other SCMs you would do a merge
+     of the new release into your working branch.  And then as you do more development on that branch
+     you end up having a mix of three kinds of changesets: a) upstream changes, b) your changes, and c)
+     merges of your changes with the upstream.  It becomes harder and harder to determine what is your 
+     new code.  
+
+     In git, when the upstream release comes out you can *rebase*, which basicall means *take all my
+     changes and apply them onto this new release branch*.  If any changeset you made fails to apply 
+     cleanly onto the new branch, you are asked to resolve it and then continue the rebase operation.
+
+     git keeps all your changes and work flow intact, it even keeps the old changes you made to the first 
+     branch in history.  Nothing is lost.  But at the end you have a ranch that you could ask the upstream 
+     to pull from if they wanted to.  It's clean because it's not polluted by merge changesets that are 
+     completely uninteresting in this kind of development.
+
+     That's just awesome.
+
+... to be continued when I have time
+

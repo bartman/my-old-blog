@@ -82,3 +82,5 @@ I've mainly consulted the lvm docs, but there are also these resources:
 
  - [Software RAID and LVM on Linux](http://www.trilug.org/talks/2005-10-raid/md-lvm-presentation/) - a slide show
  - [LVM howto](http://tldp.org/HOWTO/LVM-HOWTO/index.html) - oodles of info
+ - [A simple introduction to working with LVM](http://www.debian-administration.org/articles/410) - some debian LVM stuff
+

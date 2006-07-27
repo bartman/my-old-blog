@@ -5,7 +5,9 @@ Tags: git,scm
 
 I've been working for [Xelerance](http://www.xelerance.com/), [mcr](http://www.sandelman.ca/mcr/)'s company, for a couple of weeks now.  The project I am working on is mostly bringing KLIPS, [openswan](http://www.openswan.org/) ipsec kernel module, into the 21st centry.  Since KLIPS is a patch against the [Linux kernel](http://kernel.org/git/), it makes sense to keep it in [git](http://git.or.cz/).
 
-When Linus first said that he was working on GIT, I was very interested.  I knew that Linus liked [BitKeeper](http://bitkeeper.org), as I did, so anything that he came up with should be similar in design to BK, or at least take from the strengths of BK.  The GIT system quickly became very complex.  I liked bk because it was easy to do the simple things, GIT made it very hard to get into.  I found that mercurial, which came out at approximately same time, was far easier to use for every day SCM needs.  And, while I used git for fetching kernels, I've been avoiding it for personal SCM usage.
+<read-more>
+
+When Linus first said that he was working on GIT, I was very interested.  I knew that Linus liked [BitKeeper](http://bitkeeper.org), as I did, so anything that he came up with should be similar in design to BK, or at least take from the strengths of BK.  The GIT system quickly became very complex.  I liked bk because it was easy to do the simple things, GIT made it very hard to get into.  And, while I used git for fetching kernels, I've been avoiding it for personal SCM usage.
 
 Now, I had to embrace it for work purposes :) ... and I must say that I am beginning to like it.  GIT has some very cool features, and it makes a good use of repository branches -- something I never understood the need for while using BK.  I still find GIT to be very "plumbing" friendly, but as I go it gets easier.  [Cogito](http://kernel.org/pub/software/scm/cogito/README) certainly helps a bit, but I've found some git-only commands (ie not wrapped in cogito interface) too powerful to make me use strictly cogito.
 

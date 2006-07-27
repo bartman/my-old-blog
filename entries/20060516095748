@@ -38,7 +38,7 @@ The procedure is:
 
   Add a single partition of type Linux and make it bootable
 
-        $ mkfs.ext3 /dev/disk/by-id/ata-SanDisk_*-part1<br>
+        $ mkfs.ext3 /dev/disk/by-id/ata-SanDisk_*-part1
 
   Mount it
 
@@ -65,8 +65,8 @@ The procedure is:
 
   - /mnt/flash/etc/fstab
 
-            /dev/hda1       /       ext3    noatime,errors=remount-ro 0 1   <br>
-            proc            /proc   proc    defaults                  0 0   <br>
+            /dev/hda1       /       ext3    noatime,errors=remount-ro 0 1
+            proc            /proc   proc    defaults                  0 0
             tmpfs           /tmp    tmpfs   defaults,size=5M          0 0
 
   - /mnt/flash/etc/hostname
@@ -133,9 +133,11 @@ The procedure is:
   Put this in /etc/lilo.conf:
 
           boot = /dev/hda
-          root = /dev/hda1
           disk = /dev/hda
-          bios = 0x80
+            bios = 0x80
+          disk = /dev/sda
+            inaccessible
+
           prompt
           timeout=150
           vga=normal
@@ -144,8 +146,10 @@ The procedure is:
           default=linux
           
           image = /vmlinuz
-                  append="console=ttyS0,38400n8"
-                  label = linux 
+            initrd = /initrd.img
+            root = /dev/hda1
+            append="console=ttyS0,38400n8"
+            label = linux 
 
   And then install the MBR.
 
