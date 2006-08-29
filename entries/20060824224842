@@ -1,0 +1,33 @@
+Subject: 256 colour xterms
+Content-Type: text/x-markdown
+Alias: 256-colour-xterm
+Tags: xterm,linux,vi
+
+*Welcome to the 90's!  256 colours are here!*
+
+It's pretty sad.  I got really excited today when I read the [Tip #1312: 256 colors in vim](http://www.vim.org/tips/tip.php?tip_id=1312).
+
+I quickly installed the few colour schemes listed in the *tip* and was really impressed with the [inkpot](http://www.vim.org/scripts/script.php?script_id=1143)
+scheme... it's pretty.
+
+<read-more>
+
+So first, you seem to need a recent xterm vim 6.4 or vim 7.  The xterm or vim that shipped with Debian/Sarge does not support 256 colours... or at least, that's what
+was reported to me on IRC.
+
+Here are some useful links:
+
+   - [vim tip 1312](http://www.vim.org/tips/tip.php?tip_id=1312) - the tip that started it all
+   - [The 256 color mode of xterm](http://frexx.de/xterm-256-notes/)
+     - useful notes and scripts to test xterm support
+     - some vim colorschmes -- I am sticking to *inkpot*
+     - how to get *screen* to work with 256 colours
+
+**NB:** I had to make the change mentioned on the page to my .screenrc **and** rebuild my screen package:
+
+    sudo apt-get build-dep screen
+    apt-get source screen
+    cd screen*
+    dpkg-buildpackage
+    cd ..
+    dpkg -i screen*.deb
