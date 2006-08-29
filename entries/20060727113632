@@ -1,7 +1,7 @@
 Subject: git-graft and git-find brainstorm
 Content-Type: text/x-markdown
 Alias: git-graft-brainstorm
-Tags: git
+Tags: git,git-find,git-graft
 
 I want to be able to take a bunch of patches that were applied to one *semi-related* 
 branch and appened them to the current branch, or better yet a new branch of the 
@@ -36,6 +36,13 @@ There are two commands here: `git-find` and `git-graft`.  Starting with `git-fin
 
     git-find searches the commits in a specified range and returns
     those commits that modify the repository in a specific way.
+
+    The commits to start with can be represented in a few ways:
+
+        <A>                    - all commits from <A> to HEAD
+        <A> <B> ...            - individual commits listed
+        <A>..<B>               - all commits in given range
+        -                      - list of commit hashes from stdin
 
     The match criteria can be defined using a grammar similar to
     the find command.  The following are supported match conditions:
@@ -86,7 +93,4 @@ except that `git-rebase` is too rigid.  It's possible to implement `git-rebase` 
         <A>..<B>               - apply all commits in given range
         -                      - read list of commit hashes from stdin
 
-
-ok, now onto hacking it up.
-
-
+... now off to write some code.

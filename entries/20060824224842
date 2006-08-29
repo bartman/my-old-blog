@@ -31,3 +31,9 @@ Here are some useful links:
     dpkg-buildpackage
     cd ..
     dpkg -i screen*.deb
+
+Here are my config files:
+
+  - [vimrc](/~bart/conf/vimrc), and [colorschmes](/~bart/conf/vim/colors/)
+  - [screenrc](/~bart/conf/screenrc)
+

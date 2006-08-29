@@ -14,21 +14,24 @@ But let's go back for a bit...
 I started using BK in 2001 while working for Soma Networks.  I really loved it and was really happy 
 when Linus adopted it for kernel development.
 
-There BK pulled it's free license and Linus wrote git.  At first I really liked git, it was simple, powerful,
-and open.  And I knew that it would be a solid tool in about a year time because of the amount of people
-that would follow wherever Linus led them -- and that they would try to tell him that he was wrong while 
-following.
+Then BK pulled it's free license and Linus [wrote 
+git](http://en.wikipedia.org/wiki/Git_%28software%29#Early_history).  At first I really liked git, it was 
+simple, powerful, and open.  And I knew that it would be a solid tool in about a year time because of 
+the amount of people that would follow wherever Linus led them -- and that they would try to tell him 
+that he was wrong while following.
 
 Sometime around the 2nd or 3rd moth of git's development, Matt Mackall told Linus that he was doing the 
-back end wrong.  That is, instead of storing state, git should store differences in state.  Linus 
-of course didn't listen.  Matt thought that he was write and started to work on mercurial.
+back end wrong.  That is, instead of storing state, git should store differences in state.  Matt had a 
+cool storage scheme called a *revlog*, which he had proven several times ince then was faster at certain 
+operations.  Linus of course didn't listen.  Matt thought that he was right and started to work on mercurial.
 
 And while I see Matt's case, and he could very well be 100% correct about his issues with git, I 
 find that git is a much more powerfull tool... at least after getting over the 
 [complex interface](http://www.kernel.org/pub/software/scm/git/docs/git.html).  I have to say that 
 the [documentation](http://www.kernel.org/pub/software/scm/git/docs/everyday.html) a lot
-[better](http://www.kernel.org/pub/software/scm/git/docs/tutorial.html).  This reason and having to 
-use git for work have gotten me [over the initial pain]{learning-to-love-git}.
+[better](http://www.kernel.org/pub/software/scm/git/docs/tutorial.html) today then it was when I
+gave up on git.  Having to use git for work, and having plentiful documentation, have gotten me 
+[over the initial pain]{learning-to-love-git}.
 
 And here are a few things that make git great:
 
@@ -79,5 +82,21 @@ And here are a few things that make git great:
 
      That's just awesome.
 
-... to be continued when I have time
+  3. git-clone --shared
 
+     A shared clone is one which points directly to a (preferably) local repository for getting
+     it's objects.  This is really great for working repositories... and even better then hard-linking,
+     because it never needs updating.  Although there is a `--local` flag that does hardlinks.
+
+     So when you clone a local repository as `--shared`.  The clone will contain no object initially,
+     instead it will have a `.git/objects/info/alternates` set to the original repository.  Whenever
+     the object is not found in the new clone it will look in the `alternates` for that object.
+
+     This means that having *per-task* working repositories is trivial -- just in case doing a clone
+     was ward -- and incurring almost zero overhead.
+
+        git clone git://remote/repo clean-clone
+        git clone --local --shared clean-clone work-1
+        git clone --local --shared clean-clone work-2
+
+...more to come.

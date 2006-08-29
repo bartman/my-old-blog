@@ -18,5 +18,7 @@ Anyway, here are some links I found useful on my recent git adventures:
    - [oficial docs](http://kernel.org/pub/software/scm/git/docs/)
      - [GIT Howto Index](http://www.kernel.org/pub/software/scm/git/docs/howto-index.html)
  - [GIT Guide](http://wiki.sourcemage.org/Git_Guide) from sourcemange.org
+ - [Wine developers guide to GIT](http://wiki.winehq.org/GitWine)
+ - [Kernel Hacker's Guide to git](http://linux.yyz.us/git-howto.html)
 
 *(I wil try to update this as I find new stuff)*

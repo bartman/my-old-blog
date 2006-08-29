@@ -9,5 +9,5 @@ clean:
 add:
 	git-add entries/*[0-9]
 
-commit ci:
-	git-commit
+commit ci: add
+	git-commit -a

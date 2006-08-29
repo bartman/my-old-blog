@@ -30,3 +30,9 @@ Have a look at [the code](/~bart/snippets/pretty-function-tracer.c.html).
 
 I should probably hack something like this using [systemtap](http://sources.redhat.com/systemtap/) or at least use [jprobes](http://sourceware.org/ml/systemtap/2005-q2/msg00507.html) for
 the tracing instead of modifying the source.
+
+**Related:**
+
+ - a [friend pointed me](http://phobos.ca/mediawiki/index.php/Function_enter/leave_Instrumentation) to gcc `-finstrument-functions` option that makes gcc generate calls to an arbitrary handler for each function entered and exited.
+ - [hrprof](http://handhelds.freshmeat.net/projects/hrprof/) uses the `-finstrument-function` feature and extracts more information.
+ - a bit more research revealed [etrace](http://ndevilla.free.fr/etrace/) which seems to do this kind of function tracing at run-time.
