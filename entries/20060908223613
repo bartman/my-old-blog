@@ -1,0 +1,14 @@
+Subject: mpdscribble stream support
+Content-Type: text/x-markdown
+Alias: mpdscribble-stream-patch
+Tags: mpd,lastfm,audio
+
+I am using [gnump3d](http://www.gnump3d.org/) to get my tracks to my laptop, which is 
+using [mpd](http://www.MusicPD.org) to play tracks. I noticed that none 
+of the streamed tracks were [getting to last.fm](http://www.last.fm/user/BartTrojanowski/). I investigated and 
+discovered that mpdscribble was not getting told of the track length by 
+mpd -- understandably so -- and was not reporting it to last.fm. 
+
+I [patched the mpdscribble](http://www.jukie.net/~bart/patches/mpdscribble-0.2.10+streamable.patch)
+utility and [posted about it](http://www.last.fm/group/mpd/forum/16122/_/166600#f1928624).
+

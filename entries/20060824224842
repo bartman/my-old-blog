@@ -22,6 +22,9 @@ Here are some useful links:
      - useful notes and scripts to test xterm support
      - some vim colorschmes -- I am sticking to *inkpot*
      - how to get *screen* to work with 256 colours
+   - [konsole-256color](http://blog.cynapses.org/) - blog entry on konsole/screen/vim in 256 colours
+   - [making mutt display 256 colors](http://comments.gmane.org/gmane.mail.mutt.user/25292) - a discussion on mutt user's group that gets into some screen details
+   - [XTerm and 8-bit Characters](http://www.leonerd.org.uk/hacks/hints/xterm-8bit.html) - has nothing to do with colours, but related
 
 **NB:** I had to make the change mentioned on the page to my .screenrc **and** rebuild my screen package:
 
