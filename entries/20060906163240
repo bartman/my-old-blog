@@ -18,7 +18,7 @@ The first script will pass emails to lbdb and sendmail.
 <blockquote>
 <i>
 aside:  I never knew about the >() and <(), but ever since I read the above article, I've been using it a lot with git.<br>
-For example: </i> vimdiff <(cg-admin-cat -r old-revision somefile) somefile.
+For example: </i> vimdiff <(<a href="http://www.jukie.net/~bart/scripts/tmp/git-cat">git-cat</a> -r old-revision somefile) somefile.
 </blockquote>
 
 This script corrects for the fact that lbdbq shows entries in the reverse order... I want the most recent to be on top.
