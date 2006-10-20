@@ -12,4 +12,7 @@ You can [disable the feature](http://nixdoc.net/files/forum/about167050-These-ne
 
     apt-get update -o Acquire::PDiffs=false
 
+<read-more>
+
+Oh, cute... [PDiffs=false is a feature](http://wiki.debian.org/NewInEtch) not a bug.
 

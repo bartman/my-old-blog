@@ -1,7 +1,7 @@
 Subject: generating html colourized sourcecode
 Content-Type: text/x-markdown
 Alias: generating-colourized-source-html
-Tags: vi, html, bash
+Tags: vim, html, bash
 
 I wanted to have vim colouring of source files in html format.  There is
 [Text::VimColor](http://search.cpan.org/~geoffr/Text-VimColor/lib/Text/VimColor.pm)

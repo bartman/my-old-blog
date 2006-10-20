@@ -1,6 +1,6 @@
 Subject: bash vi editing mode
 Content-Type: text/html
-Tags: bash,vi
+Tags: bash,vim
 
 <b> bash comand line </b>
 <p> For a few years now I've been using vi editing mode for bash and anything that uses readline.  Here is how I've set things up.

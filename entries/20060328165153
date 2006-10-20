@@ -1,7 +1,7 @@
 Subject: vim7 from source
 Content-Type: text/x-markdown
 Alias: vim7-from-source
-Tags: vi,linux
+Tags: vim,linux
 
 I found a bug in vim6.4 (my comment block was too big and the line after the comment block was not left-justified) and wanted to see if vim7 had a fix.
 
@@ -18,6 +18,9 @@ Here are the steps I used to build/install my vim.
 
         $ cvs -z3 -d:pserver:anonymous@cvs.sf.net:/cvsroot/vim checkout vim7
 
+    or
+
+        $ svn co https://svn.sourceforge.net/svnroot/vim/vim7
 
 3. configure
 
@@ -37,14 +40,14 @@ Here are the steps I used to build/install my vim.
 
 5. install
 
-        $ make install
+        $ sudo make install
 
 
 6. fix install
 
     ...for some reason `--program-suffix` didn't work.
 
-        $ ln -s vim /usr/local/bin/vim7
+        $ sudo ln -s vim /usr/local/bin/vim7
 
 
 It took about 5 minutes to build on my laptop.  That's about the same amount of time it takes emacs to start up ... :)
