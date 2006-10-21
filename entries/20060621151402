@@ -47,11 +47,18 @@ And here are a few things that make git great:
      With git I can manage them using `.git/remotes/release` and `.git/remotes/development`, or even easier
      with cogito's cg-branch-add command.  Then I can simply pull and update both branches
 
-        git-pull release
-        git-pull development
+        git-fetch release
+        git-fetch development
 
-     And I can do this regardless of what branch I am currently on.  This is really cool when you're 
-     trying to compare changes between two development streams of the same tree.
+     These are called [topic](http://www.kernel.org/pub/software/scm/git/docs/howto/using-topic-branches.txt)
+     [branches](http://www.kernel.org/pub/software/scm/git/docs/howto/separating-topic-branches.txt).
+
+     And I can do the fetch regardless of what branch I am currently on, as it just updates the repository.  This 
+     is really cool when you're trying to compare changes between two development streams of the same tree.  To 
+     pull into whatever branch I am currently working on I run:
+
+        git-pull . release/some-branch
+        git-pull . development/the-branch-of-bob
 
      That's just awesome.
 
