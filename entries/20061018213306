@@ -41,7 +41,7 @@ irssi would be "*mail+bug548*".  These three programs would all be in their orig
 
 Final note... this is where Ruby comes in.  I found that *wmii* by itself is a bit slow to user input -- it's much faster then 
 things like kde or gnome, but slower then ion3 -- because the *event loop* of the window manager is written as a shell script.
-However, some one wrote [wmii+ruby](eigenclass.org/hiki.rb?wmii+ruby), which is an event loop for ruby written in ruby.
+However, some one wrote [wmii+ruby](http://eigenclass.org/hiki.rb?wmii+ruby), which is an event loop for ruby written in ruby.
 If you are interested in a fast, dynamic, tiling, keyboard-oriented window manager I suggest you start from *wmii+ruby*. :)
 
 If you want to use the latest from darcs then you will have to:
@@ -51,3 +51,4 @@ If you want to use the latest from darcs then you will have to:
     cd wmii+ruby
     ruby install.rb
 
+If you are interested, you can checkout my [~/.wmii-3/](/~bart/conf/wmii-3/) config files.

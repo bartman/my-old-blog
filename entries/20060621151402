@@ -23,7 +23,7 @@ that he was wrong while following.
 Sometime around the 2nd or 3rd moth of git's development, Matt Mackall told Linus that he was doing the 
 back end wrong.  That is, instead of storing state, git should store differences in state.  Matt had a 
 cool storage scheme called a *revlog*, which he had proven several times ince then was faster at certain 
-operations.  Linus of course didn't listen.  Matt thought that he was right and started to work on mercurial.
+operations.  Linus of course didn't listen.  Matt thought that he was right and started to work on mercurial (aka **hg**).
 
 And while I see Matt's case, and he could very well be 100% correct about his issues with git, I 
 find that git is a much more powerfull tool... at least after getting over the 
@@ -106,4 +106,27 @@ And here are a few things that make git great:
         git clone --local --shared clean-clone work-1
         git clone --local --shared clean-clone work-2
 
+  4. git-clone --reference
+
+     I manually maintain a list of frequently used git repositories on my file server.  I call this
+     my cache because I use it to reduce the amount of data that I need to get from the internet when
+     I clone a new tree.
+
+        git clone git://remote/repo clean-seed-of-repo
+        git clone --reference clean-seed-of-repo git://remote/repo work-1
+        git clone --reference clean-seed-of-repo git://remote/repo work-2
+     
+     This takes the `--local --shared` idea a bit further.  It allows the working directories to push
+     to the `remote/repo` but fetch objects from the `clean-seed-of-repo` if possible.
+
+     Having a local seed for various frequently used seeds also means that a full clone, with all history 
+     of the kernel, is about 500k on disk.  You can run all the analysis tools, like gitk, without 
+     having a full checkout.  You can then checkout a tree and not waste disk space on history...
+
+     Read more about this: [caching git repos]{git-caching}.
+
 ...more to come.
+
+NOTE: I started writing this when I was still using hg on a daily basis.  Some of these features may
+have been added go mercurial by now.
+

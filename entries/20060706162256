@@ -35,3 +35,5 @@ Here is what actually happens:
      ... but this time comment them :)
 
 *NOTE:* I think one or two steps can be carved off by using `git branch` instead of `git checkout`.  If you find a better way, I would love to hear about it.
+
+*UPDATE:* It turns out that you can do this with `git commit --amend` in new git releases.

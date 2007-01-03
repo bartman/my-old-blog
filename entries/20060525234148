@@ -20,5 +20,6 @@ Anyway, here are some links I found useful on my recent git adventures:
  - [GIT Guide](http://wiki.sourcemage.org/Git_Guide) from sourcemange.org
  - [Wine developers guide to GIT](http://wiki.winehq.org/GitWine)
  - [Kernel Hacker's Guide to git](http://linux.yyz.us/git-howto.html)
+ - [Git Cheat Sheet](http://www.itp.tuwien.ac.at/~mattems/blog/2006/07/03#git_howto) - Maximilian Attems enumerates a few frequently used git commands
 
 *(I wil try to update this as I find new stuff)*
