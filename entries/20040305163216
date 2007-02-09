@@ -1,5 +1,6 @@
 Subject: cool debian tools
 Content-Type: text/html
+Alias: cool-debian-tools
 Tags: debian
 
 <p>A few of us, Debian veterans, started naming off cool tools and tricks on IRC
@@ -14,6 +15,7 @@ somewhere...  so here goes:</p>
 <li>deborphan - Find orphaned libraries
 <li>apt-listchanges - Display new Debian changelog entries from .deb archives
 <li>apt-spy - writes a sources.list file based on bandwidth tests
+<li>dpkg-repack - generates a .deb from an installed package
 </ul>
 
 <p>Tools for keeners and developers:</p>
@@ -34,3 +36,4 @@ somewhere...  so here goes:</p>
 <li>installing from multiple releases <a href=http://www.argon.org/~roderick/apt-pinning.html>apt-pinning</a>
 </ul>
 
+**Have more?** ...please let me know.

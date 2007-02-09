@@ -1,0 +1,44 @@
+Subject: my kqemu install
+Content-Type: text/x-markdown
+Alias: kqemu-install
+Tags: qemu,kqemu
+
+I found out earlier today that [kqemu](http://fabrice.bellard.free.fr/qemu/) is now GPLed.  I think this has 
+the potential of helping out the KVM team by (hopefully) taking some of the tricks that helps kqemu get almost 
+as good performance (on some benchmarks) as KVM w/ the hardware vitualization extensions.
+
+Here I am running Ubuntu (aside: next time I pave over I am going back to *Debian*), and I want to have kqemu
+running WinXP.  But really... I just wanted to try kqemu on my poor desktop that lacks the virtualization 
+extensions.
+
+<read-more>
+
+First, I need to rebuild the qemu package, because the one in Ubuntu doesn't have kqemu support built in.
+
+        $ sudo apt-get build-dep qemu
+        $ wget http://fabrice.bellard.free.fr/qemu/qemu-0.9.0.tar.gz
+        $ tar xzf qemu-0.9.0.tar.gz
+        $ cd qemu-0.9.0
+        $ ./configure --prefix=/usr --enable-alsa --enable-kqemu --cc=gcc-3.4
+        $ make 
+        $ sudo make install
+
+Next I need to grab the kernel part...
+
+        $ wget http://fabrice.bellard.free.fr/qemu/kqemu-1.3.0pre11.tar.gz
+        $ tar xzf kqemu-1.3.0pre11.tar.gz
+        $ cd kqemu-1.3.0pre11
+        $ ./configure
+        $ make
+        $ sudo make install
+        $ sudo modprobe kqemu
+
+Then I create a new 4 gig image and install...
+
+        $ dd of=winxp.img bs=1024 seek=4000000 count=0
+        $ qemu-system-x86_64 -boot d -cdrom /dev/cdrom -hda winxp.img -m 512
+
+Push enter a few times and you're done.
+
+References:
+  - [WindowsXP Under Qemu HowTo](https://help.ubuntu.com/community/WindowsXPUnderQemuHowTo)

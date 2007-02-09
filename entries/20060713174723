@@ -14,6 +14,8 @@ I modified two files:
   - [/etc/init.d/uml-utilities](http://www.jukie.net/~bart/debian/uml/utilities/init.d-uml-utilities)
   - [/etc/default/uml-utilities](http://www.jukie.net/~bart/debian/uml/utilities/default-uml-utilities)
 
+And filed bug [378166](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=378166).
+
 <read-more>
 
 The remaining bit to configure for you is your `/etc/network/interfaces` to assign the right IPs to the tapX 
