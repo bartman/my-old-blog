@@ -1,0 +1,46 @@
+Subject: etc snapshots with git
+Content-Type: text/x-markdown
+Alias: etc-snapshots-with-git
+Tags: git,linux,debian
+
+I got this idea from a blog posting a few months back.  I think the guy was using *darcs*.  Unfortunately, I
+was unable to find the reference to link to him.
+
+Anyway, here is how you can track your `/etc` directory with *git*, and have *apt* update it
+automatically each time a package is installed.
+
+<read-more>
+
+ * install git
+
+        apt-get install git-core
+
+ * initialize `/etc` to be a git repo
+
+        cd /etc
+        git init-db
+        chmod og-rwx .git
+
+ * ignore a few files
+
+        cat > .gitignore
+        *~
+        *.dpkg-new
+        *.dpkg-old
+        ^D
+        git add .gitignore
+
+ * commit the current state
+
+        git add .
+        git commit -a -m"initial import"
+
+ * configure *apt* to track changes
+
+        cat >> /etc/apt/apt.conf
+        DPkg {
+                  Post-Invoke {"cd /etc ; git add . ; git commit -a -m'snapshot: `date`'";};
+        }
+        ^D
+
+... and you're done.
