@@ -29,5 +29,14 @@ Tags: lastfm
         $ echo "lastfm://user/BartTrojanowski/loved" | netcat localhost 32213
 </blockquote>
 
+<p>
+---
+</p>
 
-
+<p>
+Updates:
+<ul>
+<li>
+Dave wrote up how to tag using XMLRPC: <a href=http://www.dmo.ca/blog/last-fm-api-hacking-1>http://www.dmo.ca/blog/last-fm-api-hacking-1</a>
+</ul>
+</p>

@@ -1,0 +1,21 @@
+Subject: fixing vim's [[ and ]] for bad code
+Content-Type: text/x-markdown
+Alias: find-functions-in-vim
+Tags: vim
+
+I just added something to my [.vim/c.vim](http://www.jukie.net/~bart/conf/vim/c.vim)
+to make `[[` and `]]` work even if the code does not have `{` on new lines.
+
+        function! FindFunctionDefinition(dir)
+                let l:lastpattern = @/
+                if a:dir==-1
+                        ?^\(\a.*(\_[^\)]*) *\)\{,1\}{
+                elseif a:dir==1
+                        /^\(\a.*(\_[^\)]*) *\)\{,1\}{
+                endif 
+                let @/ = l:lastpattern
+        endfunction
+
+        nmap [[ :call FindFunctionDefinition(-1)<CR>
+        nmap ]] :call FindFunctionDefinition(1)<CR>
+

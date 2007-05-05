@@ -1,0 +1,10 @@
+Subject: git presentation for OCLUG
+Content-Type: text/x-markdown
+Alias: intro-to-git-talk
+Tags: git,oclug
+
+I am giving a *intro to git* tutorial for [oclug](http://oclug.on.ca/) tomorrow.
+
+Here are the slides in [PDF format](/~bart/slides/intro-to-git/intro-to-git.pdf).  If 
+you are one of the lucky ones and magic point works for you, you can also 
+grab [the source tarball](/~bart/slides/intro-to-git/intro-to-git.tgz).

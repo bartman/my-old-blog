@@ -3,12 +3,12 @@ Content-Type: text/x-markdown
 Alias: apt-get-pdiffs
 Tags: debian
 
-Debian/unstable apt-get has this feature called pdiffs.  It downloads only the diffs between the previous day's Packages and Sources indexes,
+Debian/unstable apt-get has this feature called pdiff files (or pdiffs).  It downloads only the diffs between the previous day's Packages and Sources indexes,
 which claims to improve downloads for regular use.
 
 When you don't update often you will find that your updates could take 30 minutes, plus.
 
-You can [disable the feature](http://nixdoc.net/files/forum/about167050-These-new-diffs-are-great--but.html) by running:
+You can [disable use of pdiff files](http://nixdoc.net/files/forum/about167050-These-new-diffs-are-great--but.html) by running:
 
     apt-get update -o Acquire::PDiffs=false
 

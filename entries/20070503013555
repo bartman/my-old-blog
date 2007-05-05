@@ -1,0 +1,63 @@
+Subject: urxvt mouseless url yanking
+Content-Type: text/x-markdown
+Alias: urxvt-url-yank
+Tags: urxvt,shell,desktop
+
+In the quest for a completely mouse free desktop, I wanted to be able to yank URLs from the termial
+without using the mouse.  This happens often enough in IRC when I would want to grab the most recent 
+URL and run it in firefox.
+
+I talked to the author of [vimperator](http://vimperator.mozdev.org) and he suggested that
+I look at urxvt (packaged as rxvt-unicode).  So I did.
+
+A few hours later and I have a perl plug-in for urxvt that does just want I wanted.
+
+<read-more>
+
+I use [wmii]{tags/wmii} and one of the keys that is unused atm, is Alt-U.  I mapped the new feature to Alt-U, but
+it's configurable.
+
+**Overview**
+
+   - `Alt-U`   - enter URL yank mode, select last URL; pressed subsequently selects previous URL
+   - `<esc>`   - exit URL yank mode
+   - `y`       - copy selected URL to clipboard
+   - `<enter>` - launch browser (see below) on selected URL
+   - `ctrl-n`  - select next url
+   - `ctrl-p`  - select previous url
+
+NOTE: *the key combinations are intended to be vim-like and permit me to extend them to be able to
+mark arbitrary text using similar shortcuts as screen copy mode.  So HJKL are reserved for future use,
+hence the use of a control key.*
+
+**The code**
+
+   - [gitweb interface](http://www.jukie.net/~bart/git/gitweb.cgi?p=urxvt.git/;a=summary)
+   - [current version](http://www.jukie.net/~bart/git/gitweb.cgi?p=urxvt.git;a=blob;h=ed22dfcf2e448198931b48bf25ddd126263b077c;hb=029378d2559b9c7b35b9b535b1b6086e546051ff;f=mark-yank-urls)
+
+**Clone my repo**
+
+   - you will need git
+
+        apt-get install git-core
+        git clone git://tachyon.jukie.net/urxvt
+
+**Install**
+
+   - put `mark-yank-urls` in `$HOME/.urxvt/`
+
+**Configure**
+
+   - put this in `$HOME/.Xdefaults`
+
+        URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
+        URxvt.underlineURLs: true
+        URxvt.perl-lib: /home/jukie/bart/.urxvt/                               <--- your path
+        URxvt.perl-ext: mark-yank-urls
+        URxvt.urlLauncher: firefox
+
+**Run**
+
+   - you can just run `urxvt`, but if you don't have .Xdefaults working right, use this:
+
+        urxvt --perl-lib ${HOME}/.urxvt/ -pe mark-yank-urls

@@ -1,0 +1,18 @@
+Subject: vimgrep alias
+Content-Type: text/x-markdown
+Alias: vimgrep-alias
+Tags: vim,shell,zsh
+
+I've been using Solaris recently... since yesterday.  First reactions: *How can anyone use their command line tools!?*
+
+Fortunately the system I was on had zsh and vim.
+
+Here is a macro I use to avoid Solaris grep:
+
+        function vimgrep () { tmp="$@" ; vim -c "vimgrep $tmp | copen" ; }
+
+(I could not figure out a way to do it w/o the `tmp` variable)
+
+Now you can do things like:
+
+        vimgrep pattern 'dir/**/*.c'

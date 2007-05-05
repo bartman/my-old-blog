@@ -130,3 +130,15 @@ And here are a few things that make git great:
 NOTE: I started writing this when I was still using hg on a daily basis.  Some of these features may
 have been added go mercurial by now.
 
+related links:
+
+ - [GIT vs Other: Need argument](http://marc.info/?t=117682816700010&r=1&w=2)
+ - [Ted Tso - Git and Hg](http://tytso.livejournal.com/29467.html)
+
+other:
+ 
+ - [Mercurial upgrade](http://pablotron.org/?cid=1524)
+ - [GIT vs SVN](http://git.or.cz/gitwiki/GitSvnComparsion)
+ - [An introduction to git-svn for Subversion/SVK users and deserters](http://utsl.gen.nz/talks/git-svn/intro.html#howto-track-svn)
+
+

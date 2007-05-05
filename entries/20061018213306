@@ -46,9 +46,17 @@ If you are interested in a fast, dynamic, tiling, keyboard-oriented window manag
 
 If you want to use the latest from darcs then you will have to:
 
-    apt-get install darcs wmii libhttp-access2-ruby1.8
-    darcs get http://eigenclass.org/repos/ruby-wmii/head wmii+ruby
-    cd wmii+ruby
-    ruby install.rb
+    $ sudo apt-get install darcs wmii libhttp-access2-ruby1.8 ruby1.8
+    $ darcs get http://eigenclass.org/repos/ruby-wmii/head wmii+ruby
+    $ cd wmii+ruby
+    $ ruby install.rb
 
 If you are interested, you can checkout my [~/.wmii-3/](/~bart/conf/wmii-3/) config files.
+
+Please note.  Some people have had problems with ruby 1.9 and wmii+ruby.  If you have ruby 1.9, you may need to 
+change `ruby` to `ruby1.8` on the first line of your `~/.wmii-3/wmiirc`.
+
+    $ head -n1 .wmii-3/wmiirc
+    #!/usr/bin/env ruby1.8
+                   ^^^^^^^
+

@@ -1,0 +1,17 @@
+Subject: pipe to pastey.net
+Content-Type: text/x-markdown
+Alias: pipe-to-pastey.net
+Tags: shell,mouse-free
+
+Here is a little script that lets me post to [pastey.net](http://pastey.net) from a shell prompt
+
+        #!/bin/bash
+        set -e
+
+        AUTHOR=bartman
+        SUBJECT=pipe
+        LANGUAGE=c
+
+        w3m -post <( echo -n -e "language=$LANGUAGE&author=$AUTHOR&subject=$SUBJECT&tabstop=4&text=" ; sed 's/%/%25/g' | sed 's/&/%26/g' ) \
+        -dump http://pastey.net/submit.php
+

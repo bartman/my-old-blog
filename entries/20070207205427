@@ -61,5 +61,17 @@ Then when you are prompted for a new CD press **ctrl-alt-2** and run the followi
 Then press **ctrl-alt-1** to get back to the installer.  Repeat for subsequent CDs.
 
 References:
-  - [WindowsXP Under Qemu HowTo](https://help.ubuntu.com/community/WindowsXPUnderQemuHowTo)
-  - [HOWTO: Setting up QEMU on Ubuntu with TUN/TAP and NAT](http://www.ubuntuforums.org/showthread.php?t=179472)
+
+ * [WindowsXP Under Qemu HowTo](https://help.ubuntu.com/community/WindowsXPUnderQemuHowTo)
+ * [HOWTO: Setting up QEMU on Ubuntu with TUN/TAP and NAT](http://www.ubuntuforums.org/showthread.php?t=179472)
+
+Notes:
+
+ * *mort* mentioned that he used...
+
+     `qemu -net nic,vlan=0 -net tap,vlan=0,ifname=tap0 -hda winxp.img`
+
+     ... to get his setup working using a tap device (setting up using tunctl first)
+
+     see [this guide](http://wiki.freaks-unidos.net/qemu-debian) for more details.
+
