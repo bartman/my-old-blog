@@ -27,6 +27,7 @@ Here are some useful links:
    - [XTerm and 8-bit Characters](http://www.leonerd.org.uk/hacks/hints/xterm-8bit.html) - has nothing to do with colours, but related
    - [vim tip #1384](http://www.vim.org/tips/tip.php?tip_id=1384) - xterm256 color names for console vim
    - [vim color scheme test](http://www.cs.cmu.edu/~maverick/VimColorSchemeTest/)
+   - [XTerm Colour Chart](http://excess.org/misc/xterm_colour_chart.py.html) - shows xterm and urxvt [colour cubes](http://excess.org/misc/xterm_colour_chart_sm.png)
 
 **NB:** I had to make the change mentioned on the page to my .screenrc **and** rebuild my screen package:
 

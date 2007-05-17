@@ -34,6 +34,7 @@ hence the use of a control key.*
 
    - [gitweb interface](http://www.jukie.net/~bart/git/gitweb.cgi?p=urxvt.git/;a=summary)
    - [current version](http://www.jukie.net/~bart/git/gitweb.cgi?p=urxvt.git;a=blob;h=ed22dfcf2e448198931b48bf25ddd126263b077c;hb=029378d2559b9c7b35b9b535b1b6086e546051ff;f=mark-yank-urls)
+   - I am likely to forget to update the above link, so you may want to follow the *blob* link from [the gitweb interface](http://www.jukie.net/~bart/git/gitweb.cgi?p=urxvt.git;a=tree)
 
 **Clone my repo**
 
@@ -44,7 +45,24 @@ hence the use of a control key.*
 
 **Install**
 
+   - you will need [urxvt](http://packages.debian.org/stable/x11/rxvt-unicode)
+
+        apt-get install rxvt-unicode
+
    - put `mark-yank-urls` in `$HOME/.urxvt/`
+
+     *If you got it from git, run make install*
+
+   - in order to copy things into the clipboard the script needs one of two things
+
+     - the [clipboard perl module](http://search.cpan.org/~king/Clipboard-0.09/lib/Clipboard.pm)
+
+            apt-get install cpan
+            cpan Clipboard
+
+     - the [xclip](http://packages.debian.org/stable/x11/xclip) utility
+
+            apt-get install xclip
 
 **Configure**
 
