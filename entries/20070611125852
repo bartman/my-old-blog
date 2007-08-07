@@ -1,0 +1,8 @@
+Subject: git-svn with multiple branches
+Content-Type: text/x-markdown
+Alias: 
+Tags: git,svn
+
+Dave recently wrote about [git-svn with multiple branches](http://www.dmo.ca/blog/20070608113513).  Worth a read if you want to use **git** in a hostile
+**svn** environment.
+

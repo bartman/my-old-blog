@@ -7,7 +7,7 @@ I've been having some issues setting up a x86 environment from scratch in order 
 BIOS to work once returning to real mode.  
 
 I decided to figure out why.  I know that the BIOS has the code to setup the processor and
-the peripherals to make things work... how does  it doe this?
+the peripherals to make things work... how does it do this?
 
 <read-more>
 
@@ -38,3 +38,4 @@ this code I need to run:
         ./disassemble.sh -e 0xF006 my-binary-bios-blob
 
 I don't think this will be useful to anyone... but maybe, since you read this far :)
+

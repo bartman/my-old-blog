@@ -35,7 +35,7 @@ The rest of this entry will talk about things I put into my `.vim/c.vim` file.
 **Intenting**
 
 Like everyone knows *tabs* are 8 spaces deep.  In addition to that, indentation of the first word
-should be down with the *TAB* character and not with spaces.  You can drop tis into your config:
+should be done with the *TAB* character and not with spaces.  You can drop tis into your config:
 
         set noexpandtab                         " use tabse, not spaces
         set tabstop=8                           " tabstops of 8
@@ -48,6 +48,10 @@ editing formated text:
         set autoindent smartindent              " turn on auto/smart indenting
         set smarttab                            " make <tab> and <backspace> smarter
         set backspace=eol,start,indent          " allow backspacing over indent, eol, & start
+
+Vim has a feature which makes it indent code differently based on file type; here is how you would enable it:
+
+        filetype plugin indent on
 
 And some indenting macros...
 

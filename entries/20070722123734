@@ -1,0 +1,43 @@
+Subject: Makefile template
+Content-Type: text/x-markdown
+Alias: makefile-template
+Tags: c,code,make
+
+Someone on `#oclug` was asking about building C programs with make.  I wrote up this *simple* Makefile for him.
+
+<read-more>
+
+Note that you have to set `TARGET` with your executable name, and list the .c files to compile in `SRCS`.  Also,
+note that Makefile indents must be **tabs**, not spaces.
+
+        TARGET  := <<your executable name>> 
+        SRCS    := <<one ore more of your .c files>> 
+        OBJS    := ${SRCS:.c=.o} 
+        DEPS    := ${SRCS:.c=.dep} 
+        XDEPS   := $(wildcard ${DEPS}) 
+         
+        CCFLAGS = -std=gnu99 -O2 -Wall -Werror -ggdb 
+        LDFLAGS = 
+        LIBS    = 
+         
+        .PHONY: all clean distclean 
+        all:: ${TARGET} 
+         
+        ifneq (${XDEPS},) 
+        include ${XDEPS} 
+        endif 
+         
+        ${TARGET}: ${OBJS} 
+            ${CC} ${LDFLAGS} -o $@ $^ ${LIBS} 
+         
+        ${OBJS}: %.o: %.c %.dep 
+            ${CC} ${CCFLAGS} -o $@ -c $< 
+         
+        ${DEPS}: %.dep: %.c Makefile 
+            ${CC} ${CCFLAGS} -MM $< > $@ 
+         
+        clean:: 
+           -rm -f *~ *.o ${TARGET} 
+         
+        distclean:: clean
+

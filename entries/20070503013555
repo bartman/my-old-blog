@@ -57,7 +57,6 @@ hence the use of a control key.*
 
      - the [clipboard perl module](http://search.cpan.org/~king/Clipboard-0.09/lib/Clipboard.pm)
 
-            apt-get install cpan
             cpan Clipboard
 
      - the [xclip](http://packages.debian.org/stable/x11/xclip) utility
@@ -71,7 +70,7 @@ hence the use of a control key.*
         URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
         URxvt.underlineURLs: true
         URxvt.perl-lib: /home/jukie/bart/.urxvt/                               <--- your path
-        URxvt.perl-ext: mark-yank-urls
+        URxvt.perl-ext: selection, mark-yank-urls
         URxvt.urlLauncher: firefox
 
 **Run**
