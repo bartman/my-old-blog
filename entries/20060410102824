@@ -38,14 +38,15 @@ You need to get two KDB patches.  One common, and one for your architecture.  In
 The original patches (see below) require some manual fixing.
 
         $ cd /usr/src/redhat/SOURCES/
-        $ wget http://jukie.net/~bart/kernel/2.6.9-22+kdb/kdb-v4.4-2.6.9-22.EL-common-2.patch.bz2
+        $ wget http://www.jukie.net/~bart/kernel/2.6.9-22+kdb/kdb-v4.4-2.6.9-22.EL-common-2.patch.bz2
         $ bunzip2 kdb-v4.4-2.6.9-22.EL-common-2.patch.bz2
 
-        $ wget http://jukie.net/~bart/kernel/2.6.9-22+kdb/kdb-v4.4-2.6.9-22.EL-i386-1.patch.bz2
+        $ wget http://www.jukie.net/~bart/kernel/2.6.9-22+kdb/kdb-v4.4-2.6.9-22.EL-i386-1.patch.bz2
         $ bunzip2 kdb-v4.4-2.6.9-22.EL-i386-1.patch.bz2
 
 here are the links: [kdb-v4.4-2.6.9-22.EL-common-2.patch.bz2](/~bart/kernel/2.6.9-22+kdb/kdb-v4.4-2.6.9-22.EL-common-2.patch.bz2),
-[kdb-v4.4-2.6.9-22.EL-i386-1.patch.bz2](/~bart/kernel/2.6.9-22+kdb/kdb-v4.4-2.6.9-22.EL-i386-1.patch.bz2)
+[kdb-v4.4-2.6.9-22.EL-i386-1.patch.bz2](/~bart/kernel/2.6.9-22+kdb/kdb-v4.4-2.6.9-22.EL-i386-1.patch.bz2).  Note that you don't apply
+these patches yourself, the build system will do that for you.
 
 For reference, these are the original patches I started with:
 
@@ -60,29 +61,29 @@ To build an RPM you need a spec file.  The spec file shipped with the *.src.rpm*
 
  after `Patch10001` add:
 
-        +Patch10002: kdb-v4.4-2.6.9-22.EL-common-2.patch
-        +Patch10003: kdb-v4.4-2.6.9-22.EL-i386-1.patch
+        Patch10002: kdb-v4.4-2.6.9-22.EL-common-2.patch
+        Patch10003: kdb-v4.4-2.6.9-22.EL-i386-1.patch
 
  2. add the options to pass to `patch` when applying our *kdb* patches:
 
  after `%patch10001` add:
 
-        +# kdb-v4.4-2.6.9-22.EL-common-2.patch
-        +%patch10002 -p1
-        +# kdb-v4.4-2.6.9-22.EL-i386-1.patch
-        +%patch10003 -p1
+        # kdb-v4.4-2.6.9-22.EL-common-2.patch
+        %patch10002 -p1
+        # kdb-v4.4-2.6.9-22.EL-i386-1.patch
+        %patch10003 -p1
          
 You can just get my spec patch:
 
         $ cd /usr/src/redhat/SPECS/
-        $ wget http://jukie.net/~bart/kernel/2.6.9-22+kdb/kernel-2.6.spec.patch
+        $ wget http://www.jukie.net/~bart/kernel/2.6.9-22+kdb/kernel-2.6.spec.patch
 
 here is the link: [kernel-2.6.spec.patch](/~bart/kernel/2.6.9-22+kdb/kernel-2.6.spec.patch)
 
 Then apply it by running
 
         $ cd /usr/src/redhat/SPECS/
-        $ patch -p0 < kernel-2.6.spec.patch
+        $ patch -p1 < kernel-2.6.spec.patch
 
 ### 8. patching the configs
 
@@ -95,14 +96,14 @@ I added 4 lines to each of the *i686* config files in `/usr/src/redhat/SOURCES`:
 
 You can just get my config patch:
 
-        $ wget http://jukie.net/~bart/kernel/2.6.9-22+kdb/kernel-2.6.9-i686-configs.patch
+        $ wget http://www.jukie.net/~bart/kernel/2.6.9-22+kdb/kernel-2.6.9-i686-configs.patch
 
 here is the link: [kernel-2.6.9-i686-configs.patch](/~bart/kernel/2.6.9-22+kdb/kernel-2.6.9-i686-configs.patch)
 
 Then apply it by running
 
         $ cd /usr/src/redhat/SOURCES/
-        $ patch -p0 < kernel-2.6.9-i686-configs.patch
+        $ patch -p1 < kernel-2.6.9-i686-configs.patch
 
 ### 7. building the rpm packages
 
@@ -114,9 +115,8 @@ The final products will be stored in `/usr/src/redhat/RPMS/i686/` and `/usr/src/
 
 Note that this will build a `2.6.9-22.EL.root` kernel.  There is probably a good reason for including the user name of who built it.  Eh, whatever.
 
-This is what I get:
+This is what I get in the end:
 
-        $ ls /usr/src/redhat/{RPMS/i686/,SRPMS} 
         /usr/src/redhat/RPMS/i686/:
         total 40M
         9.9M kernel-2.6.9-22.EL.root.i686.rpm

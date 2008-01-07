@@ -27,3 +27,6 @@ Second is is to define an alias that overwrites the symlink when screen is start
         alias screen='_ssh_auth_save ; export HOSTNAME=$(hostname) ; screen'
 
 Note, that the export of `HOSTNAME` may be unnecessary for you... it depends on the shell.
+
+**Update: see [my later article]{screen-with-ssh-and-x} on how to use screen with ssh and X forwarding.
+

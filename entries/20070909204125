@@ -1,0 +1,9 @@
+Subject: git-rebase --interactive
+Content-Type: text/x-markdown
+Alias: git-rebase-interactive
+Tags: git,scm
+
+MadCoder wrote today about [git-rebase --interactive](http://blog.madism.org/index.php/2007/09/09/138-git-awsome-ness-git-rebase-interactive-?cos=1)
+which is a new feature in git that allows you to easily reorder, or fix patches already applied to the 
+current branch by editing a file... very neat.
+

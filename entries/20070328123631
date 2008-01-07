@@ -19,3 +19,4 @@ to make `[[` and `]]` work even if the code does not have `{` on new lines.
         nmap [[ :call FindFunctionDefinition(-1)<CR>
         nmap ]] :call FindFunctionDefinition(1)<CR>
 
+This will make `[[` and `]]` find the next and previous function even if the first `{` is not in the first column.

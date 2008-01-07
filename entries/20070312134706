@@ -94,3 +94,8 @@ You can see what changed...
 
 Only two days after writing the original posting I got two replies.  In one, Michael Prokop told me that he had
 [ported my procedure to use mercurial](http://michael-prokop.at/blog/2007/03/14/maintain-etc-with-mercurial-on-debian/).  Rock on!
+
+Later still I was notified by Yannick Gingras that he also [tackled the etc tracking with mercurial task](http://ygingras.net/b/2007/11/a-case-for-hg-on-etc).
+
+And lastly, it should be noted that debian now has an etckeeper that trackes /etc in git.
+
