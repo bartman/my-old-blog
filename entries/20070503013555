@@ -70,7 +70,7 @@ hence the use of a control key.*
         URxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
         URxvt.underlineURLs: true
         URxvt.perl-lib: /home/jukie/bart/.urxvt/                               <--- your path
-        URxvt.perl-ext: selection, mark-yank-urls
+        URxvt.perl-ext: selection,mark-yank-urls
         URxvt.urlLauncher: firefox
 
 **Run**

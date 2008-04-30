@@ -3,6 +3,8 @@ Content-Type: text/x-markdown
 Alias: zsh-git-branch
 Tags: git,zsh,shell
 
+**NOTE**: This post has been [updated]{zsh-git-branch2}.
+
 Earlier today I saw a blog post titled "[Git in your prompt](http://acts.as.streeteasy.com/archives/2007/12/19/git_in_your_prompt/)"
 which showed how to get the current git branch to display in zsh and bash.  I tried it on my setup and found it really slow, probably due
 having `$HOME` on NFS or having big git repos or maybe not enough ram.
