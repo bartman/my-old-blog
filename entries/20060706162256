@@ -23,6 +23,8 @@ Here is the right thing to do:
         6 $  patch -p1 < ../last.patch 
         7 $  cg commit net/ipsec/ipsec_ipcomp.c
 
+(*Warning:* this is actually completely unnecessary, see below)
+
 Here is what actually happens:
 
   1. backup the work that we had done into a patch.
@@ -37,3 +39,5 @@ Here is what actually happens:
 *NOTE:* I think one or two steps can be carved off by using `git branch` instead of `git checkout`.  If you find a better way, I would love to hear about it.
 
 *UPDATE:* It turns out that you can do this with `git commit --amend` in new git releases.
+
+*Final Update:* Roberto Aguilar pointed out that I should have used `git reset`... in retrospect, what was I thinking!?
