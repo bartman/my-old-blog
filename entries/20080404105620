@@ -3,6 +3,8 @@ Content-Type: text/x-markdown
 Alias: zsh-git-branch2
 Tags: git,zsh,shell
 
+**NOTE:** This post has been [updated]{zsh-git-prompt} (again).
+
 I previously wrote about [showing the git branch name on the  zsh prompt]{zsh-git-branch}.  Caio Marcelo pointed out that
 it didn't work very well because the git branch was being queried before the command was executed, and it should
 be after to catch git commands that change the branch, like `git branch` and `git checkout`.
