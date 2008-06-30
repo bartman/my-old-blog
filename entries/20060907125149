@@ -22,7 +22,8 @@ it.  I don't really want to get into it here, you should have to do something al
 <i>(need to be root to do all of this)</i>
 </blockquote>
 
-  - update `/etc/passwd`, and `/etc/group`.
+  - update `/etc/passwd`, and `/etc/group` *(chroot account's can be password-less)*
+  - `mount -o bind /etc/resolv.conf /32/etc/resolv.conf`
   - `mount -t proc none  /32/proc`
   - `mount -o rbind /dev /32/dev`
   - `mount -o rbind /tmp /32/tmp` *(required for X to function)*

@@ -1,0 +1,18 @@
+Subject: git-clean in svn land
+Content-Type: text/x-markdown
+Alias: svn-clean
+Tags: svn,scm
+
+Some things are easier in [git]{tag/git}.  For example to nuke all changes and only keep files that are
+tracked by git I would run:
+
+        git-clean -d -x
+        git-checkout -f
+
+In [svn]{tag/svn} it's a bit more involved, but not impossible:
+
+        svn status --no-ignore | awk '{print $2}' | xargs rm -rf
+        svn revert -R .
+        svn update
+
+For extra *fun*... the `svn revert -R` will actually stop on any symlinks to directories.  Fun!

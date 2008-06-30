@@ -53,10 +53,41 @@ If you want to use the latest from darcs then you will have to:
 
 If you are interested, you can checkout my [~/.wmii-3/](/~bart/conf/wmii-3/) config files.
 
-Please note.  Some people have had problems with ruby 1.9 and wmii+ruby.  If you have ruby 1.9, you may need to 
+**NOTE 1**
+
+Some people have had problems with ruby 1.9 and wmii+ruby.  If you have ruby 1.9, you may need to 
 change `ruby` to `ruby1.8` on the first line of your `~/.wmii-3/wmiirc`.
 
     $ head -n1 .wmii-3/wmiirc
     #!/usr/bin/env ruby1.8
                    ^^^^^^^
+
+I have not found this to be the case... but if you do... you can fix it.
+
+**NOTE 2**
+
+wmii v3.5 is not compatible with today's version of wmii+ruby.  I had to pin my wmii package at v3.1.  To do this you can
+add the following 3 lines to `/etc/apt/preferences` ...
+
+    Package: wmii
+    Pin: version 3.1*
+    Pin-Priority: 1001
+
+If you don't have a distribution that has 3.1, will have to add it to your `/etc/apt/sources.list` file ...
+
+    deb http://ftp.debian.org/debian/ etch main contrib non-free
+
+With these two changes (and an `apt-get update`) you should see that *apt* will select v3.1 over v3.6.
+
+    # apt-cache policy wmii
+    wmii:
+      Installed: 3.1-5
+      Candidate: 3.1-5
+      Package pin: 3.1-5
+      Version table:
+         3.6~rc2+20070518-2 1001
+            500 http://ftp.debian.org testing/main Packages
+     *** 3.1-5 1001
+            500 http://ftp.debian.org etch/main Packages
+            100 /var/lib/dpkg/status
 
