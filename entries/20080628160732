@@ -1,0 +1,14 @@
+Subject: Authenticating Linux against OSX LDAP directory
+Content-Type: text/x-markdown
+Alias: osx-ldap-authentication
+Tags: osx,linux,ubuntu,ldap
+
+I was recently asked by a colleague, and now also a [client](http://infonium.ca/), to look over the [LDAP]{tag/ldap} configuration on his Ubuntu boxen.  He was having
+issues with the root account.  The problem turned out being that the Ubuntu box was trying to get the root authentication from LDAP.
+It successfully found an LDAP account on the OSX LDAP server, but was unable to login since that account is disabled.  The solution
+was to filter out the root account from the LDAP reply using the `pam_filter` directive in `/etc/ldap.conf`.  Jay was also kind enough
+to document his [setup for others](https://help.ubuntu.com/community/OSXLDAPClientAuthentication) that are trying to accomplish a 
+similar task.
+
+*side note: Jay briefly showed me his OSX/Linux integration... looks pretty cool.  Particularly the LDAP directory and automount of OSX exported volumes for users.  OSX seems to make certain things really easy.*
+
