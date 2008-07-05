@@ -1,6 +1,6 @@
 .PHONY: all clean add ci
 all: add
-	git-commit -a -m "commit on $(date)"
+	git-commit -a -m "commit on $(shell date)"
 	git-repack -d
 
 clean:
