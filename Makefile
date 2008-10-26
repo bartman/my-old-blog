@@ -1,14 +1,14 @@
 .PHONY: all clean add ci
 all: add
-	git-commit -a -m "commit on $(shell date)"
-	git-repack -d
+	git commit -a -m "commit on $(shell date)"
+	git gc
 
 clean:
 	-rm -f *~
 	-rm -f entries/*~
 
 add:
-	git-add entries/*[0-9] Makefile
+	git add entries/*[0-9] Makefile
 
 commit ci: add
-	git-commit -a
+	git commit -a
