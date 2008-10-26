@@ -2,6 +2,7 @@
 all: add
 	git commit -a -m "commit on $(shell date)"
 	git gc
+	git push
 
 clean:
 	-rm -f *~
