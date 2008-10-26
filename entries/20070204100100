@@ -38,11 +38,11 @@ In the last week, he's been a patching machine!
 
 We are now **18k** lines leaner then #public.
 
-The tree is available at *git://tachyon.jukie.net/klips-fsm.git/*, but I would really appreciate if you seeded
+The tree is available at *git://git.jukie.net/klips-fsm.git/*, but I would really appreciate if you seeded
 from linux before getting my changes.  Here is one way you could do this:
 
         git clone git://git2.kernel.org/pub/scm/linux/kernel/git/torvalds/linux-2.6.git/ linux-2.6.git
-        git clone --reference linux-2.6.git git://tachyon.jukie.net/klips-fsm.git/ klips-fsm.git
+        git clone --reference linux-2.6.git git://git.jukie.net/klips-fsm.git/ klips-fsm.git
 
 (this will clone Linus' tree into `linux-2.6.git` and then use that as an *alternative* source of
    revisions to complete your clone of `klips-fsm.git`)

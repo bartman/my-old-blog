@@ -3,7 +3,7 @@ Content-Type: text/x-markdown
 Alias: 
 Tags: git,git-find
 
-So I have a simple [git-find](/~bart/git/gitweb.cgi?p=git-find.git/;a=summary) working, and now I want to use 
+So I have a simple [git-find](http://git.jukie.net/git-find.git) working, and now I want to use 
 it to rip out some patches I am interested in.  The repository I am working on has a lot of uninteresting deltas 
 in it that I don't care about.  I am actually only interesting in backporting an interface change in one file 
 from the `klipsng` branch:

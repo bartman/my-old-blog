@@ -29,7 +29,7 @@ So unlike previous releases, you don't even need to install wmii or libixp.  Sim
                     lua5.1 liblua5.1-0-dev liblua5.1-posix0 \
                     dwm-tools xclip dstat
         
-        git clone git://tachyon.jukie.net/wmiirc-lua-kitchen-sink.git/
+        git clone git://git.jukie.net/wmiirc-lua-kitchen-sink.git/
         
         cd wmiirc-lua-kitchen-sink
         git submodule init

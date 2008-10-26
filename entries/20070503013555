@@ -32,16 +32,15 @@ hence the use of a control key.*
 
 **The code**
 
-   - [gitweb interface](http://www.jukie.net/~bart/git/gitweb.cgi?p=urxvt.git/;a=summary)
-   - [current version](http://www.jukie.net/~bart/git/gitweb.cgi?p=urxvt.git;a=blob;h=ed22dfcf2e448198931b48bf25ddd126263b077c;hb=029378d2559b9c7b35b9b535b1b6086e546051ff;f=mark-yank-urls)
-   - I am likely to forget to update the above link, so you may want to follow the *blob* link from [the gitweb interface](http://www.jukie.net/~bart/git/gitweb.cgi?p=urxvt.git;a=tree)
+   - [gitweb interface](http://git.jukie.net/urxvt.git) for the urxvt script repo
+   - [current version](http://git.jukie.net/urxvt.git?a=blob;f=mark-yank-urls) of mark-yank-urls
 
 **Clone my repo**
 
    - you will need git
 
         apt-get install git-core
-        git clone git://tachyon.jukie.net/urxvt
+        git clone git://git.jukie.net/urxvt
 
 **Install**
 

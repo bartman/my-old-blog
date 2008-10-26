@@ -26,11 +26,11 @@ The easiest way to get wmiirc-lua and its dependencies is to grab the
 If you prefer to get the bits yourself, here is the list of repositories you
 will need to build:
 
-  * libixp: `git://tachyon.jukie.net/libixp.git/`
-  * wmii: `git://tachyon.jukie.net/wmii.git/`
-  * wmiirc-lua: `git://tachyon.jukie.net/wmiirc-lua.git/`
-  * dmenu: `git://tachyon.jukie.net/dmenu.git/`
-  * slock: `git://tachyon.jukie.net/slock.git/`
+  * libixp: `git://git.jukie.net/libixp.git/`
+  * wmii: `git://git.jukie.net/wmii.git/`
+  * wmiirc-lua: `git://git.jukie.net/wmiirc-lua.git/`
+  * dmenu: `git://git.jukie.net/dmenu.git/`
+  * slock: `git://git.jukie.net/slock.git/`
 
 *Changes since v0.2.4*
 

@@ -23,7 +23,7 @@ So I am starting a new tree for klips-less openswan development.  Please seed fr
 openswan if you want it.
 
         # git clone http://git.openswan.org/public/scm/openswan.git/ openswan.git
-        # git clone --reference openswan.git git://tachyon.jukie.net/openswan-klipsless.git/
+        # git clone --reference openswan.git git://git.jukie.net/openswan-klipsless.git/
 
 Currently this has nothing in it (technically it has the public openswan/#unstable branch).  Over 
 the next few days I will trim out klips bits and teach the makefiles to build with an external klips tree.
