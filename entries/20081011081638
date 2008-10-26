@@ -1,0 +1,9 @@
+Subject: creating busybox symlinks
+Content-Type: text/x-markdown
+Alias: 
+Tags: busybox
+
+Busybox should have a `--create-symlinks-in=/sbin` feature, but for now...
+
+        ./busybox --help | grep 'Currently defined functions:' -A30 | grep '^\s.*,' | tr , '\n' | xargs -n1 -i{} ln -s busybox {}
+
