@@ -1,0 +1,19 @@
+Subject: shrinking URLs
+Content-Type: text/x-markdown
+Alias: shorturl
+Tags: script,bash,shell
+
+I wrote a [short script](/~bart/scripts//shorturl/shorturl) to shrink URLs:
+
+        % shorturl http://www.jukie.net/~bart/shorturl
+        http://2tu.us/ce8
+
+        % shorturl
+        Type in some urls and I'll try to shrink them for you...
+        http://www.jukie.net/~bart/shorturl
+        http://2tu.us/ce8
+        http://www.jukie.net/~bart/20090320214228
+        http://2tu.us/ce9
+
+I am doing this as part of my new [identi.ca](http://identi.ca/barttrojanowski) addiction`^W`
+usage and extending GregKH's [command line micro blogging tool](http://github.com/bartman/bti/commits/master).

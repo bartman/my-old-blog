@@ -1,0 +1,13 @@
+Subject: readlater
+Content-Type: text/x-markdown
+Alias: 
+Tags: shell
+
+[Instapaper](http://www.instapaper.com/) is a quick way to stash things to read later.  Here is a script that lets you post from the command line: [readlater](/~bart/scripts/instapaper/readlater).
+
+        $ readlater http://www.jukie.net/
+        This URL has been successfully added to this Instapaper account.
+
+Don't forget to fill in the `USER` and `PASS` fields in the script :)
+
+Next, I wanted to call on this from vimperator.  I wrote this [vimpeator plugin](/~bart/scripts/instapaper/readlater.js) to do that.

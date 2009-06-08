@@ -14,13 +14,14 @@ This is my [third]{zsh-git-branch} [post]{zsh-git-branch2} on the topic.  I have
 **UPDATE:** *since I originally wrote this, and the [previous]{zsh-git-branch} [articles]{zsh-git-branch2} on
 the topic, several new techniques have been written and some have many cool new features.  I recommend
 [checking out this writeup](http://gitready.com/advanced/2009/01/28/zsh-git-status.html).  However, the
-alternatives seem to be non-caching and take a thus long time to refresh the prompts on large repositories.
-They are thus not very interesting to me as I tend to work on large projects.  If you're still interested
-in a fast prompt read on...*
+alternatives seem to be non-caching and thus take a ong time to refresh the prompts on large repositories.
+As a result, they are not very interesting to me since I tend to work on large projects where calling* git status
+*could take a few seconds.  If you're still interested in a fast prompt read on...*
 
 I have decided to move the user name, host, and full path to the right of the screen, since most of the
-time I know those (if you don't use zsh, note that the right prompt vanishes if the command line is long).
-On the left, I now show the git state (see below) and the last component of the `$PWD`.
+time I know those (if you don't use zsh: the right prompt vanishes if the command line is long so to not get
+in the way of editing, it also goes away after you execute the command).  On the left, I now show the git
+state (see below) and the last component of the `$PWD`.
 
 The git bits include:
 
