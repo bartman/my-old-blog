@@ -1,7 +1,7 @@
 Subject: git-vim hacking
 Content-Type: text/x-markdown
 Alias: 
-Tags: git,vim
+Tags: git,vim,vimgit
 
 I did some hacking on [my fork](http://github.com/bartman/git-vim/tree) on
 [git-vim](http://github.com/motemen/git-vim/tree).  I am impressed how well

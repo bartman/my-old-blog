@@ -1,9 +1,9 @@
 Subject: git-vim
 Content-Type: text/x-markdown
 Alias: git-vim
-Tags: git,vim
+Tags: git,vim,vimgit
 
-I have had an item on my todo list to improve my vim/git integration for a while.  Today,
+I have had an item on my todo list to improve my [vim/git]{tag/vimgit} integration for a while.  Today,
 I found [git-vim](http://github.com/motemen/git-vim/tree/master) on github.  I was really
 impressed.  So I forked it and hope to do some work on the project...
 
