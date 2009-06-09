@@ -21,7 +21,7 @@ Here are the new lines:
 
 The first block of macros sets up `.` followed by one of `i`, `n`, `a`, `t`, or `y` to
 change the filter that is applied to the mailbox messages.  This is usually triggered
-with the `l` command, which invokes the mutt built-in `limit` function.  In order these
+with the `l` command, which invokes the mutt built-in `limit` function.  In order, these
 do the following:
 
  - `.i` shows the new/old/flagged but undeleted messages, and those that arrived in the last week but have not yet been replied to.
