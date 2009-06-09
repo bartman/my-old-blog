@@ -2,7 +2,7 @@
 all: add
 	touch .blog
 	git commit -a -m "commit on $(shell date)"
-	git gc
+	GIT_EXEC_PATH= /usr/bin/git gc
 	git push
 
 clean:
