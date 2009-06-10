@@ -12,6 +12,10 @@ zsh configuration:
 
         typeset -U path cdpath manpath fpath
 
-This removes duplicates from the `PATH`, `CDPATH`, `MANPATH`, and `FPATH` variables.
+This removes duplicates from the `PATH`, `CDPATH`, `MANPATH`, and `FPATH` environment variables.
+
+Well, technically it removes duplicates from the `path`, `cdpath`, `manpath`, and `fpath` arrays;
+but these are treated special and updating them automatically generates their respective `:`-delimited
+environment variables.
 
 Zsh rocks!

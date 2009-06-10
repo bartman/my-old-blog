@@ -5,8 +5,8 @@ Tags: git,vim,vimgit
 
 I did some hacking on [my fork](http://github.com/bartman/git-vim/tree) on
 [git-vim](http://github.com/motemen/git-vim/tree).  I am impressed how well
-things work.  *motemen*, the upstream author, did a really great job setting
-things up.
+[things work](http://www.osnews.com/story/21556/Using_Git_with_Vim).
+*motemen*, the upstream author, did a really great job setting things up.
 
 I've been mostly tyoing with command handling and completion this evening.
 I want to make that I could type `:git diff ma<tab>` and have it do the
