@@ -49,7 +49,7 @@ But I know that bash isn't always slow... maybe if I read one line at a time:
 
 Now, it's 0 seconds.
 
-=Well what about zsh?
+# Well what about zsh?
 
 Since you asked... zsh runs all these in 0s.
 
