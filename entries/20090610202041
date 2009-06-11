@@ -4,7 +4,7 @@ Alias:
 Tags: git
 
 I came across [a RailsConf talk](http://en.oreilly.com/rails2009/public/schedule/detail/7367) given
-by [Scott Chacon](http://jointheconversation.org/) last month.  As usually, his git work is really good.
+by [Scott Chacon](http://jointheconversation.org/) last month.  As previously, his git work is really good.
 His presentation style has also guided my [Git the basics](http://excess.org/article/2008/07/ogre-git-tutorial/)
 talk which I gave about a year ago.
 
@@ -62,7 +62,8 @@ Anyway, I want to summarize what I learned from Scott's presentation...
    told that the binary filed changed.
    
    One cool use of this could be to use `antiword` to convert the `*.doc` file to text so 
-   git can show a nice diff for MS Word files.
+   git can show a nice diff for MS Word files.  Something like this is proposed for `*.odf` files
+   [here](http://git.or.cz/gitwiki/GitTips#HowtousegittotrackOpenDocument.28OpenOffice.2CKoffice.29files.3F).
 
  - Scott also shows how you could use git filters to expand things like `$Date:$` to show the
    last modified date of a file.
