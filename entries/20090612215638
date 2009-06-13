@@ -1,0 +1,96 @@
+Subject: nfs local caching with fscache and cachefilesd on Lenny
+Content-Type: text/x-markdown
+Alias: 
+Tags: debian,nfs
+
+I must come clean.  I don't yet know how well this [all works](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=tree;f=Documentation/filesystems/caching/fscache.txt;h=HEAD;hb=HEAD).  But I have really high expectations.
+
+<read-more>
+
+If you're on Sqeeze, skip this building section.  However, because Lenny doesn't come with support for fscache you'll have to do the following:
+
+ - build a kernel that supports fscache and nfs local caching
+
+   Here is what I put in my `.config` file:
+
+                CONFIG_FSCACHE=m
+                CONFIG_FSCACHE_STATS=y
+                CONFIG_FSCACHE_HISTOGRAM=y
+                # CONFIG_FSCACHE_DEBUG is not set
+                CONFIG_CACHEFILES=m
+                # CONFIG_CACHEFILES_DEBUG is not set
+                CONFIG_CACHEFILES_HISTOGRAM=y
+
+                ...
+
+                CONFIG_NFS_FSCACHE=y
+
+
+ - build a `cachefilesd`
+
+   (you don't have to build as root)
+
+   This is pretty easy on Debian.  You need to add `deb-src` from `testing` into your `/etc/apt/sources.list` ...
+
+                # grep deb-src /etc/apt/sources.list
+                deb-src http://ftp.debian.org/debian/ testing main contrib non-free
+
+   Then download the index:
+
+                # sudo apt-get update
+
+   Install dependencies for the build:
+
+                # sudo apt-get build-dep cachefilesd
+
+   Get the daemon source package:
+
+                # apt-get source cachefilesd
+
+   Build:
+
+                # cd cachefilesd-*/
+                # dpkg-buildpackage -b
+
+   Install:
+
+                # cd ..
+                # sudo dpkg -i cachefilesd_*_*.deb
+
+ - build the new `mount.nfs` command (from *nfs-common*):
+
+   (again, don't build as root)
+
+   Install dependencies for the build:
+
+                # sudo apt-get build-dep nfs-utils
+
+   Get the daemon source package:
+
+                # apt-get source nfs-utils
+
+   Build:
+
+                # cd nfs-utils-*/
+                # dpkg-buildpackage -b
+
+   Install:
+
+                # cd ..
+                # sudo dpkg -i nfs-*_*_*.deb
+
+Now you have all the software ready, you just have to enable it.
+
+ - enable the daemon
+
+                # sed -i -e 's/^#RUN=yes/RUN=yes/' /etc/default/cachefilesd
+                # /etc/init.d/cachefilesd start
+
+ - remount the nfs filesystems with the fsc option
+
+                # mount | awk '/type nfs/ { print $3 }' | xargs -n1 mount -o remount,fsc
+
+ - make sure the same thing happens on next boot;
+ 
+   you have to add the fsc flag to the nfs mounts in `/etc/fstab`
+
