@@ -7,24 +7,26 @@ I must come clean.  I don't yet know how well this [all works](http://git.kernel
 
 <read-more>
 
-If you're on Sqeeze, skip this building section.  However, because Lenny doesn't come with support for fscache you'll have to do the following:
+### building kernel
 
- - build a kernel that supports fscache and nfs local caching
+ - build a v2.6.30 kernel that supports fscache and nfs local caching
 
    Here is what I put in my `.config` file:
 
                 CONFIG_FSCACHE=m
                 CONFIG_FSCACHE_STATS=y
                 CONFIG_FSCACHE_HISTOGRAM=y
-                # CONFIG_FSCACHE_DEBUG is not set
                 CONFIG_CACHEFILES=m
-                # CONFIG_CACHEFILES_DEBUG is not set
                 CONFIG_CACHEFILES_HISTOGRAM=y
-
                 ...
-
                 CONFIG_NFS_FSCACHE=y
 
+   This step is not debian specific.
+   I'll skip the boring details.  If you need help with building a kernel, [google](http://google.com) for it :)
+
+### building debs
+
+If you're on Sqeeze, you might be able to skip this building section and just install the debs from Squeeze.  However, because Lenny doesn't come with support for fscache you'll have to do the following:
 
  - build a `cachefilesd`
 
@@ -79,7 +81,15 @@ If you're on Sqeeze, skip this building section.  However, because Lenny doesn't
                 # cd ..
                 # sudo dpkg -i nfs-*_*_*.deb
 
+### configure
+
 Now you have all the software ready, you just have to enable it.
+
+ - remount the hard disk that `/var/cache` is on with `dir_index,user_xattr` options:
+
+                # mount -o remount,dir_index,user_xattr /
+
+   ( note that for you it may be another location, not `/` )
 
  - enable the daemon
 
@@ -90,7 +100,20 @@ Now you have all the software ready, you just have to enable it.
 
                 # mount | awk '/type nfs/ { print $3 }' | xargs -n1 mount -o remount,fsc
 
- - make sure the same thing happens on next boot;
- 
-   you have to add the fsc flag to the nfs mounts in `/etc/fstab`
+   ( this may not work for you, it's been inconsitent for me; remounting the directory cleanly, or rebooting should work if you follow the next step )
 
+ - make sure the same thing happens on next boot; don't forget to modify `/etc/fstab` to include:
+ 
+   - add the `fsc` flag to the nfs mounts
+
+   - add the `dir_index,user_xattr` to the filesystem that holds `/var/cache`
+
+
+### Does it work?
+
+ - the only proof I have of it working is that it's wasting space on my local disk when I use NFS :)
+
+                 # du /var/cache/fscache/ -s
+                 40 /var/cache/fscache/
+
+ - and doing `cat * >/dev/null` does seem faster, even after a clean remount
