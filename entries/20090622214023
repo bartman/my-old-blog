@@ -12,7 +12,7 @@ Well, bzr does not seem to have an equivalent.
 <read-more>
 
 I had to hack something together in a shell script... [bzr-export-patch](/~bart/scripts/bzr-export-patch/bzr-export-patch.html)
-is a crude approximation of `git format-patch`.
+is a crude approximation of `git format-patch`.  ([download](/~bart/scripts/bzr-export-patch/bzr-export-patch))
 
 Here is what it looks like...
 
