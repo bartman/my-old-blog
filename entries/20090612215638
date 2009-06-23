@@ -3,9 +3,17 @@ Content-Type: text/x-markdown
 Alias: 
 Tags: debian,nfs
 
-I must come clean.  I don't yet know how well this [all works](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=tree;f=Documentation/filesystems/caching/fscache.txt;h=HEAD;hb=HEAD).  But I have really high expectations.
+The idea is to put a [caching layer](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=tree;f=Documentation/filesystems/caching/fscache.txt;h=HEAD;hb=HEAD)
+between filesystems, that tend to be slow, and the user, who is impatient.  This is accomplished by the *fscache* kernel module, and the *cachefilesd* user space daemon.
+The kernel module intercepts what would be disk/network access and redirects it to the daemon.  The daemon uses local media, which supposedly is faster, to cache recent data.
+
+The new Linux native implementation is very generic, and can be used to accelerate anything like floppies and CD-ROMs.  I am interested in this because I find NFS slow.
+
+Read more about it at [Linux Magazine](http://www.linux-mag.com/id/7378/).
 
 <read-more>
+
+I must come clean.  I don't yet know how well this all works.  But I have really high expectations.
 
 ### building kernel
 
@@ -35,7 +43,7 @@ If you're on Sqeeze, you might be able to skip this building section and just in
    This is pretty easy on Debian.  You need to add `deb-src` from `testing` into your `/etc/apt/sources.list` ...
 
                 # grep deb-src /etc/apt/sources.list
-                deb-src http://ftp.debian.org/debian/ testing main contrib non-free
+                deb-src http://ftp.debian.org/debian/ testing main contrib
 
    Then download the index:
 
@@ -102,7 +110,7 @@ Now you have all the software ready, you just have to enable it.
 
    ( this may not work for you, it's been inconsitent for me; remounting the directory cleanly, or rebooting should work if you follow the next step )
 
- - make sure the same thing happens on next boot; don't forget to modify `/etc/fstab` to include:
+ - modify `/etc/fstab` to make things persistent:
  
    - add the `fsc` flag to the nfs mounts
 
