@@ -1,7 +1,7 @@
 Subject: portable printf
 Content-Type: text/x-markdown
 Alias: 
-Tags: c
+Tags: c,code
 
 I was squashing some warnings in [uzbl]{tags/uzbl} code:
 
