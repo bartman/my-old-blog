@@ -7,9 +7,10 @@ I was squashing some warnings in [uzbl]{tags/uzbl} code:
 
         printf("set %s = %d\n", (char *)k, (int)*c->ptr);
 
-Ignoring the fact that it's weird to cast a pointer to int at first glance,
-this code on 64bit would whine that you were casting a pointer to an int.  That's
-because a pointer is 64bit and an int is 32bit.
+Ignoring the fact that, at first glance, it's weird to cast a pointer to int
+(`ptr` is defined as `void**`), compiling this code on 64bit would warn you
+that you were casting a pointer to an int.  That's because a pointer is 64bit
+and an int is 32bit.
 
 <read-more>
 
