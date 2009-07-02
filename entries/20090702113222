@@ -12,7 +12,7 @@ But if this sparks your interest see my [Git talk](http://excess.org/article/200
 
 <read-more>
 
-## Why distributed?
+### Why distributed?
 
 Git is distributed which brings a lot to the table.  Particularly, I see four
 major wins with distributed revision control (like Git) over centralized
@@ -52,7 +52,7 @@ revision control (like svn):
   
   Everyone participating in the development is now maintaining a backup.
 
-## Why not centralized?
+### Why not centralized?
 
 It's worth while to dispel the so called *benefit* of centralized development.
 I often hear concerns that distributed makes it easy for developers to horde
@@ -75,7 +75,7 @@ create a branch.  However, this usually leads to a very messy branch namespace.
 Being distributed means that the private branches, that developers create for
 their own purposes, do not have to be shared with the main server.
 
-## Why Git?
+### Why Git?
 
 There are many distribute revision control systems.  Why
 pick Git?
@@ -125,6 +125,7 @@ pick Git?
   Git makes it quite easy to use.  As a matter of fact you can store completely
   unrelated branches (like your source code and project web page) in the same
   repository.
+
 
 A list like this can never be complete, but hopefully it gives you something to
 think about when choosing your revision control system.
