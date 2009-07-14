@@ -34,8 +34,8 @@ And here is the `import` script:
                 base=$(basename $tar)
                 date=$(stat --format="%y" $tar)
                 
-                git rm -qrf .
-                tar xzf $tar
+                git rm -qrf . || true
+                tar -xz --strip-components=1 -f $tar
                 git add .
                 
                 tree=$(git write-tree)
@@ -47,3 +47,10 @@ And here is the `import` script:
         echo >&2
         echo >&2 "# SUCCESS"
 
+_
+
+NOTE: the `tar` command will remove the leading path with the assumption that your project tar balls contain a single leading directory for all the files... as it is traditionally done.
+
+WARNING: you don't want to run this script from a repo that already has commits.  This script forces the first tarball 
+passed as the argument to become the first commit in history.  The current branch will contain no history other than
+what is in the tarballs.
