@@ -1,0 +1,50 @@
+Subject: rooting the droid
+Content-Type: text/x-markdown
+Alias: rooting-g1
+Tags: android,g1
+
+First let me explain the terminology.  There are two ways in which the HTC Dream (aka Tmobile G1) can be unlocked:
+
+ - so called *rooting*, which I describe in this post, involves replacing the bootloader so that the phone can use
+   community generated firmware images, aka *ROM*'s.
+
+ - there is also *unjailing* or *unlocking* the phone so that it can be used with any SIM card on any GSM network;
+   and I'll talk about that in due time.
+
+<read-more>
+
+*DISCLAIMER*: this may very well brick your phone!  Read all the instructions here, and the links I provide.  If you're still
+not discouraged, continue on :)
+
+Before you proceed, I cannot stress the importance of following directions.
+
+ - I used the excellent [Beginners Guide for Rooting your Android G1 to install Cupcake](http://androidandme.com/2009/05/guides/beginners-guide-for-rooting-your-android-g1-to-install-cupcake/)
+   
+   There are multiple write-ups like this one.
+ 
+   - I initially started with [How-to- Root, Hack, and Flash your G1/Dream](http://forum.xda-developers.com/showthread.php?t=442480)
+     article posted on [XDA developers](http://forum.xda-developers.com/) forums.
+     
+     It was very accurate, but rather old.  It does not use the `root.apk` application from the marketplace, which does most of the
+     work for you.
+   
+   - there is also [How To Root Your T-Mobile G1](http://www.droidproof.com/blog/how-to/how-to-root-your-t-mobile-g1/)
+     at the [DroidProof](http://www.droidproof.com/) blog.  The write up has 
+     a [YouTube video](http://www.youtube.com/watch?v=tS9l2XVG0iY) that maybe worth watching.
+     It's based on the previous (old) method of rooting, but note that they forget to tell you start up `telnetd` first.
+
+ - While I encourage you to follow the [Beginners Guide](http://androidandme.com/2009/05/guides/beginners-guide-for-rooting-your-android-g1-to-install-cupcake/)
+   it basically basically it boils down to this:
+   
+   - downgrade to RC29
+   - gain root (using `root.apk`)
+   - upgrade radio to v1.5 from [HTC official site](http://www.htc.com/www/support/android/adp.html) 
+     or [googlecode.com mirror](http://android-roms.googlecode.com/files/ota-radio-2_22_19_26I.zip)
+   - install custom image
+
+ - Getting this far is a PITA.  After this upgrading to any image is trivial, just copy it to `update.zip` on the flash card, boot holding
+   the *home* key, and push the magic *Alt-L* + *Alt-S* combo.
+
+ - Future updates, at least to JF builds, become even easier with [jfupdater](http://code.google.com/p/jfupdater/).
+
+ - If you're stuck finding files, check here: [Android development files](https://www.digital-bit.ch/wiki/G1devel)

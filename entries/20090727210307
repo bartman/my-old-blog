@@ -81,6 +81,7 @@ for the G1.
 
  * Setting up
    * [How to Setup T-Mobile G1 on EDGE on Rogers/Fido](http://www.androidincanada.ca/category/tutorials/) - for Canadians
+     * [Rogers HTC Dream review](http://www.boygeniusreport.com/2009/05/24/rogers-htc-dream-review/) - 3g with radio tunes to rogers network, and other features.
 
 ### Resources
 
@@ -89,7 +90,13 @@ for the G1.
    * [Android open source project](http://source.android.com/) and [documentation](http://source.android.com/documentation) pages
    * Wikipedia's [android](http://en.wikipedia.org/wiki/Android_(operating_system)), [HTC dream](http://en.wikipedia.org/wiki/HTC_Dream), [ARM](http://en.wikipedia.org/wiki/ARM_architecture#ARM_cores) pages
    * xda-developers' [HTC Dream Wiki page](http://wiki.xda-developers.com/index.php?pagename=HTC_Dream) - The basics ont eh pone, links to android SDKs, links to other websites.
+   * [Android Spin](http://androidspin.com/) - tracks unofficial firmware releases
+   * How to [Unlock T-mobile G1](http://www.unlock-tmobileg1.com/procedures/activate.php) - so that it can be used on a non-Tmobile network; *NOTE* that there are lots of other sites that provide this service.
+   * [Droidproof](http://droidproof.com/)
 
+ * Software
+   * [AndroidIRC](http://androidirc.net/) - apparently the only irc client worth getting
+   * [ConnectBot](http://code.google.com/p/connectbot/) - ssh client for android
 
  * IRC
    * `#htc-linux` on `irc.freenode.org` ([archive](http://ibot.rikers.org/%23htc-linux/)) -
@@ -104,4 +111,5 @@ for the G1.
    * [JesusFreke's AndBlog](http://jf.andblogs.net) [RSS](http://jf.andblogs.net/feed/)
    * [Android and Me](http://androidandme.com) [RSS](http://feeds2.feedburner.com/androidandme)
    * [AndroidSPIN: Android ROM Information](http://www.androidspin.com/) [RSS](http://www.androidspin.com/android_build_rss.asp)
+     * [Haykuro's custom ROMS for the G1](http://code.google.com/p/sapphire-port-dream/)
    * [Android Developers Blog](http://android-developers.blogspot.com/) [RSS](http://android-developers.blogspot.com/atom.xml)
