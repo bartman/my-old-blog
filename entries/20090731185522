@@ -32,18 +32,21 @@ Before you proceed, I cannot stress the importance of following directions.
      at the [DroidProof](http://www.droidproof.com/) blog.  The write up has 
      a [YouTube video](http://www.youtube.com/watch?v=tS9l2XVG0iY) that maybe worth watching.
      It's based on the previous (old) method of rooting, but note that they forget to tell you start up `telnetd` first.
-
- - While I encourage you to follow the [Beginners Guide](http://androidandme.com/2009/05/guides/beginners-guide-for-rooting-your-android-g1-to-install-cupcake/)
-   it basically basically it boils down to this:
    
-   - downgrade to RC29
-   - gain root (using `root.apk`)
+   - another one is [US/UK T-mobile HTC Dream G1 import/modding/jailbreak guide](http://hdmp4.com/G1%20import%20guide),
+     but I have not looked at it.  It has some links to different discussion threads that may help if you're stuck.
+
+ - While I encourage you to follow the [Beginners Guide](http://androidandme.com/2009/05/guides/beginners-guide-for-rooting-your-android-g1-to-install-cupcake/),
+   it basically boils down to this:
+   
+   - downgrade to RC29 (which has that [famed root exploit](http://mobile.slashdot.org/article.pl?sid=08/11/08/1720246))
+   - gain root (using `root.apk` or manual method)
    - upgrade radio to v1.5 from [HTC official site](http://www.htc.com/www/support/android/adp.html) 
      or [googlecode.com mirror](http://android-roms.googlecode.com/files/ota-radio-2_22_19_26I.zip)
    - install custom image
 
- - Getting this far is a PITA.  After this upgrading to any image is trivial, just copy it to `update.zip` on the flash card, boot holding
-   the *home* key, and push the magic *Alt-L* + *Alt-S* combo.
+ - Getting this far is a PITA, and takes an evening.  After this, upgrading to any image is trivial: just copy it 
+   to `update.zip` on the flash card, boot holding the *home* key, and push the magic *Alt-L* + *Alt-S* combo.
 
  - Future updates, at least to JF builds, become even easier with [jfupdater](http://code.google.com/p/jfupdater/).
 
