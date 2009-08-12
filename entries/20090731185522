@@ -3,7 +3,10 @@ Content-Type: text/x-markdown
 Alias: rooting-g1
 Tags: android,g1
 
-First let me explain the terminology.  There are two ways in which the HTC Dream (aka Tmobile G1) can be unlocked:
+In my continued quest to learn more and start hacking on the Android phones,
+I've recently rooted my Android based HTC Dream (aka Tmobile G1) phones.
+
+I'll start by explain the terminology.  There are two ways in which the phones can be unlocked:
 
  - so called *rooting*, which I describe in this post, involves replacing the bootloader so that the phone can use
    community generated firmware images, aka *ROM*'s.
