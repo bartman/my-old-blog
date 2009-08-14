@@ -51,6 +51,14 @@ Before you proceed, I cannot stress the importance of following directions.
  - Getting this far is a PITA, and takes an evening.  After this, upgrading to any image is trivial: just copy it 
    to `update.zip` on the flash card, boot holding the *home* key, and push the magic *Alt-L* + *Alt-S* combo.
 
- - Future updates, at least to JF builds, become even easier with [jfupdater](http://code.google.com/p/jfupdater/).
+Some additional notes:
+
+ - Here is a matrix of [common ROMs](http://spreadsheets.google.com/ccc?key=tAs2qa3xlveMKSI2BLcUI7g)
+
+ - Here is an index of [informative threads](http://forum.xda-developers.com/showthread.php?t=519523) on *xda-developers.com*
+
+ - If you chose a JF builds, then future updates become even easier with [jfupdater](http://code.google.com/p/jfupdater/).
 
  - If you're stuck finding files, check here: [Android development files](https://www.digital-bit.ch/wiki/G1devel)
+
+ - 
