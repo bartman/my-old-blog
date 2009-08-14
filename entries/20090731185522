@@ -61,4 +61,14 @@ Some additional notes:
 
  - If you're stuck finding files, check here: [Android development files](https://www.digital-bit.ch/wiki/G1devel)
 
- - 
+ - A community member going by alias [cyanogen](http://twitter.com/cyanogen) has some nice ROMs and tools:
+   - [improved recovery image](http://forum.xda-developers.com/showthread.php?p=3915123)
+   - [stable v3.6.8.1 firmware](http://forum.xda-developers.com/showthread.php?t=537204)
+   - [experimental v3.9.10 firmware](http://forum.xda-developers.com/showthread.php?t=539744)
+   - [github repository](http://github.com/cyanogen)
+
+ - How to use [ext2/3/4](http://forum.xda-developers.com/showthread.php?t=543985) 
+   on [the sdcard](http://forums.androidandme.com/topic/how-do-you-access-your-ext2ext3-sd-card-partition)
+   
+   Note that this is not really required with *cyanogen* roms.
+
