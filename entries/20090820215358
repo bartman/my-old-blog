@@ -3,7 +3,7 @@ Content-Type: text/x-markdown
 Alias: prettier-function-tracing
 Tags: code,c
 
-This is a follow up to my [pretty function tracing] article.  I base this work on the code presented there.
+This is a follow up to my [pretty function tracing]{pretty-function-tracing} article.  I base this work on the code presented there.
 
 Some one asked me how to get the gcc `-finstrument-functions` feature working.  If you don't know this
 flag will modify the entry and exit to/from each function to make a call out to a special set of functions used
