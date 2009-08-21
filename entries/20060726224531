@@ -1,7 +1,7 @@
 Subject: pretty function tracing
 Content-Type: text/x-markdown
 Alias: pretty-function-tracing
-Tags: code
+Tags: code,c
 
 I wanted to see how different functions got used in a block of code that I was new to... and was having a hard time understanding.  My UML instance was acting flaky and didn't 
 cooperate with gdb, so I could not single step the code.

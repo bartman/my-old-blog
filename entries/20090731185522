@@ -16,12 +16,15 @@ I'll start by explain the terminology.  There are two ways in which the phones c
 
 <read-more>
 
-*DISCLAIMER*: this may very well brick your phone!  Read all the instructions here, and the links I provide.  If you're still
-not discouraged, continue on :)
+<b>WARNING:</b> <font color=red>this may very well brick your phone!</font>  Read all the instructions here, and the links I provide.  If you're still not discouraged, continue on :)
 
 Before you proceed, I cannot stress the importance of following directions.
 
  - I used the excellent [Beginners Guide for Rooting your Android G1 to install Cupcake](http://androidandme.com/2009/05/guides/beginners-guide-for-rooting-your-android-g1-to-install-cupcake/)
+   
+   <b>UPDATE:</b> The guide I used has been rewritten as [How to root a T-Mobile G1 and myTouch 3G Android phone](http://androidandme.com/2009/08/news/how-to-root-a-t-mobile-g1-and-mytouch-3g-android-phone/), it now has more details and screenshots.
+   
+   <b>UPDATE 2:</b> Have not tried yet, but there is a new exploit that installs root on most recent firmware; see [Root a T-Mobile myTouch 3G or G1 in 6 minutes and flash Cyanogen’s rom with Donut crumbs](http://feedproxy.google.com/~r/androidandme/~3/ijUUOZz8Edg/).
    
    There are multiple write-ups like this one.
  
@@ -43,7 +46,7 @@ Before you proceed, I cannot stress the importance of following directions.
    it basically boils down to this:
    
    - downgrade to RC29 (which has that [famed root exploit](http://mobile.slashdot.org/article.pl?sid=08/11/08/1720246))
-   - gain root (using `root.apk` or manual method)
+   - gain root using [root.apk](http://www.androidactivity.com/root/root.apk) (less typing: [2tu.us/nj0](http://2tu.us/nj0)), or the manual method (see below)
    - upgrade radio to v1.5 from [HTC official site](http://www.htc.com/www/support/android/adp.html) 
      or [googlecode.com mirror](http://android-roms.googlecode.com/files/ota-radio-2_22_19_26I.zip)
    - install custom image
@@ -51,7 +54,47 @@ Before you proceed, I cannot stress the importance of following directions.
  - Getting this far is a PITA, and takes an evening.  After this, upgrading to any image is trivial: just copy it 
    to `update.zip` on the flash card, boot holding the *home* key, and push the magic *Alt-L* + *Alt-S* combo.
 
-Some additional notes:
+### Manual method:
+
+after a clean boot of RC29...
+
+ - type in `<enter><enter>telnetd<enter>`
+ - install the `telnet` app from the market
+ - download a new `recovery.img` (I am using [Cyanogen's pimped out](http://forum.xda-developers.com/showthread.php?p=3915123) [cm-recovery-1.4.img](http://n0rp.chemlab.org/android/cm-recovery-1.4.img) image)
+ - download [HardSPL/update.zip](http://koushikdutta.blurryfox.com/G1RootWalkthrough/HardSPL/update.zip)
+ - copy the `recovery.img` and `update.zip` to the SDCARD
+ - install the new recovery image...
+   
+   - `mount -o rw,remount -t yaffs2 /dev/block/mtdblock3 /system`
+   - `cd sdcard`
+   - `flash_image recovery recovery.img`
+   - `cat recovery.img > /system/recovery.img`
+   - `sync`
+ - shutdown, boot holding down HOME key
+ - update...
+   - if using `cm-recovery`, when you get the menu, press `alt-s`
+   - if using standard `recovery.img`, when you see the triangle logo, press `alt-l` then `alt-s`
+ - follow prompts, it will reboot a few times
+
+you now have root.  As before you need to install a community modded image:
+
+ - *first* upgrade radio to v1.5 from [HTC official site](http://www.htc.com/www/support/android/adp.html) 
+   or [googlecode.com mirror](http://android-roms.googlecode.com/files/ota-radio-2_22_19_26I.zip)
+   
+   - download, copy to SDCARD
+   - boot with HOME held
+   - run `alt-s`
+
+ - then install a custom image.  I recommend using [CyanogenMod](http://forum.xda-developers.com/showthread.php?t=537204) images.
+   
+   - download, copy to SDCARD
+   - boot with HOME held
+   - run `alt-s`
+   
+   NOTE: the `CyanogenMod` takes a long time to boot the first time.
+
+
+### Additional notes:
 
  - Here is a matrix of [common ROMs](http://spreadsheets.google.com/ccc?key=tAs2qa3xlveMKSI2BLcUI7g)
 
@@ -59,11 +102,16 @@ Some additional notes:
 
  - With certain ROMs, future updates become even easier with [Cyanogen updater](http://forum.xda-developers.com/showthread.php?t=544663) or [jfupdater](http://code.google.com/p/jfupdater/).
 
+ - Recent CyanogenMod images also support [apps on SD-card](http://forum.xda-developers.com/showthread.php?p=4107149) which is nice since the G1 has little internal flash.
+   
+   To activate this feature partition your disk to have 1 big vfat partion and 1 smaller ext2/3/4 partition, boot to the cm-recovery image, enter the shell (`alt-x`), and type in `apps2sd`.
+
  - If you're stuck finding files, check here: [Android development files](https://www.digital-bit.ch/wiki/G1devel)
 
  - A community member going by alias [cyanogen](http://twitter.com/cyanogen) has some nice ROMs and tools:
    - [improved recovery image](http://forum.xda-developers.com/showthread.php?p=3915123)
-   - [stable v3.6.8.1 firmware](http://forum.xda-developers.com/showthread.php?t=537204)
+   - [stable v4.0.1 firmware](http://forum.xda-developers.com/showthread.php?t=537204)
+   - [old stable v3.6.8.1 firmware](http://forum.xda-developers.com/showthread.php?t=537204)
    - [experimental v3.9.10 firmware](http://forum.xda-developers.com/showthread.php?t=539744)
    - [github repository](http://github.com/cyanogen)
 

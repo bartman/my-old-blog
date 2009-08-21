@@ -67,7 +67,6 @@ I then made some changes to the `src/net/jukie/test1/Test1.java` app:
 
 And, now to build the sucker:
 
-    # cd platforms/android-1.5/samples/HelloActivity
     # ant debug
 
 That gives me a `bin/Test1-debug.apk`.
