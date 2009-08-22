@@ -7,11 +7,13 @@ Today I wanted to see if I could build a bootable image for my Tmobile G1.
 
 <read-more>
 
-Setup...
+### Setup...
 
  - modern Linux distro (Debian/testing here)
  - the [repo](http://source.android.com/download/using-repo) utility in your path ([download repo](http://android.git.kernel.org/repo))
  - 5G of disk space
+
+### Primitive build...
 
 Next let's create a new repository to work in...
 
@@ -40,9 +42,47 @@ Now getting back to building, when `sync` is finished fetching things, you can c
 
 ... this takes about an hour on my box.  It might work with `make -j10` but I have not tried.
 
-<b>NOTE:</b> Apologies, this post is a work in progress.  I ran out of time and I didn't have to finish this.  I'll collect my notes on building a new image here.  For now you can go and follow the links I've collected below.
+### Now building it for real...
 
-### Resources
+As before I start with a clean image (or just the image you cloned above)
+
+    # mkdir mydroid
+    # cd mydroid
+    # repo init -u git://android.git.kernel.org/platform/manifest.git -b android-1.5r3
+    # repo sync
+
+But now, let's add the latest kernel...
+
+    # cat > .repo/local_manifest.xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <manifest>
+        <project path="kernel" name="kernel/msm" revision="refs/heads/android-msm-2.6.27"/>
+    </manifest>
+
+Then sync up again
+
+    # repo sync
+
+While that's happening, you need to connect your rooted phone running some community firmware (liky CyanogenMod),
+and start the Android Debug Bridge:
+
+    # sudo adb start-server
+
+Next copy all the proprietary bits out of the image:
+
+    # cd vendor/htc/dream-open
+    # ./extract-files.sh
+    # cd ..
+
+Now were are ready to build
+
+    # make
+
+### Disclaimer...
+
+Apologies, this post is a work in progress.  I ran out of time and I didn't have to finish this.  I'll collect my notes on building a new image here.  For now you can go and follow the links I've collected below.
+
+### Resources...
 
  - [Johan de Koning](http://www.johandekoning.nl/)'s *Building Android 1.5* series:
    - [Getting the source](http://www.johandekoning.nl/index.php/2009/06/07/building-android-15-getting-the-source),

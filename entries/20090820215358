@@ -70,3 +70,7 @@ I now get traces like this:
 
 To get any more out of this trace (like values passed in function parameters) you'd have to use
 a disassembler.
+
+### Resources
+
+ - [Backtrace Library](http://www.wolf-software.net/Libraries/backtrace/)
