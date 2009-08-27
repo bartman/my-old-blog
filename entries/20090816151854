@@ -19,7 +19,7 @@ Next let's create a new repository to work in...
 
     # mkdir mydroid
     # cd mydroid
-    # repo init -u git://android.git.kernel.org/platform/manifest.git -b android-1.5r3
+    # repo init -u git://android.git.kernel.org/platform/manifest.git -b cupcake
 
 At this point you'll be prompted to tell the build system about yourself.  If you're already a 
 git user, it will read the defaults from your git configuration (I think that's where it got
@@ -44,19 +44,21 @@ Now getting back to building, when `sync` is finished fetching things, you can c
 
 ### Now building it for real...
 
-As before I start with a clean image (or just the image you cloned above)
+As before I start with a clean image...
 
     # mkdir mydroid
     # cd mydroid
-    # repo init -u git://android.git.kernel.org/platform/manifest.git -b android-1.5r3
+    # repo init -u git://android.git.kernel.org/platform/manifest.git -b cupcake
     # repo sync
 
-But now, let's add the latest kernel...
+You should be able to just clean the existing image you have instead.
+
+Let's add the latest kernel...
 
     # cat > .repo/local_manifest.xml
     <?xml version="1.0" encoding="UTF-8"?>
     <manifest>
-        <project path="kernel" name="kernel/msm" revision="refs/heads/android-msm-2.6.27"/>
+        <project path="kernel" name="kernel/msm" revision="refs/heads/android-msm-2.6.29"/>
     </manifest>
 
 Then sync up again
@@ -76,7 +78,9 @@ Next copy all the proprietary bits out of the image:
 
 Now were are ready to build
 
-    # make
+    # make -j10
+
+(rejoice, it completed in 13 minutes)
 
 ### Disclaimer...
 
@@ -94,3 +98,6 @@ Apologies, this post is a work in progress.  I ran out of time and I didn't have
    
    This thread is full of interesting bits like thread merging strategies, branch names, and relse number decoding.
 
+ - Where to [download HTC proprietary binary bits](http://groups.google.com/group/android-platform/browse_thread/thread/c3fa817c33c99007?hl=en) required for building the image.
+
+ - Linux Magazine's [Debugging an Android Application](http://www.linux-mag.com/cache/7491/1.html)
