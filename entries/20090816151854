@@ -5,6 +5,10 @@ Tags: android,g1
 
 Today I wanted to see if I could build a bootable image for my Tmobile G1.
 
+This post has been updated a few times.  I had a hard time building the `master` branch.
+The `cupcake` branch built, but failed to run.  Next I tried `android-sdk-1.5_r3`, this
+seems to boot but the phone is not really functional.
+
 <read-more>
 
 ### Setup...
@@ -19,7 +23,7 @@ Next let's create a new repository to work in...
 
     # mkdir mydroid
     # cd mydroid
-    # repo init -u git://android.git.kernel.org/platform/manifest.git -b cupcake
+    # repo init -u git://android.git.kernel.org/platform/manifest.git -b android-sdk-1.5_r3
 
 At this point you'll be prompted to tell the build system about yourself.  If you're already a 
 git user, it will read the defaults from your git configuration (I think that's where it got
@@ -48,17 +52,20 @@ As before I start with a clean image...
 
     # mkdir mydroid
     # cd mydroid
-    # repo init -u git://android.git.kernel.org/platform/manifest.git -b cupcake
+    # repo init -u git://android.git.kernel.org/platform/manifest.git -b android-sdk-1.5_r3
     # repo sync
 
 You should be able to just clean the existing image you have instead.
 
-Let's add the latest kernel...
+Here are the contents of my `local_manifest.xml` file...
 
     # cat > .repo/local_manifest.xml
     <?xml version="1.0" encoding="UTF-8"?>
     <manifest>
-        <project path="kernel" name="kernel/msm" revision="refs/heads/android-msm-2.6.29"/>
+        <!-- <remove-project name="kernel/common"/> -->
+        <project path="kernel"                name="kernel/msm"                     revision="refs/heads/android-msm-2.6.29" />
+        <project path="vendor/htc/dream-open" name="platform/vendor/htc/dream-open" revision="refs/heads/cupcake"            />
+        <project path="hardware/msm7k"        name="platform/hardware/msm7k"        revision="refs/heads/cupcake"            />
     </manifest>
 
 Then sync up again
@@ -74,7 +81,15 @@ Next copy all the proprietary bits out of the image:
 
     # cd vendor/htc/dream-open
     # ./extract-files.sh
-    # cd ..
+    # cd -
+
+Next setup the environemtn variables:
+
+    # source build/envsetup.sh
+
+Followisg that, change the build to build for the *HTC Dream*:
+
+    # lunch htc_dream-eng
 
 Now were are ready to build
 
@@ -82,9 +97,24 @@ Now were are ready to build
 
 (rejoice, it completed in 13 minutes)
 
+### Running the image...
+
+<b>WARNING:</b> It worked for me, but it may not for you.  <font color=red>This may very well brick your phone!</font>
+
+Finally, you get to program it into the phone:
+
+    # cd out/target/product/dream-open
+    # fastboot flash system system.img
+    # fastboot flash boot boot.img
+    # fastboot flash userdata userdata.img
+    # fastboot reboot
+    # cd -
+
+OMG! it boots! but nothing really works.
+
 ### Disclaimer...
 
-Apologies, this post is a work in progress.  I ran out of time and I didn't have to finish this.  I'll collect my notes on building a new image here.  For now you can go and follow the links I've collected below.
+Apologies, this post is a work in progress.  I hope to get more details in here, but for now you can reed the fine links I've provided below.
 
 ### Resources...
 
