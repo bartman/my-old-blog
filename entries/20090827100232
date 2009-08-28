@@ -74,8 +74,7 @@ you will need to install the [HardSPL](http://wiki.xda-developers.com/index.php?
 bootloader separately.
 
 It is important to reemphasize the importance of what will happen if this doesn't work... <b>you will brick your phone</b>.
-Don't trust me on this one.  Go to [this page](http://wiki.xda-developers.com/index.php?pagename=HTC_Dream_Bootloader), read it,
-and decide if what you're doing is fine with you.
+Go to [this page](http://wiki.xda-developers.com/index.php?pagename=HTC_Dream_Bootloader), read it, and decide if what you're doing is fine with you.
 
 The procedure is as follows:
 
