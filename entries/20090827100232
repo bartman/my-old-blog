@@ -62,4 +62,25 @@ From the `Android system recovery` screen (power up with `HOME` key held).
    ... now, wait some more ...
 
 On the first boot (and it will reboot several times) it will take under 5 minutes.  Be patient.
-Durring this first long boot the phone is initializing the apps.
+During this first long boot the phone is initializing the apps.
+
+### Where did fastboot go?
+
+If you install using this method you will have the nice recovery image, and a nice image
+to run, but you will still have the original Tmobile G1 SPL (the bootloader).  <b>If you want fastboot</b>
+you will need to install the [HardSPL](http://wiki.xda-developers.com/index.php?pagename=HTC_Dream_Bootloader)
+bootloader separately.  The procedure is as follows:
+
+ - download [splhard1_update_signed.zip](http://forum.xda-developers.com/attachment.php?attachmentid=142426&d=1230965195)
+ - put it on the sdcard (maybe with `adb push`)
+ - reboot holding `HOME`
+ - select `Alt-A` and flash with the `splhard1_update_signed.zip` file
+ - power down
+ - boot holding `BACK` button
+
+You now have `fastboot`...
+
+    # fastboot devices
+    HT123XY45678        fastboot
+
+*Yey!*
