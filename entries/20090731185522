@@ -120,7 +120,10 @@ you now have root.  As before you need to install a community modded image:
  - How to use [ext2/3/4](http://forum.xda-developers.com/showthread.php?t=543985) 
    on [the sdcard](http://forums.androidandme.com/topic/how-do-you-access-your-ext2ext3-sd-card-partition)
    
-   Note that this is not really required with *cyanogen* roms.
+   Note that this is not required with *cyanogen* roms.
+
+ - other interesting ROMs I didn't try...
+   - [xROM](http://forum.xda-developers.com/showthread.php?t=543621)
 
  - some pages that explain finer details further
    - [HTC_Dream_Bootloader](http://wiki.xda-developers.com/index.php?pagename=HTC_Dream_Bootloader)
