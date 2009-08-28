@@ -10,6 +10,8 @@ The procedure written by [Zinx](http://zenthought.org/content/project/flashrec) 
 
 <read-more>
 
+<b>WARNING:</b> <font color=red>this may very well brick your phone!</font>  Read all the instructions here, and the links I provide.  If you're still not discouraged, continue on :)
+
 The exploit code is a fun read and I encourage the geeks to go and get [flashrec-20090815.tar.gz](http://zenthought.org/system/files/asset/2/flashrec-20090815.tar.gz) and read it.
 
 For the rest of you, here are the steps to use it:
@@ -69,7 +71,12 @@ During this first long boot the phone is initializing the apps.
 If you install using this method you will have the nice recovery image, and a nice image
 to run, but you will still have the original Tmobile G1 SPL (the bootloader).  <b>If you want fastboot</b>
 you will need to install the [HardSPL](http://wiki.xda-developers.com/index.php?pagename=HTC_Dream_Bootloader)
-bootloader separately.  The procedure is as follows:
+bootloader separately.
+
+It is important to reemphasize the importance of what will happen if this doesn't work... <b>you will brick your phone</b>.
+Go to [this page](http://wiki.xda-developers.com/index.php?pagename=HTC_Dream_Bootloader), read it, and decide if what you're doing is fine with you.
+
+The procedure is as follows:
 
  - download [splhard1_update_signed.zip](http://forum.xda-developers.com/attachment.php?attachmentid=142426&d=1230965195)
  - put it on the sdcard (maybe with `adb push`)
