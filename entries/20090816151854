@@ -118,6 +118,12 @@ Apologies, this post is a work in progress.  I hope to get more details in here,
 
 ### Resources...
 
+ - Google/Android official build links
+   - [Building For Dream](http://source.android.com/documentation/building-for-dream)
+   - [Get source](http://source.android.com/download)
+
+ - My Brain Hurts - [Building the Android source and Deploying it to your G1 or Dev Phone](http://www.koushikdutta.com/2008/12/building-android-source-and-deploying.html)
+
  - [Johan de Koning](http://www.johandekoning.nl/)'s *Building Android 1.5* series:
    - [Getting the source](http://www.johandekoning.nl/index.php/2009/06/07/building-android-15-getting-the-source),
    - [Building the source](http://www.johandekoning.nl/index.php/2009/06/08/building-android-15-building-the-source/),
@@ -131,3 +137,5 @@ Apologies, this post is a work in progress.  I hope to get more details in here,
  - Where to [download HTC proprietary binary bits](http://groups.google.com/group/android-platform/browse_thread/thread/c3fa817c33c99007?hl=en) required for building the image.
 
  - Linux Magazine's [Debugging an Android Application](http://www.linux-mag.com/cache/7491/1.html)
+
+
