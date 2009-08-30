@@ -7,9 +7,12 @@ Today I wanted to see if I could build a bootable image for my Tmobile G1.
 
 This post has been updated a few times.  I had a hard time building the `master` branch.
 The `cupcake` branch built, but failed to run.  Next I tried `android-sdk-1.5_r3`, this
-seems to boot but the phone is not really functional.
+seems to boot but the phone is not really functional.  Next attempt was to build `cupcake`
+and not change the kernel.  Duh!
 
 <read-more>
+
+<b>Standard WARNING:</b> It worked for me, but it may not for you.  <font color=red>This may very well brick your phone!</font>
 
 ### Setup...
 
@@ -23,7 +26,7 @@ Next let's create a new repository to work in...
 
     # mkdir mydroid
     # cd mydroid
-    # repo init -u git://android.git.kernel.org/platform/manifest.git -b android-sdk-1.5_r3
+    # repo init -u git://android.git.kernel.org/platform/manifest.git -b cupcake
 
 At this point you'll be prompted to tell the build system about yourself.  If you're already a 
 git user, it will read the defaults from your git configuration (I think that's where it got
@@ -52,7 +55,7 @@ As before I start with a clean image...
 
     # mkdir mydroid
     # cd mydroid
-    # repo init -u git://android.git.kernel.org/platform/manifest.git -b android-sdk-1.5_r3
+    # repo init -u git://android.git.kernel.org/platform/manifest.git -b cupcake
     # repo sync
 
 You should be able to just clean the existing image you have instead.
@@ -62,10 +65,13 @@ Here are the contents of my `local_manifest.xml` file...
     # cat > .repo/local_manifest.xml
     <?xml version="1.0" encoding="UTF-8"?>
     <manifest>
-        <!-- <remove-project name="kernel/common"/> -->
-        <project path="kernel"                name="kernel/msm"                     revision="refs/heads/android-msm-2.6.29" />
-        <project path="vendor/htc/dream-open" name="platform/vendor/htc/dream-open" revision="refs/heads/cupcake"            />
-        <project path="hardware/msm7k"        name="platform/hardware/msm7k"        revision="refs/heads/cupcake"            />
+        <!--
+             <remove-project name="kernel/common"/>
+             <project path="kernel"                name="kernel/msm"                     revision="refs/heads/android-msm-2.6.29" />
+             <project path="vendor/htc/dream-open" name="platform/vendor/htc/dream-open" revision="refs/heads/cupcake"            />
+             <project path="hardware/msm7k"        name="platform/hardware/msm7k"        revision="refs/heads/cupcake"            />
+        -->
+        <project path="kernel"                name="kernel/msm"                     revision="refs/heads/android-msm-2.6.27" />
     </manifest>
 
 Then sync up again
