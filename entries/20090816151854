@@ -134,6 +134,8 @@ Apologies, this post is a work in progress.  I hope to get more details in here,
    
    This thread is full of interesting bits like thread merging strategies, branch names, and relse number decoding.
 
+ - Another useful thread on the topic of [Building cupcake for dream](http://groups.google.com/group/android-platform/browse_thread/thread/02d496adb75997d2/541a0ec1464c5aba?show_docid=541a0ec1464c5aba#)
+
  - Where to [download HTC proprietary binary bits](http://groups.google.com/group/android-platform/browse_thread/thread/c3fa817c33c99007?hl=en) required for building the image.
 
  - Linux Magazine's [Debugging an Android Application](http://www.linux-mag.com/cache/7491/1.html)
