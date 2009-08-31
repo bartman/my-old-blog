@@ -17,6 +17,9 @@ and not change the kernel.  Duh!
 ### Setup...
 
  - modern Linux distro (Debian/testing here)
+ - standard build tools (gcc, make, etc)
+ - Java6 JDK
+ - Android SDK
  - the [repo](http://source.android.com/download/using-repo) utility in your path ([download repo](http://android.git.kernel.org/repo))
  - 5G of disk space
 
