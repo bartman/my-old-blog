@@ -12,18 +12,22 @@ The procedure written by [Zinx](http://zenthought.org/content/project/flashrec) 
 
 <b>WARNING:</b> <font color=red>this may very well brick your phone!</font>  Read all the instructions here, and the links I provide.  If you're still not discouraged, continue on :)
 
+<b>UPDATE 20090904:</b> The *flashrec* tool now supports 32a and 32b CPUs.  Read the [flashrec project page](http://zenthought.org/content/project/flashrec) for details.
+
 The exploit code is a fun read and I encourage the geeks to go and get [flashrec-20090815.tar.gz](http://zenthought.org/system/files/asset/2/flashrec-20090815.tar.gz) and read it.
 
 For the rest of you, here are the steps to use it:
 
  - on a freshly network-unlocked Tmobile G1...
- - point your browser at [flashrec-20090815.apk](http://zenthought.org/system/files/asset/2/flashrec-20090815.apk), or a shorter version of the url [http://2tu.us/oqk](http://2tu.us/oqk)
+ - point your browser at [flashrec-1.1-20090904.apk](http://zenthought.org/system/files/asset/2/flashrec-1.1-20090904.apk), or a shorter version of the url [http://2tu.us/oqk](http://2tu.us/rhg)
  - follow the procedure to allow untrusted package sources
  - run the app
  - backup your current recovery image
- - install the new CM 1.4 recovery image
- - <b>power off</b> the phone (rebooting it doesn't do it)
- - power on holding the home key
+ - download the new recovery image
+ - install the new recovery image
+ - now reboot the phone to recovery mode; you can do either:
+   - regular shutdown, and power up with HOME key held, or
+   - `adb -s HT95LNH01360 shell reboot recovery`
 
 ... and now you can install any rom you want.
 

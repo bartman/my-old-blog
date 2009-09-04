@@ -6,6 +6,8 @@ Tags: android,g1
 I finally got my [Cupcake to build]{baking-cupcake}.  The next step is to try to build something far tastier... naturally that
 something has to be the Cyanogen Cupcake/Donut blend.
 
+Grab a coffee, sit back, and read on to find out how to build your own CyanogenMod Android ROM from Cyanogen's Git repositories...
+
 <read-more>
 
 ### What is this poisonous pastry you speak of?
@@ -18,7 +20,7 @@ is called CyanogenMod, and has it's own community page: [www.CyanogenMod.com](ht
 Android community builds.  I've been running his ROMs and I am enjoying the fruits of his labour.  Truly good stuff.
 
 What makes Cyanogen's work impressive is that he makes all his work [available on github](http://github.com/cyanogen).  There
-are quite a few trees and I wanted to unravel the mystery of building my own CyanogenMod-eque firmware.
+are quite a few trees and I wanted to unravel the mystery of building my own CyanogenMod-esque firmware.
 
 ### Getting the sources
 
