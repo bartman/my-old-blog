@@ -95,12 +95,17 @@ In case of errors read them carefully.  I had to make the following minor fixes 
 
 Following these you can rerun `m` or `make`.
 
+### So, where is my firmware?
+
 After the build is done you will have the interesting bits in `out/target/product/dream-open`
 
     out/target/product/dream-open/system.img
     out/target/product/dream-open/boot.img
     out/target/product/dream-open/recovery.img
     out/target/product/dream-open/userdata.img
+
+The process of taking this and building a signed `update.zip` has a few more steps, which I hope to document at some point.  But this firmware is
+enough to run on your device.
 
 ### Flashing
 
