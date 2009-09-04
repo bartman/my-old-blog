@@ -37,7 +37,7 @@ The rest of this entry will talk about things I put into my `.vim/c.vim` file.
 Like everyone knows *tabs* are 8 spaces deep.  In addition to that, indentation of the first word
 should be done with the *TAB* character and not with spaces.  You can drop tis into your config:
 
-        set noexpandtab                         " use tabse, not spaces
+        set noexpandtab                         " use tabs, not spaces
         set tabstop=8                           " tabstops of 8
         set shiftwidth=8                        " indents of 8
         set textwidth=78                        " screen in 80 columns wide, wrap at 78
