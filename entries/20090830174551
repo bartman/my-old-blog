@@ -41,16 +41,16 @@ Next grab the android repo repository...
 
     # repo sync
 
-# Building
+### Building
 
 After that you should have all of Cyanogen's sources, and can follow the [standard build instructions](http://source.android.com/documentation/building-for-dream),
 starting at step 2.  For the purposes of completeness I include them here...
 
  - grab the `proprietary` files from an existing phone running a CyanogenMod firmware; teh stock Tmobile G1 firmware will be missing a few files (possibly obtained from other Android phones).
 
-    # cd vendor/htc/dream-open
-    # ./extract-files.sh
-    # cd -
+        # cd vendor/htc/dream-open
+        # ./extract-files.sh
+        # cd -
 
  - update your environment for the build...
    
@@ -79,7 +79,7 @@ After this is done you will have the interesting bits in `out/target/product/dre
     out/target/product/dream-open/recovery.img
     out/target/product/dream-open/userdata.img
 
-# Flashing
+### Flashing
 
 <b>WARNING:</b> Please be cautious.  <font color=red>This may very well brick your phone!</font>   I am not responsible for broken phones.
 
