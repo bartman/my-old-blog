@@ -70,9 +70,32 @@ starting at step 2.  For the purposes of completeness I include them here...
    
    *In this case `make` works just as well.  The `m` comes from the envsetup.sh script you sourced in, and it builds everything.  There is also `mm` which builds just the directory you're in.*
 
-In case of 
+### Sometimes things fail
 
-After this is done you will have the interesting bits in `out/target/product/dream-open`
+In case of errors read them carefully.  I had to make the following minor fixes at build time.
+
+ - in `external/obexftp` I had to patch one file to mask an error:
+
+        diff --git a/obexftp/bt_kit.c b/obexftp/bt_kit.c
+        index 06d03c7..e660b5c 100644
+        --- a/obexftp/bt_kit.c
+        +++ b/obexftp/bt_kit.c
+        @@ -541,6 +541,7 @@ int btkit_unregister_service(int svclass)
+                       DEBUG(1, "Service record unregistration failed.");
+                 sdp_close(session);
+        +        return 0;
+         }
+
+   The patch file is here: [cm-external-obexftp-btkit_unregister_service.patch](/~bart/patches/cyanogenmod/20090904/cm-external-obexftp-btkit_unregister_service.patch).
+
+ - the file `libOmxCore.so` does not seem to be copied to `out`, as expected; I had to copy it in manually:
+
+         # cp vendor/htc/dream-open/proprietary/libOmxCore.so \
+              out/target/product/dream-open/obj/lib/libOmxCore.so
+
+Following these you can rerun `m` or `make`.
+
+After the build is done you will have the interesting bits in `out/target/product/dream-open`
 
     out/target/product/dream-open/system.img
     out/target/product/dream-open/boot.img
