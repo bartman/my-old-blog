@@ -12,7 +12,7 @@ The procedure written by [Zinx](http://zenthought.org/content/project/flashrec) 
 
 <b>WARNING:</b> <font color=red>this may very well brick your phone!</font>  Read all the instructions here, and the links I provide.  If you're still not discouraged, continue on :)
 
-<b>UPDATE 20090904:</b> The *flashrec* tool now supports 32a and 32b CPUs.  Read the [flashrec project page](http://zenthought.org/content/project/flashrec) for details.
+<b>UPDATE 20090904:</b> The *flashrec* tool now supports 32a and 32b CPUs.  Read the [flashrec project page](http://zenthought.org/content/project/flashrec) for details.  But this doesn't quite work for the Rogers Dream yet; you can get a cm-recovery, but no ROM.
 
 The exploit code is a fun read and I encourage the geeks to go and get [flashrec-20090815.tar.gz](http://zenthought.org/system/files/asset/2/flashrec-20090815.tar.gz) and read it.
 
@@ -31,10 +31,16 @@ For the rest of you, here are the steps to use it:
 
 ... and now you can install any rom you want.
 
-To install the latest CyanogenMod, you'll need to download these files:
+To install the latest CyanogenMod, you'll need to download...
 
- - [ota-radio-2_22_19_26I.zip](http://android-roms.googlecode.com/files/ota-radio-2_22_19_26I.zip)
- - [update-cm-4.0.2-signed.zip](http://n0rp.chemlab.org/android/update-cm-4.0.2-signed.zip)
+ - for <font color=blue>Tmobile G1</font> get these files:
+   - [ota-radio-2_22_19_26I.zip](http://android-roms.googlecode.com/files/ota-radio-2_22_19_26I.zip)
+   - [update-cm-4.0.2-signed.zip](http://n0rp.chemlab.org/android/update-cm-4.0.2-signed.zip)
+
+<!--
+ - for <font color=red>Rogers Dream</font> you just want one:
+   - [cm404-32a-signed.zip](http://briancrook.ca/magic/cm404-32a-signed.zip)
+   -->
 
 copy both to the SD card.  If you have the [Android Debug Bridge](http://developer.android.com/guide/developing/tools/adb.html) (or `adb`) working
 you can just run:
@@ -42,19 +48,32 @@ you can just run:
     # adb push ota-radio-2_22_19_26I.zip /sdcard/ota-radio-2_22_19_26I.zip
     # adb push update-cm-4.0.2-signed.zip /sdcard/update-cm-4.0.2-signed.zip
 
+<!--
+... or for rogers ...
+
+    # adb push cm404-32a-signed.zip /sdcard/cm404-32a-signed.zip
+    -->
+
 From the `Android system recovery` screen (power up with `HOME` key held).
 
 *(note, you can use the rolly-ball to manuver the menu and push the ball to select options)*
 
- - select `Alt-A` or `apply any zip from sd`
- - select `ota-radio-2_22_19_26I.zip`
-   
-   ... wait ...
+ - Flashing for <font color=blue>Tmobile G1</font>...
+   - select `Alt-A` or `apply any zip from sd`
+   - select `ota-radio-2_22_19_26I.zip`  
+     
+     ... wait ...
+  
+   - select `Alt-A` or `apply any zip from sd`
+   - select `update-cm-4.0.2-signed.zip`
 
- - select `Alt-A` or `apply any zip from sd`
- - select `update-cm-4.0.2-signed.zip`
-   
-   ... wait ...
+<!--
+ - Flashing for <font color=red>Rogers Dream</font>...
+   - select `Alt-A` or `apply any zip from sd`
+   - select `cm404-32a-signed.zip`
+   -->
+
+... the rest is the same for both ...
 
  - reboot with `HOME` + `BACK` keys.
    
