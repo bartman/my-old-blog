@@ -12,7 +12,8 @@ The procedure written by [Zinx](http://zenthought.org/content/project/flashrec) 
 
 <b>WARNING:</b> <font color=red>this may very well brick your phone!</font>  Read all the instructions here, and the links I provide.  If you're still not discouraged, continue on :)
 
-<b>UPDATE 20090904:</b> The *flashrec* tool now supports 32a and 32b CPUs.  Read the [flashrec project page](http://zenthought.org/content/project/flashrec) for details.  But this doesn't quite work for the Rogers Dream yet; you can get a cm-recovery, but no ROM.
+<b>UPDATE 20090904:</b> The *flashrec* tool now supports 32a and 32b CPUs.  Read the [flashrec project page](http://zenthought.org/content/project/flashrec) for details.  See my other post titled:
+[the dreaded process of rooting Rogers Dream]{rooting-rogers-dream}.
 
 The exploit code is a fun read and I encourage the geeks to go and get [flashrec-20090815.tar.gz](http://zenthought.org/system/files/asset/2/flashrec-20090815.tar.gz) and read it.
 
