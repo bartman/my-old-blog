@@ -15,7 +15,14 @@ This is not as smooth as [rooting the G1]{rooting-g1}, and comes no where close 
  - Rogers Dream has a different HBoot bootloader which needs to be replaced with a different process.
  - It comes down to this: <font color=red>Do not use Tmobile G1 files.</font>
 
-### The steps
+Also... I assume you have the `fastboot` executable.  Having `adb` is handy, but not required.  Google for instructions if you don't.
+
+### Installing CM recovery
+
+In case you don't know Android phones have a bunch of boot modes (5, I think).  Anyway, one of them lets you upgrade
+software using `update.zip` files.  This mode comes up when you boot with the `HOME` button held.  We will overwrite
+the recovery partition with one that will do more for you, and you will need it to upgrade to community firmware in
+the future.
 
  - I used the new 32a-aware [flashrec](http://zenthought.org/content/project/flashrec) to get a CM-recovery 1.4 image installs.
    
@@ -29,74 +36,86 @@ This is not as smooth as [rooting the G1]{rooting-g1}, and comes no where close 
    It will make a `nandroid` directory on your SD-card and store all the images on it.  I was able to recover
    my phone with it.
 
- - Next you need to download [Haykuro](http://forum.xda-developers.com/member.php?u=1363573)'s rooting files.  These were hard
-   to find, because the service he uploaded them to has a 10k download limit... and I came in too late.
+### Preping for root
 
-   I initially started with this write up: [Rogers, heres your real root](http://forum.xda-developers.com/showthread.php?p=4271500), but
-   it didn't work for me.  I ended up with a phone that booted to the ROGERS screen and never went further.  Sounds like the kernel
-   wasn't getting to init.  Maybe a timing issue or the kernel was just wrong.  Anyway...
+Next you need to download [Haykuro](http://forum.xda-developers.com/member.php?u=1363573)'s rooting files.  These were hard
+to find, because the service he uploaded them to has a 10k download limit... and I came in too late.
 
-   I had previously found this write up: [All the technical details you'd like - Rooting the Rogers Dream](http://forum.xda-developers.com/showthread.php?t=532224),
-   but like I said, the link provided there -- *http://drop.io/ii4t2ax* -- had already expired it's download quota.
+I initially started with this write up: [Rogers, heres your real root](http://forum.xda-developers.com/showthread.php?p=4271500), but
+it didn't work for me.  I ended up with a phone that booted to the ROGERS screen and never went further.  Sounds like the kernel
+wasn't getting to init.  Maybe a timing issue or the kernel was just wrong.  Anyway...
 
-   I will give you the new link I found for this file: [http://drop.io/081mnjs](http://drop.io/081mnjs), linked off 
-   [this forum post](http://forum.xda-developers.com/showthread.php?p=4423861).  In case it's gone again, you can always
-   google for "[rogers_root_unzipme.zip](http://www.google.com/search?q=rogers_root_unzipme.zip)" and maybe you'll get
-   another mirror.
+I had previously found this write up: [All the technical details you'd like - Rooting the Rogers Dream](http://forum.xda-developers.com/showthread.php?t=532224),
+but like I said, the link provided there -- *http://drop.io/ii4t2ax* -- had already expired it's download quota.
 
- - Unzip the file.  Here are the files I got (for your verification):
+I will give you the new link I found for this file: [http://drop.io/081mnjs](http://drop.io/081mnjs), linked off 
+[this forum post](http://forum.xda-developers.com/showthread.php?p=4423861).  In case it's gone again, you can always
+google for "[rogers_root_unzipme.zip](http://www.google.com/search?q=rogers_root_unzipme.zip)" and maybe you'll get
+another mirror.
 
-      #  md5sum *
-      # 85114a9f478c1ffba7105c1faacef980  boot.img
-      # b877cfd3959e65abd5559862994c4db0  instructions.txt
-      # fdb11cc50fc692584d49b1e22835131c  recovery.img
-      # 2b1aaa9012dc28f88c482e1b21a46fdd  update.zip
+ - so... download [http://drop.io/081mnjs](http://drop.io/081mnjs)
+
+ - Unzip the file.
+   
+   Here are the files I got (for your verification):
+
+        #  md5sum *
+        85114a9f478c1ffba7105c1faacef980  boot.img
+        b877cfd3959e65abd5559862994c4db0  instructions.txt
+        fdb11cc50fc692584d49b1e22835131c  recovery.img
+        2b1aaa9012dc28f88c482e1b21a46fdd  update.zip
  
  - `cat instructions.txt`.  I followed most of this procedure, except for flashing the recovery image since
    I already had *CM 1.4 + JF* installed from above.
+
+### The steps
+
+Here are the steps I took while the phone was in recovery mode:
+
+ - copy the update.zip to the phone.
    
-   Here are the steps I took while the phone was in recovery mode:
+   You can do it the old fassioned way, or just:
+
+        # adb shell mount /sdcard
+        # adb push update.zip /sdcard/update.zip
+        # adb shell umount /sdcard
+
+ - activate fastboot
+
+        # adb reboot bootloader
    
-   - copy the update.zip to the phone.
+   ... you may now have to push *SEND* to switch to `FASTBOOT` as opposed to `HBOOT` mode.
 
-      # adb shell mount /sdcard
-      # adb push update.zip /sdcard/update.zip
-      # adb shell umount /sdcard
+ - reboot with the fastboot iamge
 
-   - activate fastboot
+        # fastboot boot recovery.img
+   
+   ... note, this does not flash the image, just reboots to it.  You will get a different looking
+   screen (blue/black background).
+   
+   Select `apply update`.  And as Haykuro put it:
+   
+   *LET IT FINISH, DO NOT TOUCH ANYTHING UNTIL YOUR PHONE IS COMPLETELY IDLE. DO NOT TOUCH AFTER FIRST REBOOT (WHEN CHIP APPEARS) UNLESS YOU LIKE A BRICK. :)*
+   
+   When it completes, you will have the `1.33.2005` bootloader.  It lets you flash in unofficial firmware images.
 
-      # adb reboot bootloader
-     
-     ... you may now have to push *SEND* to switch to `FASTBOOT` as opposed to `HBOOT` mode.
+ - It will then return to recovery mode.  Push `HOME` and `BACK` to reboot.  Then power off your phone.
 
-   - reboot with the fastboot iamge
+ - Boot your phone up while holding the `CAMERA` button, this gets you to Hboot/fastboot.  Activate `FASTBOOT`.
+   
+   Alternatively, if your phone is booting from the previous step, you can just run this command to get to `FASTBOOT`:
 
-      # fastboot boot recovery.img
-     
-     ... note, this does not flash the image, just reboots to it.  You will get a different looking
-     screen (blue/black background).
-     
-     Select `apply update`.  And as Haykuro put it:
-     
-     *LET IT FINISH, DO NOT TOUCH ANYTHING UNTIL YOUR PHONE IS COMPLETELY IDLE. DO NOT TOUCH AFTER FIRST REBOOT (WHEN CHIP APPEARS) UNLESS YOU LIKE A BRICK. :)*
+        # adb reboot bootloader
 
-   - It will then return to recovery mode.  Push `HOME` and `BACK` to reboot.  Then power off your phone.
+ - flash in the boot image
 
-   - Boot your phone up while holding the `CAMERA` button, this gets you to Hboot/fastboot.  Activate `FASTBOOT`.
-     
-     Alternatively, if your phone is booting from the previous step, you can just run this command to get to `FASTBOOT`:
+        # fastboot flash boot boot.img
+        # fastboot reboot
 
-      # adb reboot bootloader
+ - this should hopefully get you up to the Rogers firmware, but you now have root.
 
-   - flash in the boot image
-
-      # fastboot flash boot boot.img
-      # fastboot reboot
-
-   - this should hopefully get you up to the Rogers firmware, but you now have root.
-
-      # adb shell id
-      uid=0(root) gid=0(root)
+        # adb shell id
+        uid=0(root) gid=0(root)
 
 *Yey!*
 
