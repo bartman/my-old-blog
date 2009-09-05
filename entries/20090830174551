@@ -129,3 +129,29 @@ You'd flash your phone using fastboot like so...
 I think it's best not to flash in the recovery.img.  Should you have problems with your build, you can still recover by
 going back to the recovery image and flashing in the real CyanogenMod ROM.
 
+### Links
+
+- Cyanogen
+  - ... on [github](http://github.com/cyanogen)
+  - ... the [manifests](http://github.com/cyanogen/android/downloads)
+
+- Google docs
+  - [Installing the Android SDK](http://developer.android.com/sdk/1.5_r3/installing.html)
+  - [Get source](http://source.android.com/download)
+  - [Building For Dream](http://source.android.com/documentation/building-for-dream)
+
+- Building writeups
+  - [Building the Android source and Deploying it to your G1 or Dev Phone](http://www.koushikdutta.com/2008/12/building-android-source-and-deploying.html)
+  - [Building Android 1.5 – Getting the source](http://www.johandekoning.nl/index.php/2009/06/07/building-android-15-getting-the-source) 
+    - [part 2](http://www.johandekoning.nl/index.php/2009/06/08/building-android-15-building-the-source/),
+      [part 3](http://www.johandekoning.nl/index.php/2009/07/03/building-android-1-5-flashing-the-phone/),
+      [part 4](http://www.johandekoning.nl/index.php/2009/07/12/building-android-1-5-google-apps-and-audio-files/)
+
+Other
+  - [XDA full text search](http://wiki.xda-developers.com/index.php?pagename=FullTextSearch&s=hardspl)
+    - [HTC Dream - Bootloaders](http://wiki.xda-developers.com/index.php?pagename=HTC_Dream_Bootloader)
+    - [HTC Dream Root](http://wiki.xda-developers.com/index.php?pagename=HTC_Dream_Rooting)
+    - [HTC_Dream__haykuro_Cupcake](http://wiki.xda-developers.com/index.php?pagename=HTC_Dream__haykuro_Cupcake)
+    - [HTC Dream - Overview and useful information](http://wiki.xda-developers.com/index.php?pagename=HTC_Dream_overview_and_useful_information)
+
+
