@@ -74,18 +74,19 @@ From the `Android system recovery` screen (power up with `HOME` key held).
    - select `cm404-32a-signed.zip`
    -->
 
-... the rest is the same for both ...
+ - On first rooting you need to wipe to factory defaults
+   - reboot with `HOME` + `BACK` keys.
+     
+     ... wait ...
 
- - reboot with `HOME` + `BACK` keys.
-   
-   ... wait ...
-
- - select `Alt-W` or `wipe data/factory reset`
- - reboot with `HOME` + `BACK` keys.
-   
-   ... wait a long time ...
-   
-   ... now, wait some more ...
+   - select `Alt-W` or `wipe data/factory reset`
+   - reboot with `HOME` + `BACK` keys.
+     
+     ... wait a long time ...
+     
+   - if you come back to the recovery menu, reboot with `HOME` + `BACK` keys again.
+     
+     ... now, wait some more ...
 
 On the first boot (and it will reboot several times) it will take under 5 minutes.  Be patient.
 During this first long boot the phone is initializing the apps.
