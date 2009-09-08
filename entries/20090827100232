@@ -36,7 +36,7 @@ To install the latest CyanogenMod, you'll need to download...
 
  - for <font color=blue>Tmobile G1</font> get these files:
    - [ota-radio-2_22_19_26I.zip](http://android-roms.googlecode.com/files/ota-radio-2_22_19_26I.zip)
-   - [update-cm-4.0.2-signed.zip](http://n0rp.chemlab.org/android/update-cm-4.0.2-signed.zip)
+   - [update-cm-4.0.4-signed.zip](http://n0rp.chemlab.org/android/update-cm-4.0.4-signed.zip)
 
 <!--
  - for <font color=red>Rogers Dream</font> you just want one:
@@ -47,7 +47,7 @@ copy both to the SD card.  If you have the [Android Debug Bridge](http://develop
 you can just run:
 
     # adb push ota-radio-2_22_19_26I.zip /sdcard/ota-radio-2_22_19_26I.zip
-    # adb push update-cm-4.0.2-signed.zip /sdcard/update-cm-4.0.2-signed.zip
+    # adb push update-cm-4.0.4-signed.zip /sdcard/update-cm-4.0.4-signed.zip
 
 <!--
 ... or for rogers ...
@@ -66,7 +66,7 @@ From the `Android system recovery` screen (power up with `HOME` key held).
      ... wait ...
   
    - select `Alt-A` or `apply any zip from sd`
-   - select `update-cm-4.0.2-signed.zip`
+   - select `update-cm-4.0.4-signed.zip`
 
 <!--
  - Flashing for <font color=red>Rogers Dream</font>...
