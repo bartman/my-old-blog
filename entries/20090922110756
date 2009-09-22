@@ -12,28 +12,28 @@ Here are the steps I took to create an encrypted USB volume that I can attach to
 Below I avoid using direct device names (like `/dev/sdc1`) but instead use the ones provided
 by *udev* (ie `/dev/disk/by-id` and `/dev/disk/by-uuid`).
 
-Your device IDs will be different.  Check your `dev/disk/...` hierarchy.
+Your device IDs will be different.  Check your `/dev/disk/...` hierarchy.
 
 * format the media:
 
-        sudo luksformat -t xfs /dev/disk/by-id/usb-WDC_WD32_00BEVT-00ZCT0_D10A6976720F-0:0-part1
+        # sudo luksformat -t xfs /dev/disk/by-id/usb-WDC_WD32_00BEVT-00ZCT0_XXXXXXXXXXXX-0:0-part1
 
 * generate a key that will prevent me from tying in the pass phrase for this disk.
-
+  
   This just adds convenience and my main disk is already encrypted so the keys are pretty secure.
 
-        mkdir ~/.luks
-        chmod og-a ~/.luks
-        head -c 1000 < /dev/urandom | uuencode -m - | grep -v begin | head -c 32 >| ~/.luks/mydisk
-        chmod 0400 ~/.luks/mydisk
+        # mkdir ~/.luks
+        # chmod og-a ~/.luks
+        # head -c 1000 < /dev/urandom | uuencode -m - | grep -v begin | head -c 32 >| ~/.luks/mydisk
+        # chmod 0400 ~/.luks/mydisk
 
 * add the key to volume
 
-        sudo cryptsetup luksAddKey /dev/disk/by-id/usb-WDC_WD32_00BEVT-00ZCT0_D10A6976720F-0:0-part1 /home/oxygen/bart/.luks/mydisk
+        # sudo cryptsetup luksAddKey /dev/disk/by-id/usb-WDC_WD32_00BEVT-00ZCT0_XXXXXXXXXXXX-0:0-part1 /home/oxygen/bart/.luks/mydisk
 
 * add the following line to `/etc/crypttab`
 
-        mydisk /dev/disk/by-id/usb-WDC_WD32_00BEVT-00ZCT0_D10A6976720F-0:0-part1 /home/me/.luks/mydisk luks,checkargs=xfs,tries=5
+        mydisk /dev/disk/by-id/usb-WDC_WD32_00BEVT-00ZCT0_XXXXXXXXXXXX-0:0-part1 /home/me/.luks/mydisk luks,checkargs=xfs,tries=5
 
 * start the volume
 
@@ -43,6 +43,14 @@ Your device IDs will be different.  Check your `dev/disk/...` hierarchy.
 
         /dev/disk/by-uuid/68562de9-0c43-4ce9-91d6-4ea659c8e4e1  /media/mydisk  xfs  relatime,nodiratime  0  0
 
+* create the directory to mount on
+
+        # sudo mkdir /media/mydisk
+
+* starting it
+
+        # sudo cryptdisks_start mydisk
+
 * mount it
 
-        mount /media/mydisk
+        # sudo mount /media/mydisk
