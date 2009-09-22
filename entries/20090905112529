@@ -74,13 +74,15 @@ Here are the steps I took while the phone was in recovery mode:
 
  - copy the update.zip to the phone.
    
-   You can do it the old fassioned way, or just:
+   You can do it the old fassioned way by dragging them onto your SD-card, or with `adb` run:
 
         # adb shell mount /sdcard
         # adb push update.zip /sdcard/update.zip
         # adb shell umount /sdcard
 
  - activate fastboot
+   
+   You could power down and boot up holding the *CAMERA* button, or if you have `adb` run:
 
         # adb reboot bootloader
    
@@ -103,7 +105,7 @@ Here are the steps I took while the phone was in recovery mode:
 
  - Boot your phone up while holding the *CAMERA* button, this gets you to Hboot/fastboot.  Activate `FASTBOOT`.
    
-   Alternatively, if your phone is booting from the previous step, you can just run this command to get to `FASTBOOT`:
+   Alternatively, if your phone has already booted up from the previous step, you can just run this command to get to `FASTBOOT`:
 
         # adb reboot bootloader
 

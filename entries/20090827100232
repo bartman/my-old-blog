@@ -28,9 +28,11 @@ For the rest of you, here are the steps to use it:
  - install the new recovery image
  - now reboot the phone to recovery mode; you can do either:
    - regular shutdown, and power up with HOME key held, or
-   - `adb -s HT95LNH01360 shell reboot recovery`
+   - `adb shell reboot recovery`
 
 ... and now you can install any rom you want.
+
+<b>NOTE:</b> if you boot the Tmobile firmware now, it will reflash the original recovery image; should this happen just run the *flashrec* app again.
 
 To install the latest CyanogenMod, you'll need to download...
 
