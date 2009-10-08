@@ -23,8 +23,8 @@ The notable features are:
 
 You can run the following to add it to your `~/.gitconfig`:
 
-  git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+    git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 
 Here is what it looks like for me...
 
-  <pic src=http://www.jukie.net/~bart/pic/git-lg.png>
+  <img src=http://www.jukie.net/~bart/pic/git-lg.png>
