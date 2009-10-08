@@ -3,8 +3,9 @@ Content-Type: text/x-markdown
 Alias: virt-primer
 Tags: virt, talk
 
-I participated in the [virtualization panel](http://oclug.on.ca/meeting/48/) for my local [Linux Users Group](http://oclug.on.ca/) last night.  Pictures
+I participated in the [virtualization panel](http://oclug.on.ca/meeting/48/) at last night's meeting of my local [Linux Users Group](http://oclug.on.ca/).  Pictures
 from last night are up on [Richard Guy Briggs'](http://tricolour.net/photos/2009/10/01/oclug.html) website.
 
 I've put up the slides for the [virtualization primer](http://www.jukie.net/~bart/slides/virt-intro/) talk, and also the [source document](http://git.jukie.net/virt-intro.git)
-(created in [Inkscape](http://www.inkscape.org/)) for rendering the slides.  You will need [negative](http://github.com/bartman/negative) to do the latter.
+(created in [Inkscape](http://www.inkscape.org/)) if you wish to [use the slides for something](http://creativecommons.org/licenses/by-nc-sa/3.0/).
+I use [negative](http://github.com/bartman/negative) to convert the `.svg` image to `.png` and `.pdf` files.
