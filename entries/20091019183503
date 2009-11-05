@@ -12,8 +12,8 @@ I got to meet awesome people like Bram Moolenaar, the author of Vim, Alexis Ohan
 of the facilities the CS people have at UIUC.
 
 For ACM Reflections, I ended giving two talks: first one to introduce the topic of revision control, and second one to show people how to use Git.  Although the
-second talk was called a "Workshop" it was basically a 2 hour lecture on Git, and I think it well really well.  People kept asking questions for another hour after,
-and I received nice comments after the talk.  However, I was not overly happy about the first part, and found it a bit weak.  I think I'll stick to teaching
+second talk was called a "Workshop" it was basically a 2 hour lecture on Git, and I think it went really well.  People kept asking questions for another hour after,
+and I received positive comments after the talk.  However, I was not overly happy about the first part, and found it a bit weak.  I think I'll stick to teaching
 people about Git, rather than teaching them about revision control in general.
 
 The first talk was recorded and will be available on [the reflections website](http://www.acm.uiuc.edu/conference/2009/videos.html) soon, so you can tell me if you agree :)
@@ -21,4 +21,4 @@ The first talk was recorded and will be available on [the reflections website](h
 Anyway, I ended up redoing my [previous presentation](http://www.jukie.net/~bart/blog/ogre-git-screencast) using a slightly 
 different format.  You can get all the [slidework](http://www.jukie.net/~bart/slides/git-reflections/).
 
-... and in case you're wondering I lost at Beer Pong.
+... and in case you're wondering, I didn't win at Beer Pong.
