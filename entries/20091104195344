@@ -3,10 +3,10 @@ Content-Type: text/x-markdown
 Alias: save-everything-with-git-wip
 Tags: git,vim
 
-I am experimenting with a new workflow to help solve the problem of lost work.
-As described [in my previous post]{20091104194146}, there are already several
-ways to deal with keeping track of frequent edits.  The only problem is that
-they all involve dedication and extra effort.
+I am experimenting with a new workflow to help solve the problem of lost work
+between commits.  As described [in my previous post]{20091104194146}, there
+are already several ways to deal with keeping track of frequent edits.  The
+only problem is that they all involve dedication and extra effort.
 
 <read-more>
 
@@ -17,15 +17,17 @@ would just `git commit --amend`... or something equally easy.  Since I didn't
 have time to implement it right away, I decided thinking more about how to
 solve it better.
 
-Enter [git-wip](http://github.com/bartman/git-wip).  This shell script manages
-a hidden side branches that live along side every other branch you work on.
-Any time it's invoked it will commit the state of the working tree to this
+Enter [git-wip](http://github.com/bartman/git-wip).  *WIP* stands for Work In Progress,
+and is a term that is commonly used to describe work that is not ready to
+be shared and is still in progress.  This `git wip` tool manages hidden side
+branches that live along side every other branch you work on.  Any time
+it's invoked it will commit the state of the working tree to this
 branch.  As an example, if you work on branch *feature-X* then `git wip`
 will use *wip/feature-X* for tracking changes that follow the last commit,
 but the *feature-X* branch will never be altered by `git wip`.
 
-If you were to use `git wip` like you do `git commit` -- from the command
-line -- you might as well use `git commit`.  The intent of `git wip` is to
+If you were to use `git wip` like you do `git commit` -- manually invoking
+the command -- you might as well use `git commit`.  The intent of `git wip` is to
 create commits that will be thrown away 99% of the time.  The changes that
 `git wip` tracks are only useful for recovering code you added but then
 accidentally changed or deleted before committing.  It's something you
@@ -66,3 +68,24 @@ time are:
  * How bloated will my repos get in 30 days of capturing *every* save?  Will I even notice?
  * Will I be able to tolerate `:w` being slower?
  * Will it be useful?
+
+If you're interested in playing...
+
+ * download the script from github page: 
+   
+   `git clone git://github.com/bartman/git-wip.git`
+
+ * install git-wip in your PATH
+   
+   `cp git-wip ~/bin/`
+
+ * tell vim to call it whenever it saves
+
+   Add this to your `~/.vimrc`:
+
+        augroup git-wip
+                autocmd!
+                autocmd BufWritePost * :silent !git wip save "WIP from vim" --editor -- "%"
+        augroup END
+
+... and let me know if you'd change anything.

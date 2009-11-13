@@ -1,0 +1,20 @@
+Subject: squid and apt
+Content-Type: text/x-markdown
+Alias: 
+Tags: apt, debian, squid
+
+In the past few months apt started failing when using a squid web cache.
+
+It woudl give errors like these...
+
+  - `404 Not Found [IP: 149.20.20.135 80]`
+  - `The HTTP server sent an invalid reply header [IP: 130.89.149.227 80]`
+  - `Failed to fetch .../Packages 404 Not Found [IP: 149.20.20.135 80]`
+  - `Failed to fetch .../Sources 404 Not Found [IP: 149.20.20.135 80]`
+  - etc
+
+I finally found a solution to this in [this blog post](http://veejoe.net/blog/2009/05/trouble-with-apt-get-and-squid/).
+
+After adding the following line to my `/etc/squid3/squid.conf`, apt went back to working.
+
+    refresh_all_ims on

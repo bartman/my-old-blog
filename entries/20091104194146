@@ -4,7 +4,7 @@ Alias:
 Tags: git
 
 A few days ago a buddy, [Jean](http://geemoo.ca/), had stumbled into a problem caused by
-infrequent committing to his git repository.  Committing once the feature is implemented
+infrequent committing to his git repository.  Committing after the feature is implemented
 is common when working with tools like SVN... but we have multiple workflows available
 to us under git to manage frequent commits.
 
@@ -46,6 +46,7 @@ Here are some examples of things I've used and seen people do...
    `git commit`
    *hack*
    `git reset HEAD~3`
+   *cleanup*
    `git commit`
    
    Here we discard the last 3 commits and recombine the edits into a new commit.
