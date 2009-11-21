@@ -1,0 +1,63 @@
+Subject: notmuch for vim
+Content-Type: text/x-markdown
+Alias: notmuch.vim
+Tags: mail,vim
+
+Quite some time ago now, I tried [sup](http://sup.rubyforge.org/) a while ago and
+found it's indexing latencies un acceptable for my workflow.  I also found the user
+interface a bit foreign to me.
+
+More recently I've found [notmuch](http://notmuchmail.org/), a project that started as
+a C rewrite of the core bits of sup.  Basically, it's a program that indexes and
+searches through your existing mail.
+
+I had two issues with it.
+
+ * it had an emacs interface, and
+ * it uses maildir instead of mailbox.
+
+<read-more>
+
+The latter is a problem because maildir is horrible at managing large collections
+of mail... and even more so over NFS.  I guess I'll have to part with NFS as a
+medium of sharing my my mail.
+
+The former problem of using emacs to interface with notmuch, I started solving by
+writing a vim script to do the same in vim.  The result of a couple of days of vim
+scripting are here: [git.jukie.net/notmuch.git](http://git.jukie.net/notmuch.git)
+(see the [vim](http://git.jukie.net/notmuch.git?a=shortlog;h=refs/heads/vim) branch).
+
+`notmuch.vim` currently has two *modes* of operation:
+
+ * *search* mode - where you can sort your email using tags and keyword searches, and
+ * *show* mode - that displays threads of messages.
+
+It actually works very similarly to *gmail*.  You tag email as it comes in, and the
+display engines lets you recall email by a tag or new search criteria.
+
+Here is what `notmuch.vim` looks like in *search* mode:
+
+<img href=http://www.jukie.net/~bart/screenshots/notmuch-vim-search.png>
+
+If you select on of the messages, you'll get something like this:
+
+<img href=http://www.jukie.net/~bart/screenshots/notmuch-vim-show.png>
+
+More about the interace of `notmuch.vim` can be found here: [README](http://git.jukie.net/notmuch.git?a=blob;f=vim/README;hb=refs/heads/vim).
+
+To try it run:
+
+    git clone git://git.jukie.net/notmuch.git
+    cd notmuch
+    git checkout vim
+
+    make
+    make install
+
+    cd vim
+    make install
+
+    notmuch setup
+    notmuch new
+
+    vim -c :NotMuch
