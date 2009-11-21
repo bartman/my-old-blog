@@ -22,7 +22,7 @@ The latter is a problem because maildir is horrible at managing large collection
 of mail... and even more so over NFS.  I guess I'll have to part with NFS as a
 medium of sharing my my mail.
 
-The former problem of using emacs to interface with notmuch, I started solving by
+The former problem of using emacs to interface with notmuch I solved by
 writing a vim script to do the same in vim.  The result of a couple of days of vim
 scripting are here: [git.jukie.net/notmuch.git](http://git.jukie.net/notmuch.git)
 (see the [vim](http://git.jukie.net/notmuch.git?a=shortlog;h=refs/heads/vim) branch).
