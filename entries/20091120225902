@@ -37,11 +37,11 @@ display engines lets you recall email by a tag or new search criteria.
 
 Here is what `notmuch.vim` looks like in *search* mode:
 
-<img href=http://www.jukie.net/~bart/screenshots/notmuch-vim-search.png>
+<img src=http://www.jukie.net/~bart/screenshots/notmuch-vim-search.png>
 
 If you select on of the messages, you'll get something like this:
 
-<img href=http://www.jukie.net/~bart/screenshots/notmuch-vim-show.png>
+<img src=http://www.jukie.net/~bart/screenshots/notmuch-vim-show.png>
 
 More about the interace of `notmuch.vim` can be found here: [README](http://git.jukie.net/notmuch.git?a=blob;f=vim/README;hb=refs/heads/vim).
 
