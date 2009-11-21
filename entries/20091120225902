@@ -61,3 +61,4 @@ To try it run:
     notmuch new
 
     vim -c :NotMuch
+
