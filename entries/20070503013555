@@ -32,8 +32,8 @@ hence the use of a control key.*
 
 **The code**
 
-   - [gitweb interface](http://git.jukie.net/urxvt.git) for the urxvt script repo
-   - [current version](http://git.jukie.net/urxvt.git?a=blob;f=mark-yank-urls) of mark-yank-urls
+   - [gitweb interface](http://gitweb.jukie.net/urxvt.git) for the urxvt script repo
+   - [current version](http://gitweb.jukie.net/urxvt.git?a=blob;f=mark-yank-urls) of mark-yank-urls
 
 **Clone my repo**
 

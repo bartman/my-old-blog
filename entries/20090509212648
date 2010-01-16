@@ -31,7 +31,7 @@ have a low system overhead.
 repositories:
 
   * github: `git://github.com/bartman/wmii-lua.git` [browse](http://github.com/bartman/wmii-lua/)
-  * jukie: `git://git.jukie.net/wmii-lua.git/` [browse](http://git.jukie.net/wmii-lua.git)
+  * jukie: `git://git.jukie.net/wmii-lua.git/` [browse](http://gitweb.jukie.net/wmii-lua.git)
 
 You should read the 
 [README](http://github.com/bartman/wmii-lua/blob/e81fa5104634551a8b87644663c92b15c6fd15b3/README)

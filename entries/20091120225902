@@ -25,8 +25,8 @@ to `notmuch`.
 
 The former problem, of using emacs to interface with notmuch, I solved by
 writing a script to do the same for vim.  The result of a couple of days of vim
-scripting are here: [git.jukie.net/notmuch.git](http://git.jukie.net/notmuch.git)
-(see the [vim](http://git.jukie.net/notmuch.git?a=shortlog;h=refs/heads/vim) branch).
+scripting are here: [git.jukie.net/notmuch.git](http://gitweb.jukie.net/notmuch.git)
+(see the [vim](http://gitweb.jukie.net/notmuch.git?a=shortlog;h=refs/heads/vim) branch).
 
 `notmuch.vim` currently has two *modes* of operation:
 
@@ -70,7 +70,7 @@ So far supported features in `notmuch.vim` are:
  * adding and removing tags,
  * syntax highlighting and folding of email chunks.
 
-More about the interface of `notmuch.vim` can be found here: [README](http://git.jukie.net/notmuch.git?a=blob;f=vim/README;hb=refs/heads/vim).
+More about the interface of `notmuch.vim` can be found here: [README](http://gitweb.jukie.net/notmuch.git?a=blob;f=vim/README;hb=refs/heads/vim).
 
 To try it run:
 

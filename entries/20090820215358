@@ -36,7 +36,7 @@ This could be as easy as implementing:
 
 It just prints the hex numbers of functions, which then requires post processing.
 
-The [code I wrote](http://git.jukie.net/function-tracer.git?a=blob;f=cyg.c;hb=HEAD)
+The [code I wrote](http://gitweb.jukie.net/function-tracer.git?a=blob;f=cyg.c;hb=HEAD)
 uses the `backtrace_symbols()` glibc function that converts an offset in the running
 executable into a string that describes the symbol.  It's usually used along with
 the `backtrace()` function to generate stack dumps (or backtraces).  See 
@@ -49,9 +49,9 @@ A few notes:
    In my example I put that code into a separate file `cyg.c`.
 
  - To get symbol resolution to work use `-g` when building and `-g -rdynamic` when linking.  See
-   my [Makefile](http://git.jukie.net/function-tracer.git?a=blob;f=Makefile;hb=HEAD).
+   my [Makefile](http://gitweb.jukie.net/function-tracer.git?a=blob;f=Makefile;hb=HEAD).
 
- - My sample code is available in a git repo: [git://git.jukie.net/function-tracer.git](http://git.jukie.net/function-tracer.git)
+ - My sample code is available in a git repo: [git://git.jukie.net/function-tracer.git](http://gitweb.jukie.net/function-tracer.git)
 
 I now get traces like this:
 

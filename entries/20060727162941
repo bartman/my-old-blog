@@ -72,6 +72,6 @@ Anyway, on with the show...
 
 ** ... few hours go by ... **
 
-So here is the the first implementation [git-find.git](http://git.jukie.net/git-find.git).
+So here is the the first implementation [git-find.git](http://gitweb.jukie.net/git-find.git).
 
 I had to add glob support to `git-diff`, which took a while to figure out. ;)
