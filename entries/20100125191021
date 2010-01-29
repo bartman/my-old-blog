@@ -3,6 +3,8 @@ Content-Type: text/x-markdown
 Alias: rogers-killed-my-dream
 Tags: android,rogers,dream
 
+<b>See the updates below if you want to keep your root.</b>
+
 I just received the following text from Rogers, and as it claims my data
 access has been disabled.  Since I am running [CyanogenMod](http://www.cyanogenmod.com/)
 I never had the 911 issues that the stock Rogrers firmware experienced.
@@ -33,6 +35,8 @@ minutes I hung up.  My time is a bit more important than that.
 Well, this is one more strike for Rogers, and one more reason to leave.  Let's
 hope [WIND](http://www.windmobile.ca/) is all that it's cracked up to be.
 
+<read-more>
+
 *UPDATE*: looks like there is some [good news](http://www.androidincanada.ca/news/rogers-begins-pushing-out-android-rom-update-for-htc-magicdream/#comment-31091533):
 if you call and tell them you are running Linux, they'll "refresh your phone".  But you 
 should [avoid using the upgrade](http://www.androidincanada.ca/news/rogers-begins-pushing-out-android-rom-update-for-htc-magicdream/#comment-31334960)
@@ -49,7 +53,18 @@ was not possilbe from their end.
 I think I have 3 choices.
 
  - leave Rogers.  which I still am likely to do when WIND starts to operate in Ottawa.
+   .
+   Here is a [map of WIND towers in Ottawa](http://maps.google.com/maps/ms?ie=UTF8&hl=en&msa=0&msid=104288380340351189346.00047cfc64a9dda52d6cc&z=11)
 
  - borrow someone's phone for a day to fool the system into thinking I have updated.
 
  - call "Rogers customer retentions", which I've been told can do anything to keep me as a customer.
+
+*UPDATE 3*: After many wasted hours with tech support I found and followed [these instructions](http://forum.xda-developers.com/showpost.php?p=5440198&postcount=6)
+which let me run the rogers *boot* and *system* images, withour flashing SPL.  This allows for having the community
+recovery, which I'll later use to restore my cyanogen image.  So for now I have to run the crappy 1.5 firmware from
+rogers which should get me data back.  Will update if/when my data comes back.
+
+*UPDATE 4*: About an hour after downgrading via [eztery's instructions](http://forum.xda-developers.com/showpost.php?p=5440198&postcount=6), 
+I got 3G back.  I was still in the rogers firmware.  I powered down and restored my backup of CM, and still had 3G after
+booting my phone.  Let's see if it makes it through the next sweep.
