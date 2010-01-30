@@ -22,9 +22,9 @@ get the firmware before things started working again.
 To get things working you need to download firmware (*ipw2200-fw-3.0.tgz*) from [ipw2200.sf.net](http://ipw2200.sourceforge.net/firmware.php).  You need
 to agree to the license.
 
-Next, you will unpack this file to /lib/modules
+Next, you will unpack this file to /lib/firmware (thanks Rob Hull for the correction).
 
-        cd /lib/modules
+        cd /lib/firmware
         sudo tar xzf ipw2200-fw-3.0.tgz
 
 Then restart the drivers:
