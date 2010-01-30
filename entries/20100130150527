@@ -4,7 +4,8 @@ Alias: skype-on-64bit-lenny
 Tags: skype,linux
 
 My aunt asked that I get my mom hooked up on skype for my mom's B-day.  That involved getting a webcam and hooking it up on my mom's Ubuntu system.
-Since I've never anything with webcams, I didn't know where to start.
+Since I've never anything with webcams, I didn't know where to start.  This blog entry is about trying skype and the webcam going on my Debian
+Sqeeze laptop.
 
 <read-more>
 
@@ -29,4 +30,6 @@ From these I learned that removing `/usr/lib32/libpulse*` files does the trick. 
 Now I could start skype and make voice calls.  Video didn't work.  When I went to options to test my video configuration, I noticed that it failed to work there too.
 After some further googling I [discovered](http://forum.skype.com/index.php?showtopic=411431&st=60&p=1932431&#entry1932431) that to fix this is to 
 run `gstreamer-properties` and configure video output to use *X Window System (No Xv)*.
+
+Now it all works.
 
