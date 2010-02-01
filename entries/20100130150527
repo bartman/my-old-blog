@@ -3,8 +3,8 @@ Content-Type: text/x-markdown
 Alias: skype-on-64bit-lenny
 Tags: skype,linux
 
-My aunt asked that I get my mom hooked up on skype for my mom's B-day.  That involved getting a webcam and hooking it up on my mom's Ubuntu system.
-Since I've never anything with webcams, I didn't know where to start.  This blog entry is about trying skype and the webcam going on my Debian
+My aunt asked that I get my mom hooked up on skype for my mom's B-day.  That involved getting a webcam and hooking it up on my parents' Ubuntu system.
+Since I've never done anything with webcams, I didn't know where to start.  This blog entry is about trying skype and the webcam going on my Debian
 Sqeeze laptop.
 
 <read-more>
@@ -33,3 +33,5 @@ run `gstreamer-properties` and configure video output to use *X Window System (N
 
 Now it all works.
 
+*UPDATE*: my parents' system runs 32bit Ubuntu 8.10 (probably because that's what was recent when I set it up).  I had to remove the pulse library files there
+too to get skype to work with the microphone on the webcam.
