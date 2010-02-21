@@ -23,6 +23,16 @@ The first thing I decided to do was to install Debian/sqeeze on it.  And since I
 wanted to upgrade the on-board flash file system to [UBIFS](http://www.linux-mtd.infradead.org/doc/ubifs.html#L_overview).
 The following is an account of things I needed to do to get Debian running on UBIFS on the SheevaPlug.
 
+### SheevaPlug Installer...
+
+Before I start, I'll mention the [SheevaPlug Installer](http://www.plugcomputer.org/plugwiki/index.php/SheevaPlug_Installer).
+
+The installer asks me to...
+- On Linux host run `sudo php runme.php`
+
+I guess there are two types of people in the world: those that would have many questions about the above command, and those that woudl not.
+You are welcome to draw your own conclusions as to which camp I am in.
+
 ### Prior work...
 
 Fortunately, I didn't have to reinvent the wheel.  I read the very good [Installing Debian To Flash](http://www.plugcomputer.org/plugwiki/index.php/Installing_Debian_To_Flash) wiki page on [PlugWiki](http://www.plugcomputer.org/plugwiki).  It's a very precise, and well documented,
@@ -142,3 +152,20 @@ As of this writing, the most recent [prebuilt kernel](http://sheeva.with-linux.c
         Marvell>> saveenv
         Marvell>> boot
 
+### Links
+
+ - [SheevaPlug Installer](http://www.plugcomputer.org/plugwiki/index.php/SheevaPlug_Installer)
+
+ - [Debian on the SheevaPlug](http://www.cyrius.com/debian/kirkwood/sheevaplug/)
+   - [Installing Debian on the Marvell SheevaPlug](http://www.cyrius.com/debian/kirkwood/sheevaplug/install.html)
+
+ - [Installing Debian To Flash](http://www.plugcomputer.org/plugwiki/index.php/Installing_Debian_To_Flash)
+
+ - [Sheeva kernels](http://sheeva.with-linux.com/sheeva/index.php)
+
+ - [ubimkvol fails](http://plugcomputer.org/plugforum/index.php?topic=1279.msg7873) - forum describing the failure of `ubimkvol`.
+
+ - [UBIFS FAQ and HOWTO](http://www.linux-mtd.infradead.org/faq/ubifs.html)
+
+ - [U-Boot Quick Reference](http://www.plugcomputer.org/plugwiki/index.php/U-Boot_Quick_Reference)
+   - [uboot manual](http://www.denx.de/wiki/view/DULG/UBoot)

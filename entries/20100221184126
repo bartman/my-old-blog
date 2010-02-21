@@ -1,0 +1,41 @@
+Subject: live termcasting of your terminal over telnet
+Content-Type: text/x-markdown
+Alias: live-termcast
+Tags: shell,linux,screen
+
+I mentioned [earlier]{ubifs-on-sheeva} that I will be giving a talk 
+at [Flourish Conf](http://flourishconf.com/) next month.  While preparing for the talk
+I decided to I wanted to share my terminal with the participants of the Workshop
+via telnet.  The more popular alternative would be to use screen, or maybe vnc, which
+would require more over memory and CPU overhead... and additional accounts using the former.
+I only have a [SheevaPlug](http://en.wikipedia.org/wiki/SheevaPlug) so I am trying to be
+as conservative as possible.
+
+I was pointed to a [blog post](http://joey.kitenet.net/blog/entry/started_termcasting/)
+[on termcasting](http://joey.kitenet.net/termcast/) by [Joey Hess](http://joey.kitenet.net).
+Joey uses a [modified version of ttyrec](http://git.kitenet.net/?p=ttyrec.git) for 
+termcasting.  But this will not work for me as I want people to watch the session live.  While
+`ttyplay` seems to have some nice features, it exists as soon as it reaches the end of the
+recording... Whereas I want something similar to `tail -f`.
+
+So what I settled on is a combination of `script`, `tail -f` and `telnetd -L`.
+
+<read-more>
+
+First let's start with capturing the session.  My script is a bit more complex, but essentially
+it does the following:
+
+    script -c "TERM=vt220 screen -S termcast" -f "/tmp/screencast"
+
+I discovered that [vt220](http://en.wikipedia.org/wiki/VT220) works best when connecting from a windows system.
+
+Next, I created a script in `/usr/local/bin/play-watch-log` that contains:
+
+    #!/bin/sh
+    exec tail -f /home/watch/termcast/current
+
+The final step is to make telnetd run this script as the login shell; in `/etc/inetd.conf`, I placed:
+
+    telnet stream tcp nowait telnetd /usr/sbin/tcpd /usr/sbin/in.telnetd -L /usr/local/bin/play-watch-log
+
+And we're done.  My students will connect to the session using telnet and be able to watch what I type... sweet!
