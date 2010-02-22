@@ -11,6 +11,8 @@ would require more over memory and CPU overhead... and additional accounts using
 I only have a [SheevaPlug](http://en.wikipedia.org/wiki/SheevaPlug) so I am trying to be
 as conservative as possible.
 
+<read-more>
+
 I was pointed to a [blog post](http://joey.kitenet.net/blog/entry/started_termcasting/)
 [on termcasting](http://joey.kitenet.net/termcast/) by [Joey Hess](http://joey.kitenet.net).
 Joey uses a [modified version of ttyrec](http://git.kitenet.net/?p=ttyrec.git) for 
@@ -20,19 +22,21 @@ recording... Whereas I want something similar to `tail -f`.
 
 So what I settled on is a combination of `script`, `tail -f` and `telnetd -L`.
 
-<read-more>
+### Here is the setup...
 
 First let's start with capturing the session.  My script is a bit more complex, but essentially
 it does the following:
 
-    script -c "TERM=vt220 screen -S termcast" -f "/tmp/screencast"
+    script -c "TERM=vt220 screen -S termcast" -f "/tmp/termcast"
 
-I discovered that [vt220](http://en.wikipedia.org/wiki/VT220) works best when connecting from a windows system.
+This will start a screen session, under [script](http://en.wikipedia.org/wiki/Script_(Unix)) and record
+all input and output to a file in `tmp/termcast`.  I discovered that [vt220](http://en.wikipedia.org/wiki/VT220)
+works best when connecting from a windows system.
 
 Next, I created a script in `/usr/local/bin/play-watch-log` that contains:
 
     #!/bin/sh
-    exec tail -f /home/watch/termcast/current
+    exec tail -f /tmp/termcast
 
 The final step is to make telnetd run this script as the login shell; in `/etc/inetd.conf`, I placed:
 
