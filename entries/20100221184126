@@ -8,7 +8,7 @@ at [Flourish Conf](http://flourishconf.com/) next month.  While preparing for th
 I decided to I wanted to share my terminal with the participants of the Workshop
 via telnet.  The more popular alternative would be to use [screen](http://en.wikipedia.org/wiki/GNU_Screen)
 built in sharing, or maybe [vnc](http://en.wikipedia.org/wiki/Vnc), which would
-require more over memory and CPU overhead...  and additional accounts using the former.
+require more memory and CPU overhead...  and additional accounts using the former method.
 I only have a [SheevaPlug](http://en.wikipedia.org/wiki/SheevaPlug) to work with, so
 I am trying to be as conservative as possible.
 
@@ -17,7 +17,7 @@ I am trying to be as conservative as possible.
 I was pointed to a [blog post](http://joey.kitenet.net/blog/entry/started_termcasting/)
 [on termcasting](http://joey.kitenet.net/termcast/) by [Joey Hess](http://joey.kitenet.net).
 Joey uses a [modified version of ttyrec](http://git.kitenet.net/?p=ttyrec.git) for 
-termcasting.  But this will not work for me as I want people to watch the session live.  While
+termcasting.  This will not work for me as I want people to watch the session live.  While
 `ttyplay` seems to have some nice features, it exists as soon as it reaches the end of the
 recording... Whereas I want something similar to `tail -f`.
 
@@ -47,3 +47,11 @@ The final step is to make `telnetd` run this script as the login shell; in `/etc
     telnet stream tcp nowait telnetd /usr/sbin/tcpd /usr/sbin/in.telnetd -L /usr/local/bin/play-watch-log
 
 And we're done.  My students will connect to the session using telnet and be able to watch what I type... sweet!
+
+### "What about socat?"
+
+Shortly after I wrote this up, *Wisq* on the [#oclug](http://oclug.on.ca) irc channel suggested I use `socat`.
+
+Here is the replcement for `inetd`/`telnetd` using socat:
+
+    socat TCP-LISTEN:23,fork EXEC:"tail -f /home/watch/termcast/current"

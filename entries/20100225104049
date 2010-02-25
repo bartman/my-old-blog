@@ -1,0 +1,62 @@
+Subject: pimped out zsh prompt
+Content-Type: text/x-markdown
+Alias: pimping-out-zsh-prompt
+Tags: git,zsh,shell
+
+Here is [yet another]{zsh-git-prompt} update to the series.  I've updated my git prompt again,
+now using the *zsh 4.3.7* built in `vcs_info` module.  This time the motivation came
+from [Zsh Prompt Magic](http://kriener.org/articles/2009/06/04/zsh-prompt-magic) article.
+Here is what it looks like now:
+
+![zsh git prompt](/~bart/screenshots/zsh-git-prompt2.png)
+
+Everything is now self contained in one file: [S60_prompt](/~bart/conf/zsh.d/S60_prompt).  Grab it and source
+it into your zsh config.
+
+The features are:
+
+ - name of current branch
+ - print git repo state (`rebase`, `am`, `bisect`, `merge`, etc)
+ - show markers indicating staged/unstaged changes
+ - and highlight depth decended into the repository on the right.
+
+<read-more>
+
+The big difference in between my usage of the `vcs_info` and the one from the parent article referenced above
+is that I have large repositories where updating the status can sometimes take a couple seconds.  I like to limit
+updates as much as possible.  In the above config I use the following trick to limit the updates:
+
+        # ------------------------------
+        # update the vcs_info_msg_ magic variables, but only as little as possible
+
+        # This variable dictates weather we are going to do the git prompt update
+        # before printing the next prompt.  On some setups this saves 10s of work.
+        PR_GIT_UPDATE=1
+
+        # called before command excution
+        # here we decide if we should update the prompt next time
+        function zsh_git_prompt_preexec {
+                case "$(history $HISTCMD)" in 
+                    *git*)
+                        PR_GIT_UPDATE=1
+                        ;;
+                esac
+        }
+        preexec_functions+='zsh_git_prompt_preexec'
+
+        # called after directory change
+        # we just assume that we have to update git prompt
+        function zsh_git_prompt_chpwd {
+                PR_GIT_UPDATE=1
+        }
+        chpwd_functions+='zsh_git_prompt_chpwd'
+
+        # called before prompt generation
+        # if needed, we will update the prompt info
+        function zsh_git_prompt_precmd {
+               if [[ -n "$PR_GIT_UPDATE" ]] ; then
+                       vcs_info 'prompt'
+                       PR_GIT_UPDATE=
+               fi
+        }
+        precmd_functions+='zsh_git_prompt_precmd'
