@@ -9,14 +9,9 @@ This is my [third]{zsh-git-branch} [post]{zsh-git-branch2} on the topic.  I have
 
 ![zsh git prompt](/~bart/screenshots/zsh-git-prompt.png)
 
-<read-more>
+**UPDATE:** I've [updated my prompt again]{pimping-out-zsh-prompt}.
 
-**UPDATE:** *since I originally wrote this, and the [previous]{zsh-git-branch} [articles]{zsh-git-branch2} on
-the topic, several new techniques have been written and some have many cool new features.  I recommend
-[checking out this writeup](http://gitready.com/advanced/2009/01/28/zsh-git-status.html).  However, the
-alternatives seem to be non-caching and thus take a ong time to refresh the prompts on large repositories.
-As a result, they are not very interesting to me since I tend to work on large projects where calling* git status
-*could take a few seconds.  If you're still interested in a fast prompt read on...*
+<read-more>
 
 I have decided to move the user name, host, and full path to the right of the screen, since most of the
 time I know those (if you don't use zsh: the right prompt vanishes if the command line is long so to not get
@@ -42,3 +37,11 @@ And here are my config files:
    - [.zsh.d/S60_prompt](/~bart/conf/zsh.d/S60_prompt) - the prompt
 
 If you want more info read the [previous]{zsh-git-branch} [posts]{zsh-git-branch2}, or email...
+
+**UPDATE:** *since I originally wrote this, and the [previous]{zsh-git-branch} [articles]{zsh-git-branch2} on
+the topic, several new techniques have been written and some have many cool new features.  I recommend
+[checking out this writeup](http://gitready.com/advanced/2009/01/28/zsh-git-status.html).  However, the
+alternatives seem to be non-caching and thus take a ong time to refresh the prompts on large repositories.
+As a result, they are not very interesting to me since I tend to work on large projects where calling* git status
+*could take a few seconds.  If you're still interested in a fast prompt read on...*
+
