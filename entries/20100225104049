@@ -60,3 +60,4 @@ updates as much as possible.  In the above config I use the following trick to l
                fi
         }
         precmd_functions+='zsh_git_prompt_precmd'
+
