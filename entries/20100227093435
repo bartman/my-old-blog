@@ -1,6 +1,6 @@
 Subject: serving http content out of a git repo
 Content-Type: text/x-markdown
-Alias: 
+Alias: http-out-of-git
 Tags: git,web,lighttpd
 
 While preparing for my [Git]{tag/git} Workshop for [Flourish Conf](http://flourishconf.com/),
