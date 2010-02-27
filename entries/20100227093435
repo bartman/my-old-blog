@@ -1,0 +1,14 @@
+Subject: serving http content out of a git repo
+Content-Type: text/x-markdown
+Alias: 
+Tags: git,web,lighttpd
+
+While preparing for my [Git]{tag/git} Workshop for [Flourish Conf](http://flourishconf.com/)
+I thought about serving files over http directly out of a git repo.
+
+Here is a short shell script that I came up with: [git-serv.cgi](http://git.jukie.net/snippets.git/tree/git-serv-sh/git-serv.cgi).
+
+It takes request URLs like `http://domain/examples/dir/file` and looks up the objects
+in a bare git repository in `/home/git/examples.git`.  If it finds a *tree* object, it
+prints the file listing at that point in the tree.  If the object is a *blog*, it dumps
+the contents.  Otherwise some error is reported.

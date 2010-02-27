@@ -15,12 +15,14 @@ it into your zsh config.
 
 The features are:
 
- - name of current branch
- - git repo state (`rebase`, `am`, `bisect`, `merge`, etc)
- - markers indicating staged/unstaged changes
-   - little `1` after branch name indicates dirty working tree
-   - little `2` after branch name indicates staged changes
- - highlight depth decended into the repository on the right.
+ - name of current branch,
+ - git repo state (`rebase`, `am`, `bisect`, `merge`, etc),
+ - markers indicating staged/unstaged changes,
+   - little `1` after branch name indicates dirty working tree,
+   - little `2` after branch name indicates staged changes,
+ - highlight depth decended into the repository on the right,
+ - show failure of commands via prompt background change,
+ - show command/insert mode when using vi mode (`set -o vi`).
 
 <read-more>
 
