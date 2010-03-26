@@ -1,0 +1,25 @@
+Subject: Nexus One live in Ottawa
+Content-Type: text/x-markdown
+Alias: 
+Tags: wind
+
+I visited the [WIND Mobile](http://windmobile.ca) store at Westgate Mall this morning and signed up for WIND service.
+(I was the first geek there... yeay!) I am using my Nexus One and getting 4/4 bars for voice.  No data yet.  According
+to another customer cell enthusiast, that may take a few hours to start working.
+
+If you are setting up your android phone for WIND here are the instructions:
+
+ - power off, put in sim card (sales guy put it in backwards, tee hee)
+ - go to *Settings* => *Wireless & Networks* => *Mobile Networks* => *Access Point Names*
+   - press menu and *New APN*
+   - enter the following fields
+     - *Name:* wind
+     - *APN:* internet.windmobile.ca
+     - *MCC:* 302
+     - *MNC:* 490
+   - press menu and *Save*
+ - under *Mobile Network Settings* go to *Network operators*
+   - it should find *WIND Home* and *WIND Away*
+   - select *WIND Home*
+
+... you will receive an SMS message welcoming you to WIND, and you should be able to make calls within a minute.
