@@ -3,6 +3,8 @@ Content-Type: text/x-markdown
 Alias: zsh-git-prompt
 Tags: git,zsh,shell
 
+UPDATE: This post was [updated]{pimping-out-zsh-prompt} (yet again).
+
 This is my [third]{zsh-git-branch} [post]{zsh-git-branch2} on the topic.  I have *harshly* assimulated
 [MadCoder's](http://blog.madism.org/index.php/2008/05/07/173-git-prompt)
 [configuration](http://madism.org/~madcoder/dotfiles/zsh/60_prompt).  Here is my new zsh prompt:
