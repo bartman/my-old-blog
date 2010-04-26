@@ -1,0 +1,23 @@
+Subject: 
+Content-Type: text/x-markdown
+Alias: How many times is my function used within an executable?
+Tags: debug,devel,linux
+
+I am working on a large kernel module which had just come out of a large (and fruitful)
+internal API refactoring exercise.  I now want to go through and cull the unused functions.
+
+It turns out, all that is needed is the `readlef` utility (part of `binutils` package).
+
+First, we need to grab a list of externally visible functions:
+
+    readelf -s mymodule.ko | awk '/\<FUNC\>.*\<GLOBAL\>/ { print $8 }'
+
+Next, for each symbol we will print out the users of that function:
+
+    readelf -r mymodule.ko | grep '\<{}\>'
+
+Putting it all together:
+
+    readelf -s mymodule.ko | awk '/\<FUNC\>.*\<GLOBAL\>/ { print $8 }' \
+    | xargs -i{} -n1 sh -c "echo -n '{} ' ; readelf -r mymodule.ko | grep '\<{}\>' | wc -l"
+
