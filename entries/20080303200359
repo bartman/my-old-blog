@@ -3,7 +3,7 @@ Content-Type: text/x-markdown
 Alias: svn-branches-in-git
 Tags: git,svn,scm
  
-I must say that I am no fan [SVN]{tag/svn}, but SVN and I get a long a lot better since I started
+I must say that I am no fan of [SVN]{tag/svn}, but SVN and I get a long a lot better since I started
 using [git-svn]().  Long ago a good friend of mine, Dave O'Neill, taught me how to handle
 [multiple branches using git-svn](http://www.dmo.ca/blog/20070608113513).  I had used that
 technique until Dave taught me how to do it better.
@@ -26,6 +26,7 @@ Let's start by cloning this repository using *git-svn*:
         $ git svn clone svn://nex.scrapping.cc/shell-fm -T trunk -b branches -t tags
 
 **NOTE:** if you have commit access you may want to modify your svn:// url appropriately.
+**NOTE:** `--stdlayout` is a short form for `-T trunk -b branches -t tags`, and new versions of `git-svn` support it.
 
 This process will take longer then an `svn checkout` would... a lot longer.  There
 are two reasons for this. (1) you are getting all the history of the project, and 

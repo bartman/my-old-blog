@@ -6,7 +6,7 @@ Tags: debug,devel,linux
 I am working on a large kernel module which had just come out of a large (and fruitful)
 internal API refactoring exercise.  I now want to go through and cull the unused functions.
 
-It turns out, all that is needed is the `readlef` utility (part of `binutils` package).
+It turns out, all that is needed is the `readelf` utility (part of `binutils` package).
 
 <read-more>
 
