@@ -21,13 +21,12 @@ Here is an example configuration for `radvd` (*/etc/radvd.conf*).
     interface eth1
     {
         AdvSendAdvert on;
-        prefix 2001:470:ffff::/64                     # this is my internal network prefix
-        {
+        prefix 2001:470:ffff::/64 {                 # this is my internal network prefix
             AdvOnLink on;
             AdvAutonomous on;
             AdvRouterAddr on;
         };
-        RDNSS 2001:470:ffff::1 2001:470:ffff::2 {     # I have 2 DNS servers
+        RDNSS 2001:470:ffff::1 2001:470:ffff::2 {   # I have 2 DNS servers
             # I have no options to add here
         };
     };
