@@ -1,7 +1,7 @@
 Subject: distributing DNS list through radvd
 Content-Type: text/x-markdown
 Alias: 
-Tags: ipv6
+Tags: ipv6,dns
 
 If you have an IPv6 Linux network at home, you probably have a Linux host on the
 perimeter that's running `radvd` -- this is the server that responds to IPv6 neighbour
