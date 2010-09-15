@@ -12,6 +12,8 @@ All these tasks ware handled by the *DHCP* server, albeit a lot differently, in
 the good old days.  The one other thing that `dhcpd` did for us was to tell
 all the hosts where the DNS servers were.  It turns out that `radvd` can do this also.
 
+<read-more>
+
 [RFC 5006](http://tools.ietf.org/html/rfc5006) extends the features of `radvd` to
 also send out *RDNSS* (or *recursive DNS server* info).
 
