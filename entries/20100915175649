@@ -10,12 +10,16 @@ your hosts how to auto configure themselves.
 
 All these tasks ware handled by the *DHCP* server, albeit a lot differently, in
 the good old days.  The one other thing that `dhcpd` did for us was to tell
-all the hosts where the DNS servers were.  It turns out that `radvd` can do this also.
+all the hosts where the DNS servers were.
+
+So, do I need to run the IPv6 version of `dhcpd` AND `radvd`?
 
 <read-more>
 
-[RFC 5006](http://tools.ietf.org/html/rfc5006) extends the features of `radvd` to
-also send out *RDNSS* (or *recursive DNS server* info).
+It turns out that `radvd` can perform the task of domain name server
+distribution.  [RFC 5006](http://tools.ietf.org/html/rfc5006) extends
+the features of the ND protocol to also send out *RDNSS* 
+(or "*recursive DNS server*" info).
 
 Say, I have a simple ipv6 router with `eth0` pointing out, and `eth1` pointing in.
 Here is an example configuration for `radvd` (*/etc/radvd.conf*).
