@@ -9,7 +9,7 @@ server that responds to IPv6 neighbour discovery (ND) requests, distributes
 the *default route* to all your hosts, and tells your hosts how to auto
 configure themselves.
 
-All these tasks ware handled by the *DHCP* server, albeit a lot differently, in
+All these tasks were handled by the *DHCP* server, albeit a lot differently, in
 the good old days.  The one other thing that `dhcpd` did for us was to tell
 all the hosts where the DNS servers were.
 
