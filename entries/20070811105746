@@ -7,8 +7,8 @@ I have an update to my [previous article]{screen-ssh-agent} on forwarding [ssh-a
 through [screen]{tag/screen}.  I've since switched to [zsh]{tag/zsh} and am now forwarding 
 the X `DISPLAY` environment variable through to the screen shell.
 
-You can grab my [~/.zsh.d/S51\_screen](/~bart/conf/zsh.d/S51_screen),
-[~/.zsh.d/S60\_prompt](/~bart/conf/zsh.d/S60_prompt), and
+You can grab my [~/.zsh.d/S51\_screen](/~bart/conf/zsh/rc/S51_screen),
+[~/.zsh.d/S60\_prompt](/~bart/conf/zsh/rc/S60_prompt), and
 [~/.screenrc](/~bart/conf/screenrc) or 
 read below.
 

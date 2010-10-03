@@ -10,7 +10,7 @@ Here is what it looks like now:
 
 ![zsh git prompt](/~bart/screenshots/zsh-git-prompt2.png)
 
-Everything is now self contained in one file: [S60_prompt](/~bart/conf/zsh.d/S60_prompt).  Grab it and source
+Everything is now self contained in one file: [S60_prompt](/~bart/conf/zsh/rc/S60_prompt).  Grab it and source
 it into your zsh config.
 
 The features are:

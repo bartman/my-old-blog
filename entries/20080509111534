@@ -35,8 +35,8 @@ And here are my config files:
 
  - [.zshrc](/~bart/conf/zshrc) - just loads files in `$HOME/.zsh.d`
  - [.zsh.d](/~bart/conf/zsh.d) - zsh config split by topic, of those you want to look at this one:
-   - [.zsh.d/S55_git](/~bart/conf/zsh.d/S55_git) - my git related stuff
-   - [.zsh.d/S60_prompt](/~bart/conf/zsh.d/S60_prompt) - the prompt
+   - [.zsh.d/S55_git](/~bart/conf/zsh/rc/S55_git) - my git related stuff
+   - [.zsh.d/S60_prompt](/~bart/conf/zsh/rc/S60_prompt) - the prompt
 
 If you want more info read the [previous]{zsh-git-branch} [posts]{zsh-git-branch2}, or email...
 

@@ -30,13 +30,13 @@ you can grab them here ...
 
  - [.zshrc](/~bart/conf/zshrc) - just loads files in `$HOME/.zsh.d`
  - [.zsh.d](/~bart/conf/zsh.d) - zsh config split by topic, of those you want to look at this one:
-   - [.zsh.d/S55_git](/~bart/conf/zsh.d/S55_git) - my git related stuff
+   - [.zsh.d/S55_git](/~bart/conf/zsh/rc/S55_git) - my git related stuff
 
 **Here is the setup in detail...**
 
 First, you need to tell zsh to execute functions found in some magic arrays on certain 
 events.  Each of these is an array of function names.  Each function name is executed 
-when zsh performs some action.  I put these in [.zsh.d/S10_zshopts](/~bart/conf/zsh.d/S10_zshopts).
+when zsh performs some action.  I put these in [.zsh.d/S10_zshopts](/~bart/conf/zsh/rc/S10_zshopts).
 
         typeset -ga preexec_functions
         typeset -ga precmd_functions
@@ -46,7 +46,7 @@ We will also use the *expansions-in-prompt* feature:
 
         setopt prompt_subst
 
-The next section is in [.zsh.d/S55_git](/~bart/conf/zsh.d/S55_git) of my config.  I currently only grab the current
+The next section is in [.zsh.d/S55_git](/~bart/conf/zsh/rc/S55_git) of my config.  I currently only grab the current
 git branch and store it in `$__CURRENT_GIT_BRANCH` environment variable.  My plan is to grow it to include `git-status`
 info, and maybe bisect.  Anyway, this is the only variable to initialize.
 
@@ -96,7 +96,7 @@ will be used in the `PROMPT`.
                 echo $__CURRENT_GIT_BRANCH
         }
 
-The prompt iteself is defined in [.zsh.d/S60_prompt](/~bart/conf/zsh.d/S60_prompt).
+The prompt iteself is defined in [.zsh.d/S60_prompt](/~bart/conf/zsh/rc/S60_prompt).
 My example is far more complex, but essentially you need to do something like:
 
         PROMPT='%c$(get_git_prompt_info) %% '

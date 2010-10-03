@@ -21,7 +21,7 @@ The following can be dropped into your `$HOME/.zshrc` or you can grab my configu
 
 First you need to tell zsh to execute function found in some magic arrays.  Each of these is an array of function 
 names.  Each function name is executed when zsh performs some action.  I put these 
-in [.zsh.d/S10_zshopts](/~bart/conf/zsh.d/S10_zshopts).
+in [.zsh.d/S10_zshopts](/~bart/conf/zsh/rc/S10_zshopts).
 
         typeset -ga preexec_functions
         typeset -ga precmd_functions
@@ -31,7 +31,7 @@ We will also use the *expansions-in-prompt* feature:
 
         setopt prompt_subst
 
-The next section is in [.zsh.d/S55_git](/~bart/conf/zsh.d/S55_git) of my config.  I currently only grab the current
+The next section is in [.zsh.d/S55_git](/~bart/conf/zsh/rc/S55_git) of my config.  I currently only grab the current
 git branch and store it in `$__CURRENT_GIT_BRANCH` environment variable.  My plan is to grow it to include `git-status`
 info, and maybe bisect.  Anyway, this is the only variable to initialize.
 
@@ -68,7 +68,7 @@ Finally I make it accessible to the prompt.
                 echo $__CURRENT_GIT_BRANCH
         }
 
-The prompt iteself is defined in [.zsh.d/S60_prompt](/~bart/conf/zsh.d/S60_prompt).
+The prompt iteself is defined in [.zsh.d/S60_prompt](/~bart/conf/zsh/rc/S60_prompt).
 My example is far more complex, but essentially you need to do something like:
 
         PROMPT='%c$(get_git_prompt_info) %% '
