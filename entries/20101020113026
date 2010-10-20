@@ -1,11 +1,9 @@
 Subject: growing a live LVM volume
 Content-Type: text/x-markdown
 Alias: resize-lvm
-Tags: lvm, linux
+Tags: xfs, lvm, linux
 
-Blogging so I remember how to do it next time.
-
-I have a volume that is almost full:
+I have an LVM volume, with xfs on it, that is almost full:
 
     $ df /scratch -h
     Filesystem                Size  Used Avail Use% Mounted on
@@ -16,7 +14,7 @@ I have a volume that is almost full:
       LV Size                180.00 GB
     ...
 
-But I have some more space in the physical volume.
+But I have some more space in the physical volume.  Let's grow the logical volume.
 
 <read-more>
 
