@@ -5,7 +5,9 @@ Tags: ipv6,debian
 
 Some people have been telling me that they "have no time" or "are too lazy" to setup IPv6 on their desktop, but would like to.
 
-Below are 2 easy steps to get IPv6 running on your Debian Linux sytem (shoudl be identical on Ubuntu or similar).
+Below are 2 easy steps to get IPv6 running on your Debian Linux sytem (shoudl be identical on Ubuntu, and similar distros).
+
+If you're not running Linux, check out these pages instead: [MacOS X](http://www.deepdarc.com/miredo-osx/), [Windows](http://pugio.net/2007/07/howto-enable-ipv6-the-teredo-w.html).
 
 <read-more>
 
