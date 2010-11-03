@@ -15,9 +15,15 @@ At present, most of the home users use NAT.  This means that connections from ou
 
 Here is a simple way to add *stateful firewalling* to your IPv6 setup.  This setup will permit connections you initiate, but drop connections from outside.
 
- * Put [this script](http://git.jukie.net/snippets.git/plain/ultra-simple-stateful-firewall/etc/network/if-pre-up.d/iptables) in `/etc/network/if-pre-up.d/iptables` and make it executable (chmod +x).
- * Put [the IPv6 firewall config](http://git.jukie.net/snippets.git/plain/ultra-simple-stateful-firewall/etc/default/ip6tables) in `/etc/default/ip6tables`.
- * Load the firewall rules: `sudo ip6tables-restore < /etc/default/ip6tables`; it will stat up on the next boot automatically.
+ * Put [this script](http://git.jukie.net/snippets.git/plain/ultra-simple-stateful-firewall/etc/network/if-pre-up.d/iptables) in `/etc/network/if-pre-up.d/iptables` <br>
+   and make it executable: `chmod +x /etc/network/if-pre-up.d/iptables`
+
+ * Put [the IPv6 firewall config](http://git.jukie.net/snippets.git/plain/ultra-simple-stateful-firewall/etc/default/ip6tables) in `/etc/default/ip6tables`. <br>
+   (lines that start with a *#* are comments... read them)
+
+ * Load the firewall rules: <br>
+   `sudo ip6tables-restore < /etc/default/ip6tables` <br>
+   (it will stat up on the next boot automatically)
 
 You don't have connectivity yet, but the firewall is now configured.
 
