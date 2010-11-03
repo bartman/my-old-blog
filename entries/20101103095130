@@ -7,9 +7,9 @@ Some people have been telling me that they "have no time" or "are too lazy" to s
 
 Ok, so here are 4 easy steps to get IPv6 running on your Debian Linux sytem.
 
-<read-only>
+<read-more>
 
-## 1 - security
+### 1 - security
 
 At present, most of the home users use NAT.  This means that connections from outside to your network are mostly impossible.  This is pseudo-secure.  With IPv6 by default you get full connectivity, but do you really want everyone in the world to be able to ssh to your sytem?  Mabye not.
 
@@ -23,7 +23,7 @@ You don't have connectivity yet, but the firewall is now configured.
 
 If you like the idea of a stateful firewall for your IPv4, grab the [the IPv4 firewall config](http://git.jukie.net/snippets.git/plain/ultra-simple-stateful-firewall/etc/default/iptables) and put it in `/etc/default/iptables`.  this may break your connectivity since it's very restrictive... read the file before you decide to use it.
 
-## 2 - miredo
+### 2 - miredo
 
 [Miredo](http://www.remlab.net/miredo/) is a program that implements [Teredo tunneling](http://en.wikipedia.org/wiki/Teredo_tunneling) for UNIX systems.  Toredo is by far the easiest way to get IPv6 on your system, and Miredo is the easiest way to do that on Debian.
 
