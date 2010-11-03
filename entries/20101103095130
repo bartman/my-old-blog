@@ -27,7 +27,7 @@ Here is a simple way to add *stateful firewalling* to your IPv6 setup.  This set
 
  * Load the firewall rules: <br>
    `sudo ip6tables-restore < /etc/default/ip6tables` <br>
-   (it will stat up on the next boot automatically)
+   (it will start up on the next boot automatically)
 
 You don't have connectivity yet, but the firewall is now configured.
 
