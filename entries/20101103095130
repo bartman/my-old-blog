@@ -5,13 +5,13 @@ Tags: ipv6,debian
 
 Some people have been telling me that they "have no time" or "are too lazy" to setup IPv6 on their desktop, but would like to.
 
-Ok, so here are 4 easy steps to get IPv6 running on your Debian Linux sytem.
+Below are 2 easy steps to get IPv6 running on your Debian Linux sytem (shoudl be identical on Ubuntu or similar).
 
 <read-more>
 
 ### 1 - security
 
-At present, most of the home users use NAT.  This means that connections from outside to your network are mostly impossible.  This is pseudo-secure.  With IPv6 by default you get full connectivity, but do you really want everyone in the world to be able to ssh to your sytem?  Mabye not.
+At present, most of the home users use NAT.  This means that connections from outside to your network are mostly impossible.  This provides some sense of pseudo-security.  With IPv6, you get full connectivity between all systems on the network, but do you really want everyone in the world to be able to ssh to your sytem?  Mabye not.
 
 Here is a simple way to add *stateful firewalling* to your IPv6 setup.  This setup will permit connections you initiate, but drop connections from outside.
 
