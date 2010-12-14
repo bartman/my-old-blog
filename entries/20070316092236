@@ -150,7 +150,7 @@ Note that the config file can support multiple images.  The default is `linux`. 
 
 The kernel `append` command line is a bit long, so let me explain:
 
- * `rm` - mount read/write, you can use a read-only nfsroot, but that might require more work.
+ * `rw` - mount read/write, you can use a read-only nfsroot, but that might require more work.
  * `console=ttyS0,115200n81 console=tty0` - setup two consoles, on serial and on the terminal (screen).
  * `netdev=irq=11,name=eth0 netdev=irq=10,name=eth1` - I have two network cards and wanted to force their order based on IRQ.
  * `panic=100` - should booting fail, reboot after 100 seconds -- nice since my "lab" is in the basement.
