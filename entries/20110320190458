@@ -1,13 +1,17 @@
 Subject: What is IPv6, and why should I care?
 Content-Type: text/x-markdown
 Alias: ipv6-why
-Tags: ipv6
+Tags: ipv6,ipv6summit.ca
+
+[ NOTE: this article began as the front page of the [IPv6 Summit.ca](http://ipv6summit.ca) website ]
 
 Whenever you use the Internet, you are using an Internet Protocol (IP) - a set of rules for communication between computers. Internet Protocol Version 6 (or IPv6 for short) is an upgrade to the most widely available Internet Protocol (version 4, or IPv4).  These Internet Protocols are used to assign each computer with an address (called an IP address) that uniquely identifies it on the Web and allows other computers to communicate with it. 
 
-<div style="float: right; width: 20em; padding: 1em 0 1em 1em;">
-<h1>IPv6 has arrived.</h1> 
-<h1>Are you prepared?</h1>
+<read-more>
+
+<div style="float: right; width: 10em; padding: 1em 0 1em 1em;">
+<b><font size=+1>IPv6 has arrived.</br>
+Are you prepared?</font></b>
 </div>
 
 But IPv4 was designed in 1980, before the explosion of the Internet and the advent of Internet-connected portable devices like cell phones, tablets, e-book readers, etc.  It only has enough addresses for about 4 billion devices.  The population of our planet well exceeds 6 billion, and with more people getting connected to the Internet every day, IPv4 simply cannot keep up. 
@@ -29,3 +33,6 @@ IPv6 also holds some distinct advantages over IPv4.  It:
  - Makes small network setups a breeze
  - Improves support for mobile IP and mobile computing devices
 
+To find out more, join us at the Ottawa IPv6 Summit 2011.
+
+<a href=http://ipv6summit.ca><img src=http://ipv6summit.ca/public/conferences/1/pageHeaderTitleImage_en_US.png></a>
