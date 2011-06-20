@@ -15,7 +15,7 @@ On debian you can install it with
 
 I really liked the spell-checking plugin which uses aspell to highlight misspelled words as 
 I type them.  One thing I missed was the ability to tab complete words from the 
-`/usr/share/words` list.  So I wrote a short lua script to do it...
+`/usr/share/words` list.  So I wrote a [short lua script](https://github.com/bartman/snippets/blob/master/weechat/smarttab.lua) to do it...
 
 <read-more>
 

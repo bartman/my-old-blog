@@ -5,25 +5,22 @@ Tags: ipv6,linux,script
 
 I'm doing some IPv6 codig for a client and needed to setup a bunch of [6in4](http://en.wikipedia.org/wiki/6in4) tunnels.
 
-Thre are many ways to do this through distribution init scripts ([Debian](http://wiki.debian.org/DebianIPv6), [Fedora](http://dice.neko-san.net/2011/03/fedora-sysconfig-for-6in4-tunnel-router/)), but I wanted something less permanent and dynamic for testing.
+Thre are many ways to do this through distribution init scripts ([Debian](http://wiki.debian.org/DebianIPv6), [Fedora](http://dice.neko-san.net/2011/03/fedora-sysconfig-for-6in4-tunnel-router/)), but I wanted something less permanent and more dynamic for testing.
 
 The procedure can be summarized in these steps:
 
-- load IPv6 module
+- create a tunnel `mytun` between local `1.1.1.1` and remote `2.2.2.2`
 
-    sudo modprobe ipv6
-
-- create a tunnel `mytun` between local `1.1.1.1` and `2.2.2.2`
-
-    sudo ip tunnel add mytun mode sit local 1.1.1.1 remote 2.2.2.2 ttl 64 dev eth2
+        ip tunnel add mytun mode sit local 1.1.1.1 \
+                        remote 2.2.2.2 ttl 64 dev eth0
 
 - give the local end an address
 
-    sudo ip addr add dev mytun f8c0::1.1.1.1/64
+        ip addr add dev mytun f8c0::1.1.1.1/64
 
 - bring up the tunnel
 
-    sudo ip link set dev mytun up
+        ip link set dev mytun up
 
 <read-more>
 
@@ -31,11 +28,11 @@ And here is a script that builds both ends of the tunnel: [mk6in4tun](http://git
 
     ./mk6in4tun 2.2.2.2
     ### tunnel topology
-        [f8c0:69bd::1.1.1.1] 1.1.1.1 (eth2) <======> (???) 2.2.2.2 [f8c0:69bd::2.2.2.2]
+        [f8c0:69bd::1.1.1.1] 1.1.1.1 (eth0) <======> (???) 2.2.2.2 [f8c0:69bd::2.2.2.2]
 
     ### local setup ###
         sudo modprobe ipv6
-        sudo ip tunnel add tun69bd mode sit local 1.1.1.1 remote 2.2.2.2 ttl 64 dev eth2
+        sudo ip tunnel add tun69bd mode sit local 1.1.1.1 remote 2.2.2.2 ttl 64 dev eth0
         sudo ip addr add dev tun69bd f8c0:69bd::1.1.1.1/64
         sudo ip link set dev tun69bd up
         sudo iptables -I INPUT -s 2.2.2.2 -d 1.1.1.1 -p 41 -j ACCEPT
