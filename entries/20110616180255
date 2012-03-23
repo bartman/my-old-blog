@@ -5,7 +5,13 @@ Tags: hw,ssd
 
 After reading and hearing everyone raving about SSDs for a couple of years it was hard to resists the upgrade.
 
-So I got an Intel SSD 510 120GB to replace my Seagate 2.5" laptop HDD.
+So I got an [Intel SSD 510 120GB](http://www.techspot.com/review/387-intel-510-ssd/page4.html) to replace my Seagate 2.5" laptop HDD.
+
+The prices in the ~120GB SSD category are pretty close.  I chose the Intel based on reading that they have a low failure rate (I was unable to find the soruce when writing this up).
+
+The Thinkpad X61 only has SATA-II; the drive supposedly has better performance on SATA3.
+
+<i>UPDATE:</i> [Samat K Jain](http://samat.org/) points out that "<i>the ThinkPad X61 is limited to 1.5 Gbps, even with SATA-II (Lenovo's excuse: power saving, by keeping bus clocks down)</i>".  Lots of discussion about that [on the net](http://www.google.com/search?q=ThinkPad+X61+SATA).
 
 <read-more>
 
@@ -17,7 +23,7 @@ My setup...
 
 Here are the summarized bonie++ results.
 
-<table border="1" cellpadding="0" cellspacing="1">
+<table border="1" cellpadding="2" cellspacing="0">
 <tr>
   <td><b>Test</b></td>
   <td><b>HDD</b></td>
@@ -48,8 +54,6 @@ Here are the summarized bonie++ results.
 Detailed results follow.
 
 ### SATA connected...
-
-The Thinkpad X61 only has SATAII; the drive supposedly has better performance on SATA3.
 
 * HDD (direct, internal SATA)
 

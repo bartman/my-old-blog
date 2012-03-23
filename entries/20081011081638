@@ -7,3 +7,8 @@ Busybox should have a `--create-symlinks-in=/sbin` feature, but for now...
 
         ./busybox --help | grep 'Currently defined functions:' -A30 | grep '^\s.*,' | tr , '\n' | xargs -n1 -i{} ln -s busybox {}
 
+*update on 2012/03/22*:
+Shawn Hicks points out that this works better (unverified by me):
+
+        ./busybox --help | busybox grep 'Currently defined functions:' -A30 | busybox grep -v 'Currently defined functions:'|busybox tr , '\n'|busybox tr -d '\n\t'|busybox tr ' ' '\n'|busybox xargs -n 1 ln -s busybox
+
