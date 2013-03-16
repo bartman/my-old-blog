@@ -10,9 +10,15 @@ However, after reestablishing all important services, I noticed that TCP ports
 in the range 6666-6669 don't work -- not on IPv6 anyways.  These are usually
 used by IRC servers.
 
-I did a bit of detective work on trying to figure out what was going on.  Initially looking for solutions on the internet, but all I found were other people having this same problem with tunnelbroker.net tunnels.
+I did a bit of detective work on trying to figure out what was going on.
+Initially looking for solutions on the internet, but all I found were other
+people having this same problem with tunnelbroker.net tunnels.
 
-Now, it seems that the packets are getting into your network.  Please look over this TCP traceroute example:
+<read-more>
+
+Now, it seems that the packets are getting into their network.
+
+Look over this TCP traceroute example:
 
     $ tcptraceroute6 irc6.jukie.net 6666
     traceroute to bartman-2-pt.tunnel.tserv9.chi1.ipv6.he.net (2001:470:1f10:5fb::2) from 2607:f2c0:f00e:700:1575:dfeb:2bbe:3f7c, port 6666, from port 56058, 30 hops max, 60 bytes packets
@@ -27,9 +33,11 @@ Now, it seems that the packets are getting into your network.  Please look over
      9  * * *         
     10  * * *         
 
-In the above example, you can see that the TCP based trace route breaks after getting to tserv1.chi1.he.net.
+In the above example, you can see that the TCP traceroute breaks after
+getting to `tserv1.chi1.he.net`.
 
-Let's compare it to a port that works, like 5000 -- also used by IRC but for server-to-server communication.
+Let's compare it to a port that works, like 5000 -- also used by IRC but
+for server-to-server communication.
 
     $ tcptraceroute6 irc6.jukie.net 5000
     traceroute to bartman-2-pt.tunnel.tserv9.chi1.ipv6.he.net (2001:470:1f10:5fb::2) from 2607:f2c0:f00e:700:1575:dfeb:2bbe:3f7c, port 5000, from port 55964, 30 hops max, 60 bytes packets
@@ -43,10 +51,13 @@ Let's compare it to a port that works, like 5000 -- also used by IRC but for ser
 
 Note that in this case the packets make it through to the tunnel end point.
 
-The unfortunate part of this exercise is that in the world of tunnelled IPv6, a lot of things happen between "6" and "7".
+The unfortunate part of this exercise is that in the world of tunnelled IPv6,
+a lot of things happen between "6" and "7".
 
-I don't know what to do next.  Please let me know what I can do to fix this.
+Fortunately, all you need to do is go to the [tunnelbroker.net](http://www.tunnelbroker.net/) website,
+select your tunnel, and go to the `Advanced` tab.  Here you will find a button to
+*unblock IRC*.
 
-Best regards,
--Bart
+I did this, and all of a sudden my packets went though.
 
+Yey!
