@@ -24,8 +24,10 @@ filesystem flags, etc.
 Next I edited the `/lib/udev/rules.d/usbmount.rules` config file, adding the
 following two lines at the bottom of the file:
 
-        KERNEL=="mmcblk*", DRIVERS=="mmc_block",                ACTION=="add",  RUN+="/usr/share/usbmount/usbmount add"
-        KERNEL=="mmcblk*", SUBSYSTEMS=="mmc",   ACTION=="add",  RUN+="/usr/share/usbmount/usbmount add"
+        KERNEL=="mmcblk*", DRIVERS=="mmc_block", ACTION=="add",    RUN+="/usr/share/usbmount/usbmount add"
+        KERNEL=="mmcblk*", SUBSYSTEMS=="mmc",    ACTION=="add",    RUN+="/usr/share/usbmount/usbmount add"
+        KERNEL=="mmcblk*",                       ACTION=="remove", RUN+="/usr/share/usbmount/usbmount remove" 
+
 
 And then I inserted my SD/HC card, and my `/dev/mmcblk0p1` was automatically
 mounted under `/media/usb0`.
