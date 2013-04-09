@@ -5,7 +5,7 @@ Tags: ipv6,irc
 
 *IRC not working over HE.net 6in4 tunnel? read on...*
 
-I recently switched VSP's (to [Digital Ocean](https://www.digitalocean.com/))
+I recently switched VPS's (to [Digital Ocean](https://www.digitalocean.com/))
 and because my new co-location provider does not come
 with native IPv6, I had to use a tunnel.  Naturally I chose tunnelbroker.net.
 However, after reestablishing all important services, I noticed that TCP ports
