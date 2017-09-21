@@ -7,7 +7,7 @@ I picked up a [SheevaPlug](http://en.wikipedia.org/wiki/SheevaPlug) recently.  I
 I'll try to use it as a *git server* in a classroom setting at [Flourish Conf](http://flourishconf.com/),
 where I will be speaking about [Git]{tags/git}.
 
-<img src=/~bart/pic/marvell_sheevaplug_1-240x213.jpg>
+<img src=/~bart/blogimg/marvell_sheevaplug_1-240x213.jpg>
 
 This platform consists of a 1.2 GHz ARM processor (*Feroceon 88FR131 rev 1 (v5l)*),
 512M of SDRAM, 512M of NAND flash, 1Gbit ethernet, USB, SD card reader, and ... well, that's it.
