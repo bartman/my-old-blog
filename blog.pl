@@ -429,23 +429,27 @@ __TT__
             operating under <a href=http://www.jukie.net/>Jukie Networks Inc<a/> in Ottawa, Canada.
             -->
 
-            I am a Linux driver, kernel, and embedded software developer,
-            currently working for <a href=http://www.diablo-technologies.com/>Diablo Technologies Inc</a>.
+            I am an embedded Linux software developer and <a href=https://www.linkedin.com/in/barttrojanowski/>consultant</a>
+            operating under <a href=http://www.jukie.net/>Jukie Networks Inc<a/> in Ottawa, Canada.
 
+            <!--
             <ul>
             <li><a href="http://www.jukie.net/~bart/sig">contact info</a>
             <li><a href="http://www.jukie.net/~bart/resume">resume</a>
             <li><a href=http://git.jukie.net/>git archive</a>
             <li><a href="http://gallery.jukie.net">pictures</a>
             </ul>
+            -->
 
             <!--
             <font color=#008800>I am interested in low-level embedded contract work.</font>
             -->
 
+         <!--
          <p>
              <a href="http://www.prchecker.info/" target="_blank"><img
              align=left src="http://www.prchecker.info/PR3_img.gif" alt="" border="0" /></a>
+          -->
          <br><br>
              <a href="[% conf.url_base %]/feed.xml"><img align=left
                    src="/img/rssbanner.png"
