@@ -11,7 +11,7 @@ use Inline TT => 'DATA';
 
 my $conf = {
 	title    => "Bart's Blog",
-	data_dir => '/home/jukie/bart/.blog/entries',
+	data_dir => "../blog/entries",
 	timezone => 'Canada/Eastern',
 	url_base => script_name(),
 	host_name => virtual_host(),
