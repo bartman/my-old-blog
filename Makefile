@@ -1,6 +1,6 @@
 .PHONY: all commit deploy full-deploy clean
 all:
-	${MAKE} commit
+	git diff-index --quiet HEAD || ${MAKE} commit
 	${MAKE} deploy
 
 commit: add
