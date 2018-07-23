@@ -35,4 +35,6 @@ lookup on it.
 My `<LocalLeader>` is mapped to a coma; see my [.vimrc](http://www.jukie.net/~bart/conf/vimrc) for details.  I use `,k` as my 
 *codesearch* shortcut because I already use `K` to look up man pages... so I will be less likely to forget this one.
 
-        
+**NOTE**: I was informed by Blake Akers, of Webology, that this snippet doesn't work since Google CodeSearch was abandoned in 2011.  Please
+refer to [History of Google CodeSearch](https://www.webology.technology/2018/07/21/history-of-google-codesearch/) for an alternative:
+[codesearch.com](https://searchcode.com/).
