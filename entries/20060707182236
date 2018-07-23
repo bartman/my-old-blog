@@ -1,0 +1,14 @@
+Subject: lastfm artist and title to clipboard
+Content-Type: text/x-markdown
+Alias: lastfm-xclip-ion3
+Tags: lastfm
+
+Sharing your current [last.fm]{tag/lastfm} track on irc in realtime is very important.  :)  Here is a ion3 binding that will use `xclip` to 
+copy the current track info into the X clipboard.
+
+        defbindings("WScreen", {
+                kpress("Mod4+grave", "ioncore.exec('echo player/currentlyPlaying | nc localhost 32213 | xclip -i')"),
+        })
+
+Put it in `~/.ion3/cfg_user.lua`.
+

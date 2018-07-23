@@ -1,0 +1,10 @@
+Subject: generating html colourized sourcecode
+Content-Type: text/x-markdown
+Alias: generating-colourized-source-html
+Tags: vim, html, bash
+
+I wanted to have vim colouring of source files in html format.  There is
+[Text::VimColor](http://search.cpan.org/~geoffr/Text-VimColor/lib/Text/VimColor.pm)
+perl module, but it's not in Debian.  
+
+Vim has a `:TOhtml` command (see [:h syntax](http://www.vim.org/htmldoc/syntax.html)). I wrote a [tohtml](/~bart/scripts/tohtml/) shell script to solve the problem using `:TOhtml`.  And yes, the html was generated with itself.

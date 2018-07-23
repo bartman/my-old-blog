@@ -1,0 +1,20 @@
+Subject: wmii+ruby xlock action
+Content-Type: text/x-markdown
+Alias: wmii-xlock-action
+Tags: wmii,ruby,desktop
+
+I use *xscreensaver* and like to lock my display when I leave my computer.  Here 
+is a snippet from my `wmiirc-config.rb` file that adds an `xlock` action to the 
+`Alt-a` action menu.
+
+        plugin_config["standard:actions"]["internal"].update({
+          'xlock' => lambda do |wmii, *args|
+                system("xscreensaver-command --lock")
+          end
+        })
+
+I start my *xscreensaver* in the `.xsession` file:
+
+        /usr/bin/xscreensaver -nosplash &
+
+... before launching wmii.

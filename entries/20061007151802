@@ -1,0 +1,38 @@
+Subject: google-codesearch from vim
+Content-Type: text/x-markdown
+Alias: codesearch-from-vim
+Tags: vim,google,code
+
+I just saw [vim hint 1354](http://www.vim.org/tips/tip.php?tip_id=1354) pop up in 
+my RSS feed.  It's a neat idea... but it's hard to decide what documentation should 
+be looked up.  Simply using the file type is insufficient.
+
+It turns out that it's a lot more awesome to do [google codesearch](http://www.google.com/codesearch)
+lookup on it.
+
+<read-more>
+
+        function! OnlineDoc()
+            let s:browser = "firefox"
+            let s:wordUnderCursor = expand("<cword>")
+
+            if &ft == "cpp" || &ft == "c" || &ft == "ruby" || &ft == "php" || &ft == "python"
+                let s:url = "http://www.google.com/codesearch?q=".s:wordUnderCursor."+lang:".&ft
+            elseif &ft == "vim"
+                let s:url = "http://www.google.com/codesearch?q=".s:wordUnderCursor
+            else
+                return
+            endif
+
+            let s:cmd = "silent !" . s:browser . " " . s:url
+            execute  s:cmd
+            redraw!
+        endfunction
+
+        " online doc search
+        map <LocalLeader>k :call OnlineDoc()<CR>
+
+My `<LocalLeader>` is mapped to a coma; see my [.vimrc](http://www.jukie.net/~bart/conf/vimrc) for details.  I use `,k` as my 
+*codesearch* shortcut because I already use `K` to look up man pages... so I will be less likely to forget this one.
+
+        

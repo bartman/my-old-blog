@@ -1,0 +1,16 @@
+Subject: select loop for X events
+Content-Type: text/x-markdown
+Alias: 
+Tags: devel,x
+
+I am not a huge fan of threading when it can be avoided.  I always thought that it was OK for GUI programs to be threaded.
+I just discovered that you can [handle X events from a select loop](http://www.linuxquestions.org/questions/programming-9/xnextevent-select-409355/#post2431345).
+
+        dis = XOpenDisplay(DISPLAY);
+        fd = ConnectionNumber(dis);
+
+        FD_SET(fd, &in_fds);
+
+        select(fd+1, &in_fds, NULL, NULL, NULL);
+
+        ...

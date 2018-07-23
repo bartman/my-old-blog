@@ -1,0 +1,8 @@
+Subject: remote power switch
+Content-Type: text/x-markdown
+Alias: remote-power-switch
+Tags: hardware
+
+I just got a [Web Power Switch](http://www.digital-loggers.com/lpc.html), and hooked it up to the 
+*lab* machines in the basement.  I can now reset them with a web page... which is going to get scripted
+really soon.
