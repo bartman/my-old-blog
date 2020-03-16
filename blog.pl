@@ -5,6 +5,11 @@ use CGI qw( :standard );
 use IO::File;
 use File::Find::Rule;
 use POSIX qw( strftime );
+use Sys::MemInfo qw(totalmem freemem totalswap);
+
+my $minmegs = 15;
+my $freemegs = &freemem / 1024 / 1024;
+die "insufficient RAM\n" if ($freemegs < $minmegs);
 
 #use Inline (Config => DIRECTORY => '/tmp/bart-blog-inline');
 use Inline TT => 'DATA';
