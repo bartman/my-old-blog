@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-BLOG="$HOME/.blog"
+BLOG="$HOME/blog"
 ENTR="$BLOG/entries"
 
 DATE=`date +"%Y%m%d%H%M%S"`
