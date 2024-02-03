@@ -6,7 +6,7 @@ Tags: vim,nvim,neovim,linux
 I started from scratch and built up a new Neovim config.
 
 Based on this video series:
-* https://www.youtube.com/watch?v=zHTeCSVAFNY by `typecraft` (thank you)
+* [video](https://www.youtube.com/watch?v=zHTeCSVAFNY) by `typecraft` (thank you)
 
 Pushed to github here:
 https://github.com/bartman/nvim-config
@@ -21,11 +21,13 @@ So this is what it looks like...
 
 
 You'll probably have to install some tools...
+
 ```
 sudo apt install clang clangd npm
 ```
 
 You will need neovim 0.10, or at least 0.9 for some of these plugins.
+
 I found building it from source pretty easy on Debian/Ubuntu.
 
 ```
@@ -39,6 +41,7 @@ make install
 
 Note that I installed things in `~/usr/neovim`, which means it needs to go in the PATH.
 Alternatively you can make aliases for them in your `~/.bashrc` (or whatever shell you use).
+
 ```
 alias vim=~/usr/neovim/nvim
 alias vi=~/usr/neovim/nvim
@@ -46,6 +49,7 @@ alias vimdiff='~/usr/neovim/nvim -d'
 ```
 
 Move the old config out of the way, if you have one...
+
 ```
 mv ~/.config/nvim ~/.config/nvim.old
 ```
@@ -58,12 +62,14 @@ cp -r config/nvim/* ~/.config/nvim/
 ```
 
 Start things up...
+
 ```
 nvim
 ```
+
 At this point you can run
-* `:Lazy` to check on the nvim packages being installed (`q` to close)
-* `:Mason` to check on diagnostic tools being installed (`q` to close)
+ - `:Lazy` to check on the nvim packages being installed (`q` to close)
+ - `:Mason` to check on diagnostic tools being installed (`q` to close)
 
 You can use `:WhichKey` to browse through the keyboard shortcuts interactively.
 
