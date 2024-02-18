@@ -1,1 +1,1 @@
-grep Subject: entries/*[0-9] | sed 's/:Subject:/ /'
+grep '^Subject:' entries/*[0-9] | sed 's/:Subject:/ /'
